@@ -6,7 +6,10 @@ var flash = require('connect-flash');
 var ejs = require('ejs');
 var methodOverride = require('method-override');
 
-app.use(bodyparser.json());
+app.use(bodyparser.json())
+.use(bodyparser.urlencoded({
+    extended: true
+}));
 const mongoose = require("./config/database.js");
 
 app.use(express.static(__dirname + "/public"));
