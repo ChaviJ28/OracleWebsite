@@ -1,6 +1,6 @@
 mongoose = require('mongoose');
-
-mongoUrl = "mongodb://localhost:27017/oracledb";
+// 
+mongoUrl = "mongodb://localhost:27017/oracledb"; 
 const options = {
     keepAlive: true,
     useNewUrlParser: true,

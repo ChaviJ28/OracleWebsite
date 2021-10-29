@@ -29,12 +29,12 @@
 
 
   <div class="container mt-5">
-    <h3 class="text-center">Update Event</h3>
-    <form action="/events/<%= event._id %>/update?_method=PUT" method="POST" class="mt-5" enctype="multipart/form-data">
+    <h3 class="text-center">Update Blog</h3>
+    <form action="/blogs/<%= blog._id %>/update?_method=PUT" method="POST" class="mt-5" enctype="multipart/form-data">
       <div class="mb-3 row">
         <label for="staticFrom" class="col-sm-2 col-form-label">Title</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" value="<%= event.title %>" name="title" placeholder="Title">
+          <input type="text" class="form-control" value="<%= blog.title %>" name="title" placeholder="Title">
         </div>
       </div>
 
@@ -49,45 +49,22 @@
 
 
       <div class="mb-3 row">
-        <label for="staticFrom" class="col-sm-2 col-form-label">Starting Time</label>
+        <label for="staticFrom" class="col-sm-2 col-form-label">Author</label>
         <div class="col-sm-10">
-          <input type="time" class="form-control" value=<%=event.timeFrom %> name="from" placeholder="Starting Time">
+          <input type="text" class="form-control" value="<%=blog.author %>" name="author" placeholder="Author">
         </div>
       </div>
 
       <div class="mb-3 row">
-        <label for="staticTo" class="col-sm-2 col-form-label">Finishing Time</label>
+        <label for="staticFrom" class="col-sm-2 col-form-label">CatchPhrase</label>
         <div class="col-sm-10">
-          <input type="time" class="form-control" value=<%=event.timeTo %> name="to" placeholder="Finishing Time">
+          <input type="text" class="form-control" value="<%=blog.catch %>" name="catch"
+            placeholder="Catchphrase on Card">
         </div>
       </div>
-
-
-      <div class="mb-3 row">
-        <label for="staticFrom" class="col-sm-2 col-form-label">Location</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" value=<%=event.location %> name="location" placeholder="Location">
-        </div>
-      </div>
-
-      <div class="mb-3 row">
-        <label for="staticFrom" class="col-sm-2 col-form-label">Google Form Link</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" value=<%=event.linkgoogle %> name="google" placeholder="Google Form
-          Link">
-        </div>
-      </div>
-
-
-      <div class="mb-3 form-check form-switch">
-        <input class="form-check-input" type="checkbox" role="switch" id="" name="big" <% if (event.big==true) { %>
-        checked <% } %> >
-          <label class="form-check-label" for="flexSwitchCheckChecked">Big Event</label>
-      </div>
-
 
       <div class="mb-3 ">
-        <textarea id="summernote" name="description"><%= event.description %></textarea>
+        <textarea id="summernote" name="description"><%= blog.description %></textarea>
       </div>
 
 
@@ -96,7 +73,7 @@
 
       <div class="mb-2 row">
         <div class="col-3">
-          <img style="width: 200px;" src=<%=event.imageUrl %>>
+          <img style="width: 200px;" src=<%=blog.imageUrl %>>
         </div>
         <div class="col-8 row">
           <div class="mb-3 form-check form-switch">
@@ -115,10 +92,10 @@
 
       </div>
 
-      <input type="text" class="form-control d-none" value="<%= event.imageUrl %>" name="oldImage" placeholder="Title">
+      <input type="text" class="form-control d-none" value="<%= blog.imageUrl %>" name="oldImage" placeholder="Title">
 
       <div class="mb-3 text-end">
-        <button type="submit" class="btn btn-primary">update Event</button>
+        <button type="submit" class="btn btn-primary">update blog</button>
       </div>
     </form>
   </div>
