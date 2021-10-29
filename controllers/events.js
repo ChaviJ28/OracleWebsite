@@ -74,6 +74,7 @@ module.exports.new =  async (req, res, next) => {
                 title: req.body.title,
                 date: req.body.date,
                 description: req.body.description,
+                smallDes: req.body.smallDes,
                 imageUrl: '/uploads/images/' + req.file.filename,
                 timeFrom: req.body.from,
                 timeTo: req.body.to,
@@ -117,6 +118,7 @@ module.exports.update = async (req, res) => {
     
             title: req.body.title,
             description: req.body.description,
+            smallDes: req.body.smallDes,
             timeFrom: req.body.from,
             timeTo: req.body.to,
             big: big,
