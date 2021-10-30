@@ -1,7 +1,7 @@
 
 module.exports.home = async (req, res) => {
     try {
-        res.send('Hi Bitch')
+        res.render('homepage')
     } catch (err) {
         console.log(err)
     }

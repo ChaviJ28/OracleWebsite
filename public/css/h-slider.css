@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.container-bg{
+    background-image: linear-gradient(45deg, #CB6CE6, #4D67D8);
+    border-radius: 10px;
+}
+
+.img-s{
+    width: 520px;
+    height: 320px;
+    object-fit: cover;    
+}
+
+.w{
+    width: 50% !important;
+}
+
+.carousel-control-prev-icon{
+    position: absolute;
+    left: 0px;
+}
+
+.carousel-control-next-icon{
+    position: absolute;
+    right: 0px;
+}
+
+.title-date{
+    height: 30px;
+}
+
+ 
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1023px) {
+    .img-s{
+        width: 590px; /* original value was 500 */
+        height: 357px;
+        object-fit: cover;
+    }
+
+    .title-date{
+        padding-top: 5px;
+    }
+
+ 
+}
+
+@media screen and (max-width: 426px) {
+
+    .img-s{
+        width: 490px; /* original value was 500 */
+        height: 357px;
+        object-fit:contain;
+    }
+    /* push slider arrows */
+    .carousel-control-next, .carousel-control-prev-icon{
+        margin-top: -150px ;
+    }
+
+    .title-date{
+        padding-top: 10px;
+        height: 40px;
+    }
+}
