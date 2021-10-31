@@ -38,11 +38,13 @@ app.use(async function (req, res, next) {
 const indexRoutes = require('./routes/index.js')
 const blogRoutes = require('./routes/blogs.js')
 const eventRoutes = require('./routes/events.js')
+const aboutRoutes = require('./routes/about.js')
 
 //use routes
 app.use('/', indexRoutes);
 app.use('/blogs', blogRoutes);
 app.use('/events', eventRoutes);
+app.use('/about', aboutRoutes);
 
 
 var port = 3000

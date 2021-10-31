@@ -1,0 +1,288 @@
+.team{
+	/*background-image: url("jk3.png");*/
+    background-color: white;
+	background-size: cover;
+    background-position: absolute;
+    align-content: center;
+	background-repeat: none;
+}
+
+/* .img-area{
+    overflow: hidden;
+    position: relative;
+    height: 269px;
+    width: 175px;
+} */
+
+.img-area{
+    height: 400px;
+width: 320px;
+overflow: hidden;
+    position: relative;
+}
+
+
+@media (min-width: 768px){s
+  .seven-cols .col-lg-1  {
+    width: 80%;
+    *width: 80%;
+  }
+}
+
+@media (min-width: 992px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+  }
+  h4{
+    font-size: 1px;
+  }
+
+  .img-area{
+    overflow: hidden;
+    position: relative;
+    height: 255px;
+    width: 150px;
+}
+}
+
+.img-area{
+	padding:  5%;
+	border-radius: 10px;
+    background: linear-gradient(180deg, rgba(121, 75, 183, 0.45) 0%, rgba(9, 13, 25, 0.35) 96.56%);
+
+    /*background-color: rgba(255, 255, 255, 1.0);
+	background: inherit;
+	backdrop-filter:  blur(30px);*/
+	box-shadow:0 0 5px 0;
+
+    /* overflow: scroll; */
+
+}
+
+@media (min-width: 992px) {
+ 
+  .img-area{
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+    width: 128px;
+}
+}
+
+
+@media (min-width: 1200px) {
+    
+    .img-area{
+      overflow: hidden;
+      position: relative;
+      height: 280px;
+      width: 150px;
+  }
+  }
+
+
+
+@media (min-width: 1400px) {
+    
+  
+    .img-area{
+      height: 280px;
+      width: 175px;
+  }
+  }
+
+.img-area{
+	padding:  5%;
+	border-radius: 10px;
+    background-color: #803380;
+
+    /*background-color: rgba(255, 255, 255, 1.0);
+	background: inherit;
+	backdrop-filter:  blur(30px);*/
+	box-shadow:0 0 5px 0;
+
+    /* overflow: scroll; */
+
+}
+
+/*@media (min-width: 1100px){
+    .img-area{
+        translate: 50px;
+        margin-left: -100px;
+    }
+    }
+
+@media (min-width: 1100px){
+    .outer:hover{
+    z-index: 1;
+    position: relative;
+    transition: 1s;
+    transform: translateY(-50px);
+    transform: scale(1.2);
+}
+}
+
+@media (min-width: 1100px){
+    .outer:hover ~.outer {
+    transition: 1s;
+   transform: translateX(90px);
+}}
+*/
+
+.img-area:hover .social, .img-area:active .social, .img-area:focus img{
+    cursor: pointer;
+    opacity: 2;
+    transform: rotateY(0deg) scale(1, 1);
+}
+
+
+
+
+.img-area:hover .social, .img-area:active img, .img-area:focus img{
+    transform: scale(1.2)
+}
+.img-area img{
+    transition: all 0.4s ease 0s;
+}
+@media (max-width: 768px){
+    .img-area img{
+        display: inline-block;
+    }
+}
+.img-area .social{
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: .5s;
+    transform: rotateY(180deg) scale(0.5, 0.5);
+}
+.img-area .social ul{
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    top: 50px;
+}
+.img-area .social ul li a{
+    border: 1px solid #fff;
+    color: #fff;
+    display: inline-block;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+.img-area .social ul li a:hover{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid transparent;
+}
+
+h4,h6,h5{
+    max-width:100%;
+    max-height:100%;
+    font-family: montserrat;
+    color: white;
+    word-wrap: break-word;
+   
+}
+
+h1{
+    padding: 5%;
+    font-family: montserrat;
+    color: black;   
+}
+
+.text-title {
+   color: #f0f0f0e5 !important;
+   
+}
+
+
+
+
+body {
+    margin: 0%;
+    background: #090D19;
+}
+
+.category {
+    height: 180px;
+    background: linear-gradient(180deg, rgba(121, 75, 183, 0.45) 0%, rgba(9, 13, 25, 0.35) 96.56%);
+   
+}
+
+.title {
+    color: #fff;
+    font-size: 2.5rem;
+font-family: montserrat;
+font-weight: bold;
+}
+
+#img {
+    width: 550px;
+    margin: auto;
+}
+
+.spaceEvent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+   
+}
+
+
+.textIcon {
+    color: #fff;
+    margin: 16px auto !important;
+    font-size: 1.2rem;
+}
+
+.widthIcons {
+    width: 190px;
+}
+
+.iconEvent {
+    width: 1.75rem;
+}
+
+.descriptionEvents {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+
+
+
+    @media (max-width: 1400px) {
+       
+   
+     }
+
+     @media (max-width: 900px) {  
+        .font-exec {
+            font-size: 1.3rem !important;
+        }
+}
+
+    @media (max-width: 750px) { 
+    
+     }
+
+
+
+    @media (max-width: 599px) { 
+      
+     }

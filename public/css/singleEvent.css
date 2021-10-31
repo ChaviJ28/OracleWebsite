@@ -21,6 +21,12 @@ font-weight: bold;
     margin: auto;
 }
 
+.icon-big{
+    color: white;
+font-weight: 1000;
+scale: 1.5;
+}
+
 .spaceEvent {
     display: flex;
     flex-direction: row;

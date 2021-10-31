@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+    
+html , body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.homeimg {
+    /* was: center fixed */
+    background: url(/uploads/images/backgrounds/backgroundDark.png) no-repeat center;
+    display: table;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+}
+
+.landingArea{
+    height: 400px;
+    background: url(/uploads/images/backgrounds/sidebar.png) no-repeat center;
+    background-size: cover;
+    background-position-y: 40%;
+}
+
+/* ---------------- text ---------------- */
+p {
+    color: white;
+}
+
+.sub-heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px  ;
+}
+.main-heading {
+    text-align: center;
+    text-transform: lowercase;
+    font-size: 70px ;
+}
+
+/* ---------------- buttons ---------------- */
+button {
+    background: linear-gradient(-45deg, #516ab8, #438cdf,  #794bb7, #516ab8);
+    background-size: 800% 400%;
+    /* padding: 4px 4px !important; */
+    width: 165px !important;
+    display: inline-block;
+    border: none;
+    border-radius: 8px !important;
+    font-size: 17px !important;
+    font-weight: bold !important;
+    color: white !important;
+    transition: all .5s ease-in-out !important;
+    animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both !important;
+   }
+
+   button:hover {
+    animation: gradient 3s infinite !important;
+    transform: scale(1.05) !important;
+   }
+
+   button:active {
+    animation: gradient 3s infinite !important;
+    transform: scale(0.8) !important;
+   }
+
+   @keyframes gradient {
+    0% {
+     background-position: 0% 50%;
+    }
+
+    50% {
+     background-position: 100% 50%;
+    }
+
+    100% {
+     background-position: 0% 50%;
+    }
+   }
+
+    /* .homepage-a {   
+       text-decoration: none !important;
+   } */
+
+
+/* ---------------- services icon ---------------- */
+.servicesDetails{
+    transition: all .2s ease-in-out;
+}
+
+.servicesDetails:hover{
+    transform: scale(1.1);
+
+}
+.servicesBox{
+    transition: transform .7s ease-in-out;
+}
+.servicesBox:hover{
+    transform: rotate(360deg);
+}
+.servicesBorder{
+    border-right: 1px solid grey;
+    height: 80px;
+}
+
+
+/*   ---------------- stickers ---------------- */
+.home-sticker-1{
+    transform: rotate(8deg);
+}
+
+.home-sticker-2{
+    transform: rotate(00deg);
+}
+
+.home-sticker-3{
+    /* transform: rotate(10deg); */
+    /* margin-top: 100px;; */
+    
+    z-index: 1000;
+    margin-top: -80px;
+    position: relative;
+}
+
+
+/* -------------------------------- MOBILE 320 ----------- */
+@media screen and (min-width: 320px) and (max-width: 575px) {
+    html , body {
+        height: 100%;
+        width: 100%;
+        font-family: 'Roboto', sans-serif;
+    }
+    .homeimg {
+        /* was: center fixed */
+        background: url(/uploads/images/backgrounds/backgroundDark.png) no-repeat center;
+        display: table;
+        height: 100%;
+        position: relative;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .landingArea{
+        height: 350px;
+        background: url(/uploads/images/backgrounds/sidebar.png) no-repeat center;
+        background-size: contain;
+        background-position-y: 60%;
+    }
+
+    /* ---------------- text ---------------- */
+    .landingText{
+        margin-bottom: 25px !important;
+    }
+    p {
+        color: white;
+    }
+    .sub-heading {
+        text-align: center !important;
+        text-transform: uppercase;
+        font-size: 14px  ;
+    }
+    .main-heading {
+        /* text-align: center !important; */
+        text-transform: lowercase;
+        font-size: 27px ;
+    }
+
+    /* ---------------- button ---------------- */
+    .landingButton{
+        height: 100px;
+    }
+    .buttonTablet{
+        width: 268px !important;
+    }
+    button {
+        background: linear-gradient(-45deg, #516ab8, #438cdf,  #794bb7, #516ab8);
+        background-size: 800% 400%;
+        /* padding: 4px 4px !important; */
+        width: 165px !important;
+        display: inline-block;
+        border: none;
+        border-radius: 8px !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
+        color: white !important;
+        transition: all .5s ease-in-out !important;
+        animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both !important;
+    }
+
+    /* ---------------- services icon ---------------- */
+    .servicesBorder{
+        display: none;
+    }
+
+    .home-sticker-1{
+        transform: rotate(38deg);
+        width: 100px; 
+        height:100px; 
+    }
+
+    .home-sticker-2{
+        transform: rotate(00deg);
+    }
+}
+
+/* -------------------------------- LARGER MOBILE 576 ----------- */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    html , body {
+        height: 100%;
+        width: 100%;
+        font-family: 'Roboto', sans-serif;
+    }
+    .homeimg {
+        /* was: center fixed */
+        background: url(/uploads/images/backgrounds/backgroundDark.png) no-repeat center;
+        display: table;
+        height: 100%;
+        position: relative;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .landingArea{
+        height: 250px;
+        background: url(/uploads/images/backgrounds/sidebar.png) no-repeat center;
+        background-size: cover;
+        background-position-y: 45%;
+    }
+
+    /* ---------------- text ---------------- */
+    .landingText{
+        margin-bottom: 25px !important;
+    }
+    p {
+        color: white;
+    }
+    .sub-heading {
+        text-align: center !important;
+        text-transform: uppercase;
+        font-size: 16px  ;
+    }
+    .main-heading {
+        /* text-align: center !important; */
+        text-transform: lowercase;
+        font-size: 40px ;
+    }
+
+    /* ---------------- button ---------------- */
+    .landingButton{
+        height: 100px;
+    }
+    .buttonTablet{
+        width: 200px !important;
+    }
+    button {
+        background: linear-gradient(-45deg, #516ab8, #438cdf,  #794bb7, #516ab8);
+        background-size: 800% 400%;
+        /* padding: 4px 4px !important; */
+        width: 165px !important;
+        display: inline-block;
+        border: none;
+        border-radius: 8px !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
+        color: white !important;
+        transition: all .5s ease-in-out !important;
+        animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both !important;
+    }
+
+    /* ---------------- services icon ---------------- */
+    .servicesText{
+        text-align: center;
+    }
+    .servicesBorder{
+        display: none;
+    }
+}
+
+/* -------------------------------- TABLEt 768 ----------- */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    html , body {
+        height: 100%;
+        width: 100%;
+        font-family: 'Roboto', sans-serif;
+    }
+    .homeimg {
+        /* was: center fixed */
+        background: url(/uploads/backgrounds/backgroundDark.png) no-repeat center;
+        display: table;
+        height: 100%;
+        position: relative;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .landingArea{
+        height: 250px;
+        background: url(/uploads/images/backgrounds/sidebar.png) no-repeat center;
+        background-size: cover;
+        background-position-y: 64%;
+    }
+
+    /* ---------------- text ---------------- */
+    .landingText{
+        margin-bottom: 25px !important;
+    }
+    p {
+        color: white;
+    }
+    .sub-heading {
+        text-align: center !important;
+        text-transform: uppercase;
+        font-size: 14px  ;
+    }
+    .main-heading {
+        /* text-align: center !important; */
+        text-transform: lowercase;
+        font-size: 45px ;
+    }
+
+    /* ---------------- button ---------------- */
+    .landingButton{
+        height: 100px;
+    }
+    .buttonTablet{
+        width: 268px !important;
+    }
+    button {
+        background: linear-gradient(-45deg, #516ab8, #438cdf,  #794bb7, #516ab8);
+        background-size: 800% 400%;
+        /* padding: 4px 4px !important; */
+        width: 165px !important;
+        display: inline-block;
+        border: none;
+        border-radius: 8px !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
+        color: white !important;
+        transition: all .5s ease-in-out !important;
+        animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both !important;
+    }
+
+    /* ---------------- services icon ---------------- */
+    .servicesRow{
+        width: 650px !important;
+    }
+    .servicesText{
+        text-align: center;
+    }
+    .servicesBorder{
+        display: none;
+    }
+    .home-sticker-1{
+        transform: rotate(16deg);
+        width: 100px; 
+        height:100px; 
+    }
+}
+ 

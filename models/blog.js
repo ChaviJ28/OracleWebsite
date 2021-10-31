@@ -1,30 +1,14 @@
 const mongoose = require("mongoose");
 
-var eventSchema = mongoose.Schema({
+
+var blogSchema = mongoose.Schema({
     title: String,
-    date: { $type: Date, default: Date.now },
+    date: Date,
     description: String,
     imageUrl: String,
-    timeFro: String,
-    timeTo: String,
-    location: String,
-    email: String,
-    collaborators: [
-        {
-            name: { $type: String },
-            image: { $type: String },
-            description: { $type: String }
-        }
-    ],
-    registrationForm: {
-        id: {
-            $type: mongoose.Schema.Types.ObjectId,
-            ref: "form"
-        }
-    }
-    // registrationURL: String
-},
-    { typeKey: '$type' }
+    author: String,
+    catch:String
+}
 );
 
-module.exports = mongoose.model("event", eventSchema);
+module.exports = mongoose.model("blog", blogSchema);
