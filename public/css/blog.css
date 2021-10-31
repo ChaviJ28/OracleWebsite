@@ -144,13 +144,13 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 }
 
 .btn-main, .btn-transparent, .btn-small {
-  background: #f75757;
+  background: #040404b3;
   color: #fff;
   transition: all 0.2s ease;
 }
 
 .btn-main:hover, .btn-transparent:hover, .btn-small:hover {
-  background: #dd0b0b;
+  background: #000;
   color: #fff;
 }
 
@@ -1427,6 +1427,8 @@ h3.quote::before {
 }
 
 @media (max-width: 768px) {
+
+  
 
   .navbar-toggler {
     color: #fff;

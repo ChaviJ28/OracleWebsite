@@ -123,12 +123,13 @@
                 data.blogs.forEach(blog => {
                     // masonary();
                     console.log(typeof blog.date)
-                    var content = '<div class="col-lg-4 col-md-6 mb-5"><div class="blog-item rounded"><img src="' + blog.imageUrl + '" alt="photo" class="img-fluid rounded"><div class="blog-item-content p-4"><div class="d-flex flex-row-reverse" style="font-size: 0.9rem;color: #ffffffb3;"><div class=" text-capitalize "><i class="ti-time mr-1"></i>' + retDateFormat(blog.date) + '</div><div class=" mx-2 text-capitalize author-text"><i class="ti-user me-1"></i>' + blog.author + '</div></div><h3 class="mt-1 "><a href="/blogs/view/' + blog._id + '" class="text-white">' + blog.title + '</a></h3><p class="mb-2 text-white">' + blog.catch + '</p><a href="/blogs/view/' + blog._id + '" class="btn btn-small btn-main btn-round-full">Read More</a></div></div></div>';
+                    var content = '<div class="col-lg-4 col-md-6 mb-5 smallS" style=""><div class="blog-item rounded"><img src="' + blog.imageUrl + '" alt="photo" class="img-fluid rounded"><div class="blog-item-content p-4"><div class="d-flex flex-row-reverse" style="font-size: 0.9rem;color: #ffffffb3;"><div class=" text-capitalize "><i class="ti-calendar me-1"></i>' + retDateFormat(blog.date) + '</div><div class=" mx-3 text-capitalize author-text"><i class="ti-user me-1"></i>' + blog.author + '</div></div><h3 class="mt-1 "><a href="/blogs/view/' + blog._id + '" class="text-white">' + blog.title + '</a></h3><p class="mb-2 text-white">' + blog.catch.substr(0, 200)+" ..." + '</p><div class="d-flex flex-row-reverse"><a href="/blogs/view/' + blog._id + '" class="btn btn-small btn-main btn-round-full">Read More</a></div></div></div></div>';
                     document.getElementsByClassName("row")[0].innerHTML += content;
+                 
                 });
                 setTimeout(function () {
                     masonary();
-                }, 750);
+                }, 500);
 
 
                 if (data.blogs.length == 0) {

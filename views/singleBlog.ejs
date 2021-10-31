@@ -27,21 +27,21 @@
 
     <section id="eventDetails" class="container mb-5">
         <div class="text-center">
-            <img id="img" src=<%=blog.imageUrl %>>
+            <img id="imgblog" src=<%=blog.imageUrl %>>
         </div>
 
         <div class="row mt-5">
             <div class="col-1"></div>
-            <div class="col-10 spaceEvent">
-                <div class="spaceEvent widthIcons">
-                    <i class="ti-user icon-big"></i>
-                    <p class="textIcon">
+            <div class="col-10 spaceEvent2">
+                <div class="spaceEvent mx-5">
+                    <i class="ti-user icon-big iconEvent"></i>
+                    <p class="textIcon2">
                         <%= blog.author %>
                     </p>
                 </div>
-                <div class="spaceEvent widthIcons">
-                    <img class="iconEvent" src="/icon/calender.svg">
-                    <p class="textIcon">
+                <div class="spaceEvent mx-5">
+                    <i class="ti-calendar icon-big"></i>
+                    <p class="textIcon2">
                         <%= blog.date.toDateString('en-US').substr(4, blog.date.toDateString('en-US').length) %>
                     </p>
                 </div>

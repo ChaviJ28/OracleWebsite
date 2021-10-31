@@ -188,7 +188,7 @@ margin: 30px auto;
           }
 
           .eventCard {
-            width: 100%;
+            width: 90%;
         }
 
         .liTab {
@@ -197,14 +197,14 @@ margin: 30px auto;
         }
 
         #widthTab {
-            width: 203px;
+            width: 235px;
 margin: 30px auto;
 
         }
 
         .liTab {
             padding: 6px 15px;
-            font-size: 13px;
+            font-size: 16px;
         }
 
         .category {
