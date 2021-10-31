@@ -132,7 +132,7 @@
                 }, 500);
 
 
-                if (data.blogs.length == 0) {
+                if (data.blogs.length == 0 || data.blogs.length < 6) {
                     document.getElementsByClassName('lds-ripple')[0].style.display = 'none';
                 }
 
