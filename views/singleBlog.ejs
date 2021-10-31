@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/plugins/themify/css/themify-icons.css">
     <link rel="stylesheet" href="/css/singleEvent.css">
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=617e5bc49709b0001266ba22&product=inline-share-buttons' async='async'></script></head>
 
 
 </head>
@@ -30,16 +31,18 @@
             <img id="imgblog" src=<%=blog.imageUrl %>>
         </div>
 
-        <div class="row mt-5">
+        <div class="sharethis-inline-share-buttons mt-4"></div>
+
+        <div class="row mt-2" >
             <div class="col-1"></div>
             <div class="col-10 spaceEvent2">
-                <div class="spaceEvent mx-5">
+                <div class="spaceEvent mx-3">
                     <i class="ti-user icon-big iconEvent"></i>
                     <p class="textIcon2">
                         <%= blog.author %>
                     </p>
                 </div>
-                <div class="spaceEvent mx-5">
+                <div class="spaceEvent mx-3">
                     <i class="ti-calendar icon-big"></i>
                     <p class="textIcon2">
                         <%= blog.date.toDateString('en-US').substr(4, blog.date.toDateString('en-US').length) %>
@@ -49,6 +52,8 @@
 
             <div class="col-1"></div>
         </div>
+
+        
 
         <div class="mt-5 ">
             <h4 class="title mb-4">Description:</h4>
