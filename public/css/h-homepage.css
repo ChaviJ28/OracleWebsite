@@ -9,7 +9,7 @@ html , body {
 
 .homeimg {
     /* was: center fixed */
-    background: url(/uploads/images/backgrounds/backgroundDark.png) no-repeat center;
+    background: url(/images/backgrounds/backgroundDark.png) no-repeat center;
     display: table;
     height: 100%;
     position: relative;
@@ -19,7 +19,7 @@ html , body {
 
 .landingArea{
     height: 400px;
-    background: url(/uploads/images/backgrounds/sidebar.png) no-repeat center;
+    background: url(/images/backgrounds/sidebar.png) no-repeat center;
     background-size: cover;
     background-position-y: 40%;
 }
@@ -134,7 +134,7 @@ button {
     }
     .homeimg {
         /* was: center fixed */
-        background: url(/uploads/images/backgrounds/backgroundDark.png) no-repeat center;
+        background: url(/images/backgrounds/backgroundDark.png) no-repeat center;
         display: table;
         height: 100%;
         position: relative;
@@ -144,7 +144,7 @@ button {
 
     .landingArea{
         height: 350px;
-        background: url(/uploads/images/backgrounds/sidebar.png) no-repeat center;
+        background: url(/images/backgrounds/sidebar.png) no-repeat center;
         background-size: contain;
         background-position-y: 60%;
     }
@@ -214,7 +214,7 @@ button {
     }
     .homeimg {
         /* was: center fixed */
-        background: url(/uploads/images/backgrounds/backgroundDark.png) no-repeat center;
+        background: url(/images/backgrounds/backgroundDark.png) no-repeat center;
         display: table;
         height: 100%;
         position: relative;
@@ -224,7 +224,7 @@ button {
 
     .landingArea{
         height: 250px;
-        background: url(/uploads/images/backgrounds/sidebar.png) no-repeat center;
+        background: url(/images/backgrounds/sidebar.png) no-repeat center;
         background-size: cover;
         background-position-y: 45%;
     }
@@ -287,7 +287,7 @@ button {
     }
     .homeimg {
         /* was: center fixed */
-        background: url(/uploads/backgrounds/backgroundDark.png) no-repeat center;
+        background: url(images/backgrounds/backgroundDark.png) no-repeat center;
         display: table;
         height: 100%;
         position: relative;
@@ -297,7 +297,7 @@ button {
 
     .landingArea{
         height: 250px;
-        background: url(/uploads/images/backgrounds/sidebar.png) no-repeat center;
+        background: url(images/images/backgrounds/sidebar.png) no-repeat center;
         background-size: cover;
         background-position-y: 64%;
     }
