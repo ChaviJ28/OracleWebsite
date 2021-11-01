@@ -68,6 +68,7 @@ header.sticky .inner-main-menu ul{
 }
 
 .inner-main-menu ul li .menu{
+    /* XXX */
     color: #fff;
     font-size: 16px;
     letter-spacing: 1px;
@@ -78,6 +79,7 @@ header.sticky .inner-main-menu ul{
 }
 
 .inner-main-menu ul .register{
+    /* XXX */
     color: #fff;
     font-size: 16px;
     letter-spacing: 1px;
@@ -207,11 +209,12 @@ input{
     }
 
     .links{
+        /* XXX */
         position: absolute;
         right: 0px;
         height: inherit;
         top: 125px;
-        background-color: #090d1975;
+        background-color: #090d19e8;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -273,7 +276,7 @@ input{
 }
 
 /*-------------------------Responsiveness 375px-------------------------*/
-@media screen and (max-width: 320px){
+@media screen and (max-width: 380px){
     .hamburger{
         margin-right: 20px;
         padding: 25px 0px;
@@ -295,9 +298,11 @@ input{
 
     .inner-main-menu ul li .menu{
         font-size: 14px;
+        margin-left: 0px;
     }
     
     .inner-main-menu ul .register{
         font-size: 14px;
+        margin-left: 10px;
     }
 }
