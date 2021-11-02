@@ -141,9 +141,33 @@ header.sticky .inner-main-menu ul{
     height: 115px;
 }
 
+.logo-area .caption{
+    animation: coolStuff 0.5s linear;
+}
+
+@keyframes coolStuff {
+    /* 0%  {
+        opacity: 0;}
+    50% {
+        opacity: .5;}
+    100%    {
+        opacity: 1;} */
+
+    0% {
+        transform: scale(0.5, 0.5);
+    }
+    100%{
+        transform: scale(1, 1);
+    }
+}
+
 .logo-area:hover{
     transform: rotateY(360deg);
+   
 }
+
+
+
 
 .logo{
     width: 100px;
@@ -244,8 +268,13 @@ input{
 
     .inner-main-menu ul li .menu{
         margin-bottom: 25px;
+        margin-left: 0px;
     }
 
+    .inner-main-menu ul .register{
+        font-size: 14px;
+        margin-left: 10px;
+    }
 }
 
 .nav-active{
