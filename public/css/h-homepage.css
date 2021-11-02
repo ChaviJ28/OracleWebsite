@@ -144,9 +144,9 @@ button {
 
     .landingArea{
         height: 350px;
-        background: url(/images/backgrounds/sidebar.png) no-repeat center;
+        background: url(/images/backgrounds/sidebar_mobile.png) no-repeat center;
         background-size: contain;
-        background-position-y: 60%;
+        background-position-y: 85%;
     }
 
     /* ---------------- text ---------------- */
@@ -199,6 +199,8 @@ button {
         width: 100px; 
         height:100px; 
     }
+    
+    
 
     .home-sticker-2{
         transform: rotate(00deg);
@@ -287,7 +289,7 @@ button {
     }
     .homeimg {
         /* was: center fixed */
-        background: url(images/backgrounds/backgroundDark.png) no-repeat center;
+        background: url(/images/backgrounds/backgroundDark.png) no-repeat center;
         display: table;
         height: 100%;
         position: relative;
@@ -296,15 +298,15 @@ button {
     }
 
     .landingArea{
-        height: 250px;
-        background: url(images/images/backgrounds/sidebar.png) no-repeat center;
+        height: 400px;
+        background: url(/images/backgrounds/sidebar.png) no-repeat center;
         background-size: cover;
-        background-position-y: 64%;
+        background-position-y: 120%;
     }
 
     /* ---------------- text ---------------- */
     .landingText{
-        margin-bottom: 25px !important;
+        /* margin-bottom: 25px !important; */
     }
     p {
         color: white;
