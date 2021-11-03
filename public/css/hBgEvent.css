@@ -1,0 +1,8 @@
+.background-event {
+    width: 59rem;
+background: url(/images/backgrounds/banner.jpeg) no-repeat center;
+height: 31rem;
+background-size: contain;
+margin: auto;
+border-radius: 30px;
+}
