@@ -144,14 +144,14 @@ button {
 
     .landingArea{
         height: 350px;
-        background: url(/images/backgrounds/sidebar.png) no-repeat center;
+        background: url(/images/backgrounds/sidebar_mobile.png) no-repeat center;
         background-size: contain;
-        background-position-y: 60%;
+        background-position-y: 95%;
     }
 
     /* ---------------- text ---------------- */
     .landingText{
-        margin-bottom: 25px !important;
+        margin-bottom: 35px !important;
     }
     p {
         color: white;
@@ -170,6 +170,7 @@ button {
     /* ---------------- button ---------------- */
     .landingButton{
         height: 100px;
+        /* margin-top: 30px !important; */
     }
     .buttonTablet{
         width: 268px !important;
@@ -199,6 +200,8 @@ button {
         width: 100px; 
         height:100px; 
     }
+    
+    
 
     .home-sticker-2{
         transform: rotate(00deg);
@@ -287,7 +290,7 @@ button {
     }
     .homeimg {
         /* was: center fixed */
-        background: url(images/backgrounds/backgroundDark.png) no-repeat center;
+        background: url(/images/backgrounds/backgroundDark.png) no-repeat center;
         display: table;
         height: 100%;
         position: relative;
@@ -296,15 +299,15 @@ button {
     }
 
     .landingArea{
-        height: 250px;
-        background: url(images/images/backgrounds/sidebar.png) no-repeat center;
+        height: 400px;
+        background: url(/images/backgrounds/sidebar.png) no-repeat center;
         background-size: cover;
-        background-position-y: 64%;
+        background-position-y: 120%;
     }
 
     /* ---------------- text ---------------- */
     .landingText{
-        margin-bottom: 25px !important;
+        /* margin-bottom: 25px !important; */
     }
     p {
         color: white;
@@ -359,3 +362,80 @@ button {
     }
 }
  
+/* -------------------------------- BIGGER 1400 ----------- */
+@media screen and (min-width: 1400px) {
+    html , body {
+        height: 100%;
+        width: 100%;
+        font-family: 'Roboto', sans-serif;
+    }
+    .homeimg {
+        /* was: center fixed */
+        background: url(/images/backgrounds/backgroundDark.png) no-repeat center;
+        display: table;
+        height: 100%;
+        position: relative;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .landingArea{
+        height: 400px;
+        background: url(/images/backgrounds/sidebar.png) no-repeat center;
+        background-size: cover;
+        background-position-y: 40%;
+    }
+
+    /* ---------------- text ---------------- */
+    .landingText{
+        /* margin-bottom: 25px !important; */
+    }
+    p {
+        color: white;
+    }
+    .sub-heading {
+        text-align: center !important;
+        text-transform: uppercase;
+        font-size: 18px  ;
+    }
+    .main-heading {
+        /* text-align: center !important; */
+        text-transform: lowercase;
+        font-size: 70px ;
+    }
+
+    /* ---------------- button ---------------- */
+    /* .landingButton{
+        height: 100px;
+    }
+    .buttonTablet{
+        width: 268px !important;
+    } */
+    button {
+        background: linear-gradient(-45deg, #516ab8, #438cdf,  #794bb7, #516ab8);
+        background-size: 800% 400%;
+        /* padding: 4px 4px !important; */
+        width: 165px !important;
+        display: inline-block;
+        border: none;
+        border-radius: 8px !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
+        color: white !important;
+        transition: all .5s ease-in-out !important;
+        animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both !important;
+    }
+
+    /* ---------------- services icon ---------------- */
+    /* .servicesRow{
+        width: 650px !important;
+    } */
+    /* .servicesText{
+        text-align: center;
+    } */
+    .servicesBorder{
+        border-right: 1px solid grey;
+        height: 80px;
+    }
+   
+}
