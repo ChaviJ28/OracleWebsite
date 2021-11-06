@@ -1,8 +1,209 @@
 .background-event {
     width: 59rem;
-background: url(/images/backgrounds/banner.jpeg) no-repeat center;
+
 height: 31rem;
-background-size: contain;
 margin: auto;
 border-radius: 30px;
+}
+
+
+.banner{
+    width: 100%;
+    /* position: absolute; */
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+}
+.banner .wrap{
+    position: relative;
+    width: 100%;
+    max-width: 1020px;
+    padding: 40px 20px;
+    margin: auto;
+}
+.banner .arrow{
+    display: block;
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    font-size: 2em;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .3s ease-in-out;
+    padding: 5px;
+    z-index: 22222222;
+}
+.banner .arrow:before{
+    cursor: pointer;
+}
+.banner .arrow.left{
+    left: 10px;
+}
+.banner .arrow.right{
+    right: 10px;
+}
+.banner .arrow:hover{
+    color: #794bb7;
+}
+.banner .dots{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 60px;
+    left: 0;
+    display: block;
+    z-index: 3333;
+    height: 12px;
+}
+.banner .dots .dot{
+    list-style-type: none;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    position: relative;
+}
+.banner .dots .dot.active,
+.banner .dots .dot:hover{
+background: #794bb7;
+border-color: #794bb7;
+}
+
+.banner .dots .dot.active{
+    animation: banner-scale .5s ease-in-out forwards;
+}
+.banner .cont{
+    position: relative;
+    overflow: hidden;
+}
+.banner .cont > div{
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 0 70px 0;
+    opacity: 0;
+}
+.banner .cont > div.inactive{
+    opacity: 1;
+}
+.banner .cont > div.active{
+    
+    position: relative;
+    opacity: 1;
+    
+}
+.banner .cont div .img img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 50%;
+}
+.banner .cont div h2{
+    color: #af7df2;;
+    font-size: 1em;
+    margin: 15px 0;
+}
+.banner .cont div p{
+    font-size: 1.15em;
+    color: #fff;
+    width: 80%;
+    margin: auto;
+}
+
+.banner .cont div.active .img img{
+    animation: banner-show .5s ease-in-out forwards;
+}
+.banner .cont div.active h2{
+    animation: banner-content-in .4s ease-in-out forwards;
+}
+.banner .cont div.active p {
+    animation: banner-content-in .5s ease-in-out forwards;
+}
+.banner .cont div.inactive .img img{
+    animation: banner-hide .5s ease-in-out forwards;
+}
+.banner .cont div.inactive h2{
+    animation: banner-content-out .4s ease-in-out forwards;
+}
+.banner .cont div.inactive p {
+    animation: banner-content-out .5s ease-in-out forwards;
+}
+
+ 
+@keyframes banner-scale {
+    0% {
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.623);
+    }
+    35% {
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.212);
+    }
+    70% {
+        box-shadow: 0px 0px 10px 5px #794bb7;
+    }
+    100% {
+        box-shadow: 0px 0px 0px 0px #794bb7;
+    }
+}
+
+@keyframes banner-content-in {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes banner-content-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+@keyframes banner-show {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes banner-hide {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+
+/* Responsive */
+
+@media all and (max-width: 300px) {
+    body {
+        font-size: 14px;
+    }
+}
+@media all and (max-width: 500px) {
+    .banner .arrow{
+        font-size: 1.5rem;
+    }
+    .banner .cont div p{
+        line-height: 25px;
+    }
 }

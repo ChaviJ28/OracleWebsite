@@ -1,5 +1,8 @@
 // coding with nick
 // vars
+
+// coding with nick
+
 'use strict'
 var testim = document.getElementById("testim"),
     testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
@@ -12,9 +15,26 @@ var testim = document.getElementById("testim"),
     testimTimer
     ;
 // coding with nick
-window.onload = function () {
+
 
     // Testim Script
+   
+
+
+'use strict'
+var banner = document.getElementById("banner"),
+    bannerDots = Array.prototype.slice.call(document.getElementById("banner-dots").children),
+    bannerContent = Array.prototype.slice.call(document.getElementById("banner-content").children),
+    bannerleftArrow = document.getElementById("left-arrow"),
+    bannerRightArrow = document.getElementById("right-arrow"),
+    bannerSpeed = 4500,
+    currentSlide2 = 0,
+    currentActive = 0,
+    bannerTimer
+    ;
+// coding with nick
+window.onload = function () {
+
     function playSlide(slide) {
         for (var k = 0; k < testimDots.length; k++) {
             testimContent[k].classList.remove("active");
@@ -55,5 +75,46 @@ window.onload = function () {
     }
     playSlide(currentSlide);
 
-}
+
+    // banner Script
+    function playSlide2(slide) {
+        for (var k = 0; k < bannerDots.length; k++) {
+            bannerContent[k].classList.remove("active");
+            bannerContent[k].classList.remove("inactive");
+            bannerDots[k].classList.remove("active");
+        }
+        if (slide < 0) {
+            slide = currentSlide2 = bannerContent.length - 1;
+        }
+        if (slide > bannerContent.length - 1) {
+            slide = currentSlide2 = 0;
+        }
+        if (currentActive != currentSlide) {
+            bannerContent[currentActive].classList.add("inactive");
+        }
+        bannerContent[slide].classList.add("active");
+        bannerDots[slide].classList.add("active");
+
+        currentActive = currentSlide2;
+
+        clearTimeout(bannerTimer);
+        bannerTimer = setTimeout(function () {
+            playSlide2(currentSlide2 += 1);
+        }, bannerSpeed)
+    }
 // coding with nick
+    bannerleftArrow.addEventListener("click", function () {
+        playSlide2(currentSlide2 -= 1);
+    })
+    bannerRightArrow.addEventListener("click", function () {
+        playSlide2(currentSlide2 += 1);
+    })
+
+    for (var l = 0; l < bannerDots.length; l++) {
+        bannerDots[l].addEventListener("click", function () {
+            playSlide2(currentSlide2 = bannerDots.indexOf(this));
+        })
+    }
+    playSlide2(currentSlide2);
+
+}
