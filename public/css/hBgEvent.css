@@ -221,3 +221,28 @@ border-color: #794bb7;
         line-height: 25px;
     }
 }
+
+
+@media screen and (min-width: 767px)  and (max-width: 1200px){
+    .background-event {
+        width: 100%;
+        height: 28rem;
+        border-radius: 10px;
+    }
+
+    .banner .dots .dot {
+        border: 1px solid #a68383;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .background-event {
+        width: 100%;
+        height: 15rem;
+        border-radius: 10px;
+    }
+
+    .banner .dots .dot {
+        border: 1px solid #a68383;
+    }
+}
