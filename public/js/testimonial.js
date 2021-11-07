@@ -32,6 +32,7 @@ var banner = document.getElementById("banner"),
     currentActive = 0,
     bannerTimer
     ;
+
 // coding with nick
 window.onload = function () {
 
@@ -77,12 +78,38 @@ window.onload = function () {
 
 
     // banner Script
-    function playSlide2(slide) {
+
+    async function playSlide2(slide) {
         for (var k = 0; k < bannerDots.length; k++) {
             bannerContent[k].classList.remove("active");
             bannerContent[k].classList.remove("inactive");
             bannerDots[k].classList.remove("active");
+
+           document.getElementById('banner-content').addEventListener("mouseover", function( event ) { 
+                //   console.log(document.querySelector('#banner-content')); 
+                for (var k = 0; k < bannerContent.length; k++) {
+                     document.getElementsByClassName("bannerImg")[k].style.filter = 'blur(5px)';
+                          document.getElementsByClassName("btnHovShow")[k].style.display = "inline"; 
+                      
+                }
+                })
+        
+                document.getElementById('banner-content').addEventListener("mouseout", function( event ) { 
+                    //   console.log(document.querySelector('#banner-content')); 
+                    for (var k = 0; k < bannerContent.length; k++) {
+                        console.log("hov");
+                        document.getElementsByClassName("bannerImg")[k].style.filter = 'blur(0px)';
+                        document.getElementsByClassName("btnHovShow")[k].style.display = "none"; 
+                        // playSlide2(slide);
+                        
+                    }
+                    })
         }
+
+        
+
+        
+
         if (slide < 0) {
             slide = currentSlide2 = bannerContent.length - 1;
         }
@@ -117,4 +144,27 @@ window.onload = function () {
     }
     playSlide2(currentSlide2);
 
-}
+    
+
+
+    // for (var k = 0; k < bannerContent.length; k++) {
+        
+      
+           
+    //        
+        
+          
+    //       });
+    //       bannerContent[k].addEventListener('mouseout', function() {
+    //         document.getElementsByClassName("bannerImg")[k].style.filter = 'blur(0px)';
+    //         document.getElementsByClassName("btnHovShow")[k].style.display = "none"; 
+    //       }); 
+                
+         }
+
+    //}
+
+    // document.querySelectorAll('.banner-content').addEventListener("mouseover", function( event ) {
+    //     console.log(document.querySelector('.banner-content'));
+    // } ) 
+    

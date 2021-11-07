@@ -4,8 +4,26 @@
 height: 31rem;
 margin: auto;
 border-radius: 30px;
+position: relative;
 }
 
+.btnHovShow {
+    position: relative;
+bottom: 50%;
+padding: 12px 24px;
+border: none;
+cursor: pointer;
+display: none;
+}
+
+.bannerImg {
+    width: 100%;
+    border-radius: 25px;
+}
+
+/* .bannerImg:hover {
+    -webkit-filter: blur(1.5px);
+} */
 
 .banner{
     width: 100%;
@@ -194,11 +212,7 @@ border-color: #794bb7;
 
 /* Responsive */
 
-@media all and (max-width: 300px) {
-    body {
-        font-size: 14px;
-    }
-}
+
 @media all and (max-width: 500px) {
     .banner .arrow{
         font-size: 1.5rem;
