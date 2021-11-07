@@ -40,10 +40,8 @@
                         <div class="blog-item rounded">
                             <img src="/uploads/images/bf3f52dffa0599dbc62cab3bc64b3b81" alt=""
                                 class="img-fluid rounded">
-
                             <div class="blog-item-content p-4">
                                 <div class="d-flex flex-row-reverse" style="font-size: 0.9rem;color: #ffffffb3;">
-
                                     <div class=" text-capitalize "><i class="ti-time mr-1"></i> 27/10/2021
                                     </div>
                                     <div class=" mx-2 text-capitalize author-text"><i class="ti-user me-1"></i>Chavi
@@ -53,9 +51,7 @@
                                 </h3>
                                 <p class="mb-2 text-white">Non illo quas blanditiis repellendus laboriosam minima animi.
                                     Consectetur accusantium pariatur repudiandae!(Descri)...</p>
-
                                 <a href="blog-single.html" class="btn btn-small btn-main btn-round-full">Read More</a>
-
                             </div>
                         </div>
                     </div> -->
@@ -84,13 +80,11 @@
 
         <script>
             var next = 0;
-
             $(window).scroll(function () {
                 if ($(window).scrollTop() == $(document).height() - $(window).height()) {
                     apicall();
                 }
             });
-
             function apicall() {
                 $.ajax({
                     url: "http://uomoracleclub.org/blogs/api/get?next=" + next,
@@ -99,7 +93,6 @@
                     dataType: 'json'
                 });
             }
-
             function masonary() {
                 var elem = document.querySelector('.row');
                 var msnry = new Masonry(elem, {
@@ -107,37 +100,28 @@
                     itemSelector: '.col-lg-4',
                 });
             }
-
             function t() {
                 document.getElementsByClassName("col-lg-4")[0].addEventListener('change', () => {
                     alert('asd')
                 })
             }
-
-
             function display(data) {
                 console.log(data);
                 var b = data.blogs
                 next = data.next;
-
                 data.blogs.forEach(blog => {
                     // masonary();
                     console.log(typeof blog.date)
                     var content = '<div class="col-lg-4 col-md-6 mb-5 smallS" style=""><div class="blog-item rounded"><img src="' + blog.imageUrl + '" alt="photo" class="img-fluid rounded"><div class="blog-item-content p-4"><div class="d-flex flex-row-reverse" style="font-size: 0.9rem;color: #ffffffb3;"><div class=" text-capitalize "><i class="ti-calendar me-1"></i>' + retDateFormat(blog.date) + '</div><div class=" mx-3 text-capitalize author-text"><i class="ti-user me-1"></i>' + blog.author + '</div></div><h4 class="mt-1 "><a href="/blogs/view/' + blog._id + '" class="text-white">' + blog.title + '</a></h4><p class="mb-2 text-white">' + blog.catch.substr(0, 200) + " ..." + '</p><div class="d-flex flex-row-reverse"><a href="/blogs/view/' + blog._id + '" class="btn btn-small btn-main btn-round-full">Read More</a></div></div></div></div>';
                     document.getElementsByClassName("row")[0].innerHTML += content;
-
                 });
                 setTimeout(function () {
                     masonary();
                 }, 500);
-
-
                 if (data.blogs.length == 0 || data.blogs.length < 6) {
                     document.getElementsByClassName('lds-ripple')[0].style.display = 'none';
                 }
-
             }
-
             function retDateFormat(str) {
                 var ret = str.substr(8, 2) + '/' + str.substr(5, 2) + '/' + str.substr(0, 4);
                 return ret;

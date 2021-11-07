@@ -7,6 +7,20 @@ html , body {
     font-family: 'Roboto', sans-serif;
 }
 
+.featured {
+    font-weight: 700;
+color: #412c4f;
+font-size: 3rem;
+
+}
+
+.hBl {
+    font-weight: 700;
+color: #412c4f;
+font-size: 2.5rem;
+margin-left: -3%;
+}
+
 .homeimg {
     /* was: center fixed */
     background: url(/images/backgrounds/backgroundDark.png) no-repeat center;
@@ -40,6 +54,7 @@ p {
     font-size: 70px ;
 }
 
+
 /* ---------------- buttons ---------------- */
 button {
     background: linear-gradient(-45deg, #516ab8, #438cdf,  #794bb7, #516ab8);
@@ -55,6 +70,9 @@ button {
     transition: all .5s ease-in-out !important;
     animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both !important;
    }
+
+ 
+
 
    button:hover {
     animation: gradient 3s infinite !important;
@@ -306,9 +324,7 @@ button {
     }
 
     /* ---------------- text ---------------- */
-    .landingText{
-        /* margin-bottom: 25px !important; */
-    }
+   
     p {
         color: white;
     }
@@ -364,6 +380,12 @@ button {
  
 /* -------------------------------- BIGGER 1400 ----------- */
 @media screen and (min-width: 1400px) {
+
+
+    .bgSBig {
+        margin-top: 8%;
+    }
+
     html , body {
         height: 100%;
         width: 100%;
@@ -387,9 +409,7 @@ button {
     }
 
     /* ---------------- text ---------------- */
-    .landingText{
-        /* margin-bottom: 25px !important; */
-    }
+
     p {
         color: white;
     }

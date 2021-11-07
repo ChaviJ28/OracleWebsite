@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,12 @@
     <title>Oracle Club </title>
 
     <!-- favicon -->
+
     <link rel="icon" href="/images/logo/new2.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/plugins/themify/css/themify-icons.css">
 
     <!-- external css -->
     <link rel="stylesheet" type="text/css" href="css/updatednavbar.css">
@@ -16,355 +22,433 @@
     <link rel="stylesheet" href="css/h-slider.css">
     <link rel="stylesheet" href="css/h-services.css">
     <link rel="stylesheet" href="css/h-testimonial.css">
+    <link rel="stylesheet" href="css/hBgEvent.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/blog.css">
     <!-- <link rel="stylesheet" href="assets/style/Footer.css" /> -->
 
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
 </head>
+
 <body>
     <%- include('partials/navbar.ejs') %>
 
-    <!-- first page - landing area -->
-    <div class="homeimg">
-        <br>    <br>    <br>
-        <!-- landing text -->
-        <div class="container-fluid">
-            <div class="row align-items-center landingArea"  style="border:  0px solid rgb(0, 204, 255);">
-                <div class="container" >
-                     
-                    <!-- text -->
-                    <div class="col-12 col-lg-12 col-md-12 col-sm-12 landingText" style="border:  0px solid rgb(200, 255, 0);"> 
-                        <p class="fw-bold sub-heading">We are a student driven club to bridge the gap between the
-                            <br>
-                            <span class="fw-bold main-heading">university and industry</span> 
-                        </p>
+        <!-- first page - landing area -->
+        <div class="homeimg">
+            <br> <br> <br>
+            <!-- landing text -->
+            <div class="container-fluid bgSBig">
+                <div class="row align-items-center landingArea" style="border:  0px solid rgb(0, 204, 255);">
+                    <div class="container">
+
+                        <!-- text -->
+                        <div class="col-12 col-lg-12 col-md-12 col-sm-12 landingText"
+                            style="border:  0px solid rgb(200, 255, 0);">
+                            <p class="fw-bold sub-heading">We are a student driven club to bridge the gap between the
+                                <br>
+                                <span class="fw-bold main-heading">university and industry</span>
+                            </p>
+                        </div>
+
+                        <!-- buttons -->
+                        <div class="container">
+                            <div class="row justify-content-center align-items-center landingButton"
+                                style="border:  0px solid red;">
+
+                                <div class="col-lg-2 col-md-2 col-sm-2 d-flex justify-content-center buttonTablet"
+                                    style="border:  0px solid rgb(179, 255, 0);">
+
+                                    <button onclick="location.href='http://www.example.com'" type="button"
+                                        class="btn btn-seconday btnJoin">Join the club</button>
+                                </div>
+
+                                <div class="col-lg-2 col-md-2 col-sm-2 d-flex justify-content-center buttonTablet"
+                                    style="border:  0px solid rgb(60, 255, 0);">
+                                    <button type="button" class="btn btn-seconday btnEvents"> Events </button>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </div>
 
-                    <!-- buttons -->
-                    <div class="container" >
-                        <div class="row justify-content-center align-items-center landingButton" style="border:  0px solid red;">
-                            
-                            <div class="col-lg-2 col-md-2 col-sm-2 d-flex justify-content-center buttonTablet" style="border:  0px solid rgb(179, 255, 0);" >
+                </div>
+            </div>
+            <!-- /landing text -->
 
-                                <button onclick="location.href='http://www.example.com'" type="button" class="btn btn-seconday btnJoin">Join the club</button> 
-                            </div>  
-            
-                            <div class="col-lg-2 col-md-2 col-sm-2 d-flex justify-content-center buttonTablet" style="border:  0px solid rgb(60, 255, 0);" >
-                                <button type="button" class="btn btn-seconday btnEvents">  Events </button>  
-                            </div>  
-                         
+            <!-- services minimal border border-light -->
+            <div class="container px-5">
+                <div class="row gx-1 justify-content-center servicesRow" style="border: 0px solid red;">
+
+                    <!-- 1-1 -->
+                    <div class="col-lg-2 col-md-2 col-sm-1 servicesDetails">
+                        <!-- border-end border-light -->
+                        <!-- style="border:1px solid red;" -->
+                        <div class="col-md-12 col-sm-1 d-flex justify-content-center ">
+                            <img src="/images/icons/home_1.png" alt="" width="50" height="50">
+                        </div>
+                        <div class="col-md-12 col-sm-1 d-flex justify-content-center">
+                            <p class="servicesText">Over 500 Members</p>
                         </div>
                     </div>
- 
+
+                    <div class="col-md-1 col-sm-1 d-flex justify-content-center servicesBox">
+                        <div class="servicesBorder"></div>
+                    </div>
+
+
+                    <!-- 2-2 -->
+                    <div class="col-lg-2 col-md-2 col-sm-2 servicesDetails">
+                        <!-- border-end border-light -->
+                        <!-- style="border:1px solid red;" -->
+                        <div class="col-md-12 d-flex justify-content-center ">
+                            <img src="/images/icons/home_2.png" alt="" width="50" height="50">
+                        </div>
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <p class="servicesText">4+ Years Involvment </p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-1 d-flex justify-content-center servicesBox">
+                        <div class="servicesBorder"></div>
+                    </div>
+
+
+                    <!-- 3-3 -->
+                    <div class="col-lg-2 col-md-2 col-sm-2 servicesDetails">
+                        <!-- border-end border-light -->
+                        <!-- style="border:1px solid red;" -->
+                        <div class="col-md-12 d-flex justify-content-center ">
+                            <img src="/images/icons/home_3.png" alt="" width="50" height="50">
+                        </div>
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <p class="servicesText">50+ Events</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-1 d-flex justify-content-center servicesBox">
+                        <div class="servicesBorder"></div>
+                    </div>
+
+                    <!-- 4-4 -->
+                    <div class="col-lg-2 col-md-2 col-sm-2 servicesDetails">
+                        <!-- border-end border-light -->
+                        <!-- style="border:1px solid red;" -->
+                        <div class="col-md-12 d-flex justify-content-center ">
+                            <img src="/images/icons/home_4.png" alt="" width="50" height="50">
+                        </div>
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <p class="servicesText">Oracle Cloud Platform</p>
+                        </div>
+                    </div>
+
+
                 </div>
-                
             </div>
+            <!-- /services minimal -->
+
+            <br> <br> <br> <br> <br>
         </div>
-        <!-- /landing text -->
-
-        <!-- services minimal border border-light -->
-        <div class="container px-5">
-            <div class="row gx-1 justify-content-center servicesRow" style="border: 0px solid red;">
-                
-                <!-- 1-1 -->
-                <div class="col-lg-2 col-md-2 col-sm-1 servicesDetails" >
-                    <!-- border-end border-light -->
-                    <!-- style="border:1px solid red;" -->
-                    <div class="col-md-12 col-sm-1 d-flex justify-content-center ">
-                        <img src="/images/icons/home_1.png" alt="" width="50" height="50">
-                    </div>
-                    <div class="col-md-12 col-sm-1 d-flex justify-content-center">
-                        <p class="servicesText">Over 500 Members</p>
-                    </div>
-                </div>  
-
-                <div class="col-md-1 col-sm-1 d-flex justify-content-center servicesBox">
-                    <div class="servicesBorder"></div>
-                </div>
+        <!-- /first page -->
 
 
-                <!-- 2-2 -->
-                <div class="col-lg-2 col-md-2 col-sm-2 servicesDetails"  >
-                    <!-- border-end border-light -->
-                    <!-- style="border:1px solid red;" -->
-                    <div class="col-md-12 d-flex justify-content-center ">
-                        <img src="/images/icons/home_2.png" alt="" width="50" height="50">
-                    </div>
-                    <div class="col-md-12 d-flex justify-content-center">
-                        <p class="servicesText">4+ Years Involvment </p>
- 
-                    </div>
-                </div>  
-
-                <div class="col-md-1 col-sm-1 d-flex justify-content-center servicesBox">
-                    <div class="servicesBorder"></div>
-                </div>
-
-                
-                <!-- 3-3 -->
-                <div class="col-lg-2 col-md-2 col-sm-2 servicesDetails"  >
-                    <!-- border-end border-light -->
-                    <!-- style="border:1px solid red;" -->
-                    <div class="col-md-12 d-flex justify-content-center ">
-                        <img src="/images/icons/home_3.png" alt="" width="50" height="50">
-                    </div>
-                    <div class="col-md-12 d-flex justify-content-center">
-                        <p class="servicesText">50+ Events</p>
-                    </div>
-                </div>  
-
-                <div class="col-md-1 col-sm-1 d-flex justify-content-center servicesBox">
-                    <div class="servicesBorder"></div>
-                </div>
- 
-                <!-- 4-4 -->
-                <div class="col-lg-2 col-md-2 col-sm-2 servicesDetails"  >
-                    <!-- border-end border-light -->
-                    <!-- style="border:1px solid red;" -->
-                    <div class="col-md-12 d-flex justify-content-center ">
-                        <img src="/images/icons/home_4.png" alt="" width="50" height="50">
-                    </div>
-                    <div class="col-md-12 d-flex justify-content-center">
-                        <p class="servicesText">Oracle Cloud Platform</p>
-                    </div>
-                </div>                 
-                
-                
-            </div>
-        </div>
-        <!-- /services minimal -->
-
-        <br>    <br>    <br>    <br>    <br>
-    </div>
-    <!-- /first page -->
-
-    
-    <!-- sticker 1-1 -->
-    <br>
+        <!-- sticker 1-1 -->
+        <br>
         <div class="container home-sticker-1">
             <!-- 1075 - 992 -->
             <img class="sticker1" src="/images/icons/sticker1.png" width="116" height="100" alt="">
         </div>
-    <!-- sticker 1-1 -->
-        
+        <!-- sticker 1-1 -->
 
-    <!-- second page - slider -->
-    <section>
-        <div class="container container-fluid py-5 container-bg">
-            <div class="row">
-                <div class="col w">
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
-                        
-                        <div class="carousel-inner">
-                            
-                            <div class="carousel-item active" >
-                                <div class="row" >
-                                    <div class="col-md col-lg d-flex justify-content-center"  >
-                                        <img src="/images/event1.jpg" class="img-s" alt="..."   >
-                                    </div>
-                                    <div class="col-md title-para"  >
-                                        <div class="col d-flex justify-content-between title-date">
-                                            <div class="col-lg-6 col-md-6 col-sm-6"   >
-                                                <p>Title 1</p>
-                                            </div>  
-                                            <div class="col-lg-4 col-md-4 col-sm-4"  >
-                                                <p>Date</p>
-                                            </div>  
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis eius tenetur, sunt iste ratione sed saepe quaerat, voluptates itaque inventore magnam, nemo autem. Dolores natus quo aliquam incidunt accusamus possimus.</p>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis eius tenetur, sunt iste ratione sed saepe quaerat, voluptates itaque inventore magnam, nemo autem. Dolores natus quo aliquam incidunt accusamus possimus.</p>
-                                    </div>
-                                    <div class="container gy-4 d-flex justify-content-center" >
-                                        <a href="#" type="button" id="homepage-button-1" class="btn btn-primary btnJoin"> Register Now !</a>
-                                    </div>
-                                </div>
-                                
+
+        <!-- second page - slider -->
+        <section class="mb-5">
+
+            <div class="container">
+                <h1 class="text-center featured">FEATURED EVENTS</h1>
+
+
+                <section class="banner" id="banner">
+                    <div class="wrap">
+
+                        <span id="Bright-arrow" class="arrow right fa fa-chevron-right"></span>
+                        <span id="Bleft-arrow" class="arrow left fa fa-chevron-left"></span>
+
+                        <ul class="dots" id="banner-dots">
+                            <li class="dot active"></li>
+                            <li class="dot"></li>
+                            <li class="dot"></li>
+                        </ul>
+
+                        <div class="cont" id="banner-content">
+
+                            <div class="background-event active">
+
+                                <img src="/images/backgrounds/banner.jpeg" class="bannerImg">
+                                <button class="btnHovShow">Learn More</button>
                             </div>
 
-                            <div class="carousel-item">
-                                <div class="row align-items-center"  >
-                                    <div class="col-md col-lg d-flex justify-content-center">
-                                        <img src="/images/event1.jpg" class="img-s" alt="..."   >
-                                    </div>
-                                    <div class="col-md"  >
-                                        <div class="col d-flex justify-content-between title-date">
-                                            <div class="col-lg-6 col-md-6 col-sm-6"  >
-                                                <p>Title 2</p>
-                                            </div>  
-                                            <div class="col-lg-4 col-md-4 col-sm-4"  >
-                                                <p>Date</p>
-                                            </div>  
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis eius tenetur, sunt iste ratione sed saepe quaerat, voluptates itaque inventore magnam, nemo autem. Dolores natus quo aliquam incidunt accusamus possimus.</p>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis eius tenetur, sunt iste ratione sed saepe quaerat, voluptates itaque inventore magnam, nemo autem. Dolores natus quo aliquam incidunt accusamus possimus.</p>
-                                    </div>
-                                    <div class="container gy-4 d-flex justify-content-center" >
-                                        <a href="#" id="homepage-button-2" class="btn btn-primary"> Register Now</a>
-                                    </div>
-                                </div>
+                            <div class="background-event ">
+
+                                <img src="/images/backgrounds/b2.jpg" class="bannerImg">
+                                <button class="btnHovShow">Learn More</button>
                             </div>
 
-                            <div class="carousel-item">
-                                <div class="row align-items-center"   >
-                                    <div class="col-md col-lg d-flex justify-content-center">
-                                        <img src="/images/event2.jpg" class="img-s" alt="..."  >
-                                    </div>
-                                    <div class="col-md"  >
-                                        <div class="col d-flex justify-content-between title-date">
-                                            <div class="col-lg-6 col-md-6 col-sm-6"   >
-                                                <p>Title 3</p>
-                                            </div>  
-                                            <div class="col-lg-4 col-md-4 col-sm-4"  >
-                                                <p>Date</p>
-                                            </div>  
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis eius tenetur, sunt iste ratione sed saepe quaerat, voluptates itaque inventore magnam, nemo autem. Dolores natus quo aliquam incidunt accusamus possimus.</p>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis eius tenetur, sunt iste ratione sed saepe quaerat, voluptates itaque inventore magnam, nemo autem. Dolores natus quo aliquam incidunt accusamus possimus.</p>
-                                    </div>
-                                    <div class="container gy-4 d-flex justify-content-center"  >
-                                        <a href="#" id="homepage-button-3" class="btn btn-primary"> View Events Details</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="background-event">
 
+                                <img src="/images/backgrounds/banner.jpeg" class="bannerImg">
+                                <button class="btnHovShow">Learn More</button>
+                            </div>
 
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+
+                    </div>
+                </section>
+
+
+
+            </div>
+        </section>
+
+
+        <section class="blog-wrap">
+            <div class="container">
+
+                <h2 class="hBl mb-5">RECENT BLOGS</h2>
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 mb-5 smallS">
+                        <div class="blog-item rounded"
+                            style="background: linear-gradient(261.46deg, rgb(95, 19, 198) 11.27%, rgb(66, 12, 83) 57.87%);">
+                            <img src="/uploads/images/fb3e8b037c46578900defdb7044663ab" alt=""
+                                class="img-fluid rounded">
+
+                            <div class="blog-item-content p-4">
+                                <div class="d-flex flex-row-reverse" style="font-size: 0.9rem;color: #ffffffb3;">
+
+                                    <div class=" text-capitalize "><i class="ti-calendar me-1"></i> 27/10/2021
+                                    </div>
+                                    <div class=" mx-3 text-capitalize author-text"><i class="ti-user me-1"></i>Chavi
+                                        Surujbhali</div>
+                                </div>
+                                <h4 class="mt-1 "><a href="blog-single.html" class="text-white">Title of Blog</a>
+                                </h4>
+                                <p class="mb-2 text-white">Non illo quas blanditiis repellendus laboriosam minima animi.
+                                    Consectetur accusantium pariatur repudiandae!(Descri)...</p>
+
+                                <div class="d-flex flex-row-reverse"><a href="/blogs/view/' + blog._id + '"
+                                        class="btnBlog btn btn-small btn-main btn-round-full">Read More</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-5 smallS">
+                        <div class="blog-item rounded"
+                            style="background: linear-gradient(261.46deg, rgb(95, 19, 198) 11.27%, rgb(66, 12, 83) 57.87%);">
+                            <img src="/uploads/images/fb3e8b037c46578900defdb7044663ab" alt=""
+                                class="img-fluid rounded">
+
+                            <div class="blog-item-content p-4">
+                                <div class="d-flex flex-row-reverse" style="font-size: 0.9rem;color: #ffffffb3;">
+
+                                    <div class=" text-capitalize "><i class="ti-calendar me-1"></i> 27/10/2021
+                                    </div>
+                                    <div class=" mx-3 text-capitalize author-text"><i class="ti-user me-1"></i>Chavi
+                                        Surujbhali</div>
+                                </div>
+                                <h4 class="mt-1 "><a href="blog-single.html" class="text-white">Title of Blog</a>
+                                </h4>
+                                <p class="mb-2 text-white">Non illo quas blanditiis repellendus laboriosam minima animi.
+                                    Consectetur accusantium pariatur repudiandae!(Descri)...</p>
+
+                                <div class="d-flex flex-row-reverse"><a href="/blogs/view/' + blog._id + '"
+                                        class="btnBlog btn btn-small btn-main btn-round-full">Read More</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6 mb-5 smallS">
+                        <div class="blog-item rounded"
+                            style="background: linear-gradient(261.46deg, rgb(95, 19, 198) 11.27%, rgb(66, 12, 83) 57.87%);">
+                            <img src="/uploads/images/fb3e8b037c46578900defdb7044663ab" alt=""
+                                class="img-fluid rounded">
+
+                            <div class="blog-item-content p-4">
+                                <div class="d-flex flex-row-reverse" style="font-size: 0.9rem;color: #ffffffb3;">
+
+                                    <div class=" text-capitalize "><i class="ti-calendar me-1"></i> 27/10/2021
+                                    </div>
+                                    <div class=" mx-3 text-capitalize author-text"><i class="ti-user me-1"></i>Chavi
+                                        Surujbhali</div>
+                                </div>
+                                <h4 class="mt-1 "><a href="blog-single.html" class="text-white">Title of Blog</a>
+                                </h4>
+                                <p class="mb-2 text-white">Non illo quas blanditiis repellendus laboriosam minima animi.
+                                    Consectetur accusantium pariatur repudiandae!(Descri)...</p>
+
+                                <div class="d-flex flex-row-reverse"><a href="/blogs/view/' + blog._id + '"
+                                        class="btnBlog btn btn-small btn-main btn-round-full">Read More</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!-- /second page - slider -->
+            </div>
+        </section>
+
+        <br><br><br><br>
+        <!-- third page - services details -->
+        <section class="services">
+            <div class="container text-white py-5">
+                <h1 class="text-center pb-5 heading">Everything that we do</h1>
+                <div class="row">
+                    <div class="col-12 col-lg-4 col-md-4 px-4 text-center">
+                        <img src="/images/icons/home_1.png" alt="" class="img-fluid s-image my-4">
+                        <h1 class="py-3">Talks</h1>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's <span class="text-purple">standard</span> dummy text ever since the
+                            1500s, when an unknown printer took a <span class="text-purple">galley</span> of type and
+                            scrambled it to make a type specimen book</p>
+                        <p>Learn about our latest <a href="" class="text-purple">human rights talk</a></p>
+                    </div>
+                    <div class="col-12 col-lg-4 col-md-4 px-4 text-center">
+                        <img src="/images/icons/home_1.png" alt="" class="img-fluid s-image my-4">
+                        <h1 class="py-3">Workshops</h1>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's <span class="text-purple">standard</span> dummy text ever since the
+                            1500s, when an unknown printer took a <span class="text-purple">galley</span> of type and
+                            scrambled it to make a type specimen book</p>
+                        <p>Learn about our latest <a href="" class="text-purple">C# training</a></p>
+                    </div>
+                    <div class="col-12 col-lg-4 col-md-4 px-4 text-center">
+                        <img src="/images/icons/home_1.png" alt="" class="img-fluid s-image my-4">
+                        <h1 class="py-3">Competitions</h1>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's <span class="text-purple">standard</span> dummy text ever since the
+                            1500s, when an unknown printer took a <span class="text-purple">galley</span> of type and
+                            scrambled it to make a type specimen book</p>
+                        <p>Learn about our latest <a href="" class="text-purple">front-end battle</a></p>
                     </div>
                 </div>
             </div>
+        </section>
+        <!-- /services details -->
 
-      
+        <!-- sticker 1-3 -->
+        <br>
+        <div class="container d-flex flex-row-reverse home-sticker-3">
+            <img src="/images/icons/sticker2.png" width="104" height="120" alt="">
         </div>
-    </section>
-    <!-- /second page - slider -->
+        <!-- sticker 1-3 -->
 
-     
-    <br><br><br><br>
-    <!-- third page - services details -->
-    <section class="services">
-        <div class="container text-white py-5">
-            <h1 class="text-center pb-5 heading">Everything that we do</h1>
-            <div class="row">
-                <div class="col-12 col-lg-4 col-md-4 px-4 text-center">
-                    <img src="/images/icons/home_1.png" alt="" class="img-fluid s-image my-4">
-                    <h1 class="py-3">Talks</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's <span class="text-purple">standard</span> dummy text ever since the 1500s, when an unknown printer took a <span class="text-purple">galley</span> of type and scrambled it to make a type specimen book</p>
-                    <p>Learn about our latest <a href=""  class="text-purple">human rights talk</a></p>
+
+        <!-- fourth page -  testimonial -->
+        <section class="testim" id="testim">
+            <div class="wrap">
+                <h2 class="text-center pb-5 heading">Hear what others have to say about our club</h2>
+
+                <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+                <span id="left-arrow" class="arrow left fa fa-chevron-left"></span>
+
+                <ul class="dots" id="testim-dots">
+                    <li class="dot active"></li>
+                    <li class="dot"></li>
+                    <li class="dot"></li>
+                    <li class="dot"></li>
+                    <li class="dot"></li>
+                </ul>
+
+                <div class="cont" id="testim-content">
+
+                    <div class="active">
+                        <div class="img"><img src="/images/testimonials/p2.jpg"></div>
+                        <h2>Lorem N. Ipsum</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel
+                            voluptatum
+                            deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="img"><img src="/images/testimonials/p2.jpg"></div>
+                        <h2>Lorem L. Ipsum</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel
+                            voluptatum
+                            deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="img"><img src="/images/testimonials/p2.jpg"></div>
+                        <h2>Lorem R. Ipsum</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel
+                            voluptatum
+                            deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="img"><img src="/images/testimonials/p2.jpg"></div>
+                        <h2>4th</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel
+                            voluptatum
+                            deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="img"><img src="/images/testimonials/p2.jpg"></div>
+                        <h2>5th</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel
+                            voluptatum
+                            deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores.
+                        </p>
+                    </div>
+
                 </div>
-                <div class="col-12 col-lg-4 col-md-4 px-4 text-center">
-                    <img src="/images/icons/home_1.png" alt="" class="img-fluid s-image my-4">
-                    <h1 class="py-3">Workshops</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's <span class="text-purple">standard</span> dummy text ever since the 1500s, when an unknown printer took a <span class="text-purple">galley</span> of type and scrambled it to make a type specimen book</p>
-                    <p>Learn about our latest <a href=""  class="text-purple">C# training</a></p>
-                </div>
-                <div class="col-12 col-lg-4 col-md-4 px-4 text-center">
-                    <img src="/images/icons/home_1.png" alt="" class="img-fluid s-image my-4">
-                    <h1 class="py-3">Competitions</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's <span class="text-purple">standard</span> dummy text ever since the 1500s, when an unknown printer took a <span class="text-purple">galley</span> of type and scrambled it to make a type specimen book</p>
-                    <p>Learn about our latest <a href=""  class="text-purple">front-end battle</a></p>
-                </div>
+
             </div>
-        </div>
-    </section>
-    <!-- /services details -->
+        </section>
+        <!-- /testimonial -->
 
-    <!-- sticker 1-3 -->
-    <br>
-    <div class="container d-flex flex-row-reverse home-sticker-3">
-        <img src="/images/icons/sticker2.png" width="104" height="120" alt="">
-    </div>
-    <!-- sticker 1-3 -->
+        <script>
+            console.log(document.querySelectorAll('#banner-content'));
+            document.querySelectorAll('.banner-content').forEach(item => {
+                console.log(item)
+                // item.addEventListener("click", function (event) {
+                //     console.log("hov");
+                // })
+            })
+        </script>
 
-
-    <!-- fourth page -  testimonial -->
-    <section class="testim" id="testim">
-        <div class="wrap">
-            <h2 class="text-center pb-5 heading">Hear what others have to say about our club</h2>
-             
-            <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
-            <span id="left-arrow" class="arrow left fa fa-chevron-left"></span>
-
-            <ul class="dots" id="testim-dots">
-                <li class="dot active"></li>
-                <li class="dot"></li>
-                <li class="dot"></li>
-                <li class="dot"></li>
-                <li class="dot"></li>
-            </ul>
-
-            <div class="cont" id="testim-content">
-
-                <div class="active">
-                    <div class="img"><img src="/images/testimonials/p2.jpg"></div>
-                    <h2>Lorem N. Ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel voluptatum
-                        deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores.</p>
-                </div>
-                
-                <div>
-                    <div class="img"><img src="/images/testimonials/p2.jpg"></div>
-                    <h2>Lorem L. Ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel voluptatum
-                        deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores.</p>
-                </div>
-                
-                <div>
-                    <div class="img"><img src="/images/testimonials/p2.jpg"></div>
-                    <h2>Lorem R. Ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel voluptatum
-                        deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores.</p>
-                </div>
-
-                <div>
-                    <div class="img"><img src="/images/testimonials/p2.jpg"></div>
-                    <h2>4th</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel voluptatum
-                        deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores.</p>
-                </div>
-
-                <div>
-                    <div class="img"><img src="/images/testimonials/p2.jpg"></div>
-                    <h2>5th</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel voluptatum
-                        deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores.</p>
-                </div>
-                
-            </div>
-
-        </div>
-    </section>
-    <!-- /testimonial -->
- 
-
-    <!-- to sync with backend later -->
-    <script>
-        document.getElementById('homepage-button-1');
-        document.getElementById('homepage-button-2');
-        document.getElementById('homepage-button-3');
-
+        <!-- to sync with backend later -->
+        <script>
+            document.getElementById('homepage-button-1');
+            document.getElementById('homepage-button-2');
+            document.getElementById('homepage-button-3');
         //if status is true
         // var url = "https://www.google.com/"
         // document.getElementById('homepage-button-3').setAttribute('href', url );
+        </script>
+
+        <!-- bs JS cdn -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"></script>
+        <!-- js navbar -->
+        <script type="text/javascript" src="js/navbar.js"></script>
+        <!-- js testimonial -->
+        <script type="text/javascript" src="/js/testimonial.js"></script>
 
 
-    </script>
-   
-    <!-- bs JS cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-    <!-- js navbar -->
-    <script type="text/javascript" src="js/navbar.js"></script>
-    <!-- js testimonial -->
-   <script type="text/javascript" src="/js/testimonial.js"></script>
-     
-     
 </body>
+
 </html>
