@@ -2,4 +2,4 @@
 /package-lock.json
 /public/uploads/images
 .vscode/settings.json
-
+/node_modules
