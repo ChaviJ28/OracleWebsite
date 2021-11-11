@@ -120,45 +120,52 @@
           </div>
 
         </div>
-        <script>
-          $('#summernote').summernote({
-            placeholder: 'Hello stand alone ui',
-            tabsize: 2,
-            height: 120,
-            toolbar: [
-              ['style', ['style']],
-              ['font', ['bold', 'underline', 'clear']],
-              ['color', ['color']],
-              ['para', ['ul', 'ol', 'paragraph']],
-              ['table', ['table']],
-              ['insert', ['link', 'picture', 'video']],
-              ['fontname'],
-              ['view', ['fullscreen', 'codeview', 'help']],
+      </div>
 
-            ]
-          });
-        </script>
+      <div class="mb-3 text-end">
+        <button type="submit" class="btn btn-primary">update Event</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    $('#summernote').summernote({
+      placeholder: 'Hello stand alone ui',
+      tabsize: 2,
+      height: 120,
+      toolbar: [
+        ['style', ['style']],
+        ['font', ['bold', 'underline', 'clear']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['table', ['table']],
+        ['insert', ['link', 'picture', 'video']],
+        ['fontname'],
+        ['view', ['fullscreen', 'codeview', 'help']],
 
-        <script>
-          function changeDisplay() {
-            var imageId = document.getElementById("newImg")
-            var checked = document.getElementById("updateImage")
+      ]
+    });
+  </script>
 
-            if (checked.checked == true) {
-              imageId.style.display = "block";
-              document.getElementById("newUpPhoto").required = true;
+  <script>
+    function changeDisplay() {
+      var imageId = document.getElementById("newImg")
+      var checked = document.getElementById("updateImage")
 
-            } else {
-              imageId.style.display = "none";
-              document.getElementById("newUpPhoto").required = false;
-            }
+      if (checked.checked == true) {
+        imageId.style.display = "block";
+        document.getElementById("newUpPhoto").required = true;
 
-          }
-        </script>
+      } else {
+        imageId.style.display = "none";
+        document.getElementById("newUpPhoto").required = false;
+      }
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-          crossorigin="anonymous"></script>
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
 
 </body>
 

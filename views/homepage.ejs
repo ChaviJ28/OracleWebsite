@@ -67,7 +67,9 @@
 
                                 <div class="col-lg-2 col-md-2 col-sm-2 d-flex justify-content-center buttonTablet"
                                     style="border:  0px solid rgb(60, 255, 0);">
-                                    <button type="button" class="btn btn-seconday btnEvents"> Events </button>
+                                    <a href="/events"><button type="button"
+                                            class="btn btn-seconday btnEvents">Events</button>
+                                    </a>
                                 </div>
 
                             </div>
@@ -180,33 +182,48 @@
 
                         <ul class="dots" id="banner-dots">
                             <li class="dot active"></li>
-                            <li class="dot"></li>
-                            <li class="dot"></li>
+                            <% for(i=0; i<banner.length-1; i++){ %>
+                                <li class="dot"></li>
+                                <%}%>
                         </ul>
 
                         <div class="cont" id="banner-content">
 
-                            <div class="background-event active">
+                            <%banner.forEach((b, i)=>{%>
+                                <%if(i==0){%>
+                                    <div class="background-event active">
+                                        <%}else {%>
+                                            <div class="background-event ">
+                                                <%}%>
 
-                                <img src="/images/backgrounds/banner.jpeg" class="bannerImg">
-                                <button class="btnHovShow">Learn More</button>
-                            </div>
+                                                    <img src="<%=b.url%>" class="bannerImg">
+                                                    <button class="btnHovShow"
+                                                        onclick="location.href='<%=b.link%>'">Learn
+                                                        More</button>
+                                            </div>
+                                            <%})%>
 
-                            <div class="background-event ">
+                                                <!-- <div class="background-event active">
 
-                                <img src="/images/backgrounds/b2.jpg" class="bannerImg">
-                                <button class="btnHovShow">Learn More</button>
-                            </div>
+                                                    <img src="/images/backgrounds/banner.jpeg" class="bannerImg">
+                                                    <button class="btnHovShow">Learn More</button>
+                                                </div>
 
-                            <div class="background-event">
+                                                <div class="background-event ">
 
-                                <img src="/images/backgrounds/banner.jpeg" class="bannerImg">
-                                <button class="btnHovShow">Learn More</button>
-                            </div>
+                                                    <img src="/images/backgrounds/b2.jpg" class="bannerImg">
+                                                    <button class="btnHovShow">Learn More</button>
+                                                </div>
+
+                                                <div class="background-event">
+
+                                                    <img src="/images/backgrounds/banner.jpeg" class="bannerImg">
+                                                    <button class="btnHovShow">Learn More</button>
+                                                </div> -->
+
+                                    </div>
 
                         </div>
-
-                    </div>
                 </section>
 
 
@@ -220,84 +237,39 @@
 
                 <h2 class="hBl mb-5">RECENT BLOGS</h2>
                 <div class="row">
+                    <% blogs.forEach((blog)=> {%>
+                        <div class="col-lg-4 col-md-6 mb-5 smallS">
+                            <div class="blog-item rounded"
+                                style="background: linear-gradient(261.46deg, rgb(95, 19, 198) 11.27%, rgb(66, 12, 83) 57.87%);">
+                                <img src="<%= blog.imageUrl%>" alt="" class="img-fluid rounded">
 
-                    <div class="col-lg-4 col-md-6 mb-5 smallS">
-                        <div class="blog-item rounded"
-                            style="background: linear-gradient(261.46deg, rgb(95, 19, 198) 11.27%, rgb(66, 12, 83) 57.87%);">
-                            <img src="/uploads/images/fb3e8b037c46578900defdb7044663ab" alt=""
-                                class="img-fluid rounded">
+                                <div class="blog-item-content p-4">
+                                    <div class="d-flex flex-row-reverse" style="font-size: 0.9rem;color: #ffffffb3;">
 
-                            <div class="blog-item-content p-4">
-                                <div class="d-flex flex-row-reverse" style="font-size: 0.9rem;color: #ffffffb3;">
-
-                                    <div class=" text-capitalize "><i class="ti-calendar me-1"></i> 27/10/2021
+                                        <div class="date text-capitalize "><i class="ti-calendar me-1"></i>
+                                            <%=blog.date.toString().substr(8, 2)%>
+                                                <%=blog.date.toString().substr(4, 3)%>
+                                                    <%=blog.date.toString().substr(11, 4)%>
+                                        </div>
+                                        <div class=" mx-3 text-capitalize author-text"><i class="ti-user me-1"></i>
+                                            <%= blog.author%>
+                                        </div>
                                     </div>
-                                    <div class=" mx-3 text-capitalize author-text"><i class="ti-user me-1"></i>Chavi
-                                        Surujbhali</div>
-                                </div>
-                                <h4 class="mt-1 "><a href="blog-single.html" class="text-white">Title of Blog</a>
-                                </h4>
-                                <p class="mb-2 text-white">Non illo quas blanditiis repellendus laboriosam minima animi.
-                                    Consectetur accusantium pariatur repudiandae!(Descri)...</p>
+                                    <h4 class="mt-1 "><a href="/blogs/view/<%= blog._id %>" class="text-white">
+                                            <%= blog.title%>
+                                        </a>
+                                    </h4>
+                                    <p class="mb-2 text-white">
+                                        <%= blog.catch.substr(0, 200) %>
+                                    </p>
 
-                                <div class="d-flex flex-row-reverse"><a href="/blogs/view/' + blog._id + '"
-                                        class="btnBlog btn btn-small btn-main btn-round-full">Read More</a></div>
+                                    <div class="d-flex flex-row-reverse"><a href="/blogs/view/<%= blog._id %>"
+                                            class="btnBlog btn btn-small btn-main btn-round-full">Read More</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-5 smallS">
-                        <div class="blog-item rounded"
-                            style="background: linear-gradient(261.46deg, rgb(95, 19, 198) 11.27%, rgb(66, 12, 83) 57.87%);">
-                            <img src="/uploads/images/fb3e8b037c46578900defdb7044663ab" alt=""
-                                class="img-fluid rounded">
-
-                            <div class="blog-item-content p-4">
-                                <div class="d-flex flex-row-reverse" style="font-size: 0.9rem;color: #ffffffb3;">
-
-                                    <div class=" text-capitalize "><i class="ti-calendar me-1"></i> 27/10/2021
-                                    </div>
-                                    <div class=" mx-3 text-capitalize author-text"><i class="ti-user me-1"></i>Chavi
-                                        Surujbhali</div>
-                                </div>
-                                <h4 class="mt-1 "><a href="blog-single.html" class="text-white">Title of Blog</a>
-                                </h4>
-                                <p class="mb-2 text-white">Non illo quas blanditiis repellendus laboriosam minima animi.
-                                    Consectetur accusantium pariatur repudiandae!(Descri)...</p>
-
-                                <div class="d-flex flex-row-reverse"><a href="/blogs/view/' + blog._id + '"
-                                        class="btnBlog btn btn-small btn-main btn-round-full">Read More</a></div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-4 col-md-6 mb-5 smallS">
-                        <div class="blog-item rounded"
-                            style="background: linear-gradient(261.46deg, rgb(95, 19, 198) 11.27%, rgb(66, 12, 83) 57.87%);">
-                            <img src="/uploads/images/fb3e8b037c46578900defdb7044663ab" alt=""
-                                class="img-fluid rounded">
-
-                            <div class="blog-item-content p-4">
-                                <div class="d-flex flex-row-reverse" style="font-size: 0.9rem;color: #ffffffb3;">
-
-                                    <div class=" text-capitalize "><i class="ti-calendar me-1"></i> 27/10/2021
-                                    </div>
-                                    <div class=" mx-3 text-capitalize author-text"><i class="ti-user me-1"></i>Chavi
-                                        Surujbhali</div>
-                                </div>
-                                <h4 class="mt-1 "><a href="blog-single.html" class="text-white">Title of Blog</a>
-                                </h4>
-                                <p class="mb-2 text-white">Non illo quas blanditiis repellendus laboriosam minima animi.
-                                    Consectetur accusantium pariatur repudiandae!(Descri)...</p>
-
-                                <div class="d-flex flex-row-reverse"><a href="/blogs/view/' + blog._id + '"
-                                        class="btnBlog btn btn-small btn-main btn-round-full">Read More</a></div>
-                            </div>
-                        </div>
-                    </div>
-
-
+                        <% }) %>
 
                 </div>
                 <!-- /second page - slider -->
@@ -418,16 +390,6 @@
             </div>
         </section>
         <!-- /testimonial -->
-
-        <script>
-            console.log(document.querySelectorAll('#banner-content'));
-            document.querySelectorAll('.banner-content').forEach(item => {
-                console.log(item)
-                // item.addEventListener("click", function (event) {
-                //     console.log("hov");
-                // })
-            })
-        </script>
 
         <!-- to sync with backend later -->
         <script>

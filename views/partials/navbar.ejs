@@ -10,7 +10,11 @@
             <li></li>
             <li><a href="/events" class="menu">Events</a></li>
             <li><a href="/blogs" class="menu">Blog</a></li>
-            <li><a href="" class="register">Join Us</a></li>
+            <% if(!currentUser){ %>
+                <li><a href="" class="register">Join Us</a></li>
+                <%}else{%>
+                    <li><a href="/logout" class="register">Log Out</a></li>
+                    <%}%>
         </ul>
     </div>
     <div class="hamburger">
