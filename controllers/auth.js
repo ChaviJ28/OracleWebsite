@@ -7,9 +7,9 @@ module.exports.loginform = async (req, res) => {
 }
 
 module.exports.registerform = async (req, res) => {
-    // isLoggedIn(req, res, () => {
-    res.render('register')
-    // })
+    isLoggedIn(req, res, () => {
+        res.render('register')
+    })
 }
 
 module.exports.login = async (req, res) => {
@@ -22,29 +22,29 @@ module.exports.logout = async (req, res) => {
 }
 
 module.exports.register = async (req, res) => {
-    // isLoggedIn(req, res, () => {
-    let nUser = new userdb({
-        name: req.body.name,
-        username: req.body.username,
-        email: req.body.email
-    });
-    userdb.register(nUser, 'default123', (err, user) => {
-        if (err) {
-            req.flash("error", "Something went wrong, please try again !");
-            res.redirect("/register");
-        } else {
-            //send mail ?
-            req.login(nUser, (err) => {
-                if (err) {
-                    req.flash('success', 'Accont created, please login ')
-                    res.redirect('/login');
-                } else {
-                    res.redirect('/dash')
-                }
-            })
-        }
+    isLoggedIn(req, res, () => {
+        let nUser = new userdb({
+            name: req.body.name,
+            username: req.body.username,
+            email: req.body.email
+        });
+        userdb.register(nUser, 'default123', (err, user) => {
+            if (err) {
+                req.flash("error", "Something went wrong, please try again !");
+                res.redirect("/register");
+            } else {
+                //send mail ?
+                req.login(nUser, (err) => {
+                    if (err) {
+                        req.flash('success', 'Accont created, please login ')
+                        res.redirect('/login');
+                    } else {
+                        res.redirect('/dash')
+                    }
+                })
+            }
+        })
     })
-    // })
 
 }
 
