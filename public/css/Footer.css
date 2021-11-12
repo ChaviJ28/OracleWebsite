@@ -110,9 +110,13 @@
 
 /*------------------------------------------------------Links hover and styling Start----------------------------------------------------*/  
 /* test */
-body{
-    font-family: 'Roboto', sans-serif;
+.fStyle{
+    font-family:sans-serif;
     background-color: #090d19;
+}
+
+ p {
+    font-style: inherit;
 }
 
 .br-footer {
@@ -383,6 +387,14 @@ body{
 }  
 }
 
+
+@media (max-width: 576px) { 
+
+.privacyp {
+    margin-left: 1rem;
+}
+
+}
 /* ----------------------------------Small devices (landscape phones, 576px and up)----------------------------------------*/
 @media (min-width: 576px) { 
 
@@ -444,7 +456,7 @@ body{
     }
     /* aaa    576px      */ 
     .dividerspace{
-        position: absolute ;
+        position: sticky ;
         top: 680px;
         width: 100%;
         height: 20px;
@@ -461,7 +473,7 @@ body{
     }
 
     .lastspace{
-        position: absolute ;
+        position: sticky ;
         top: 700px;
         width: 100%;
         height: 50px;
@@ -714,7 +726,7 @@ body{
 
 /* aaa 768 */
 .dividerspace{
-    position: absolute;
+    position: sticky;
     top: 720px;
     width: 100%;
     height: 30px;
@@ -731,7 +743,7 @@ body{
 }
 
 .lastspace{
-    position: absolute;
+    position: sticky;
     top: 740px;
     width: 100%;
     height: 50px;
@@ -955,7 +967,7 @@ body{
 }
 
 .oraclelogo{
-    position: absolute;
+    position: relative;
     background-color: #090d19;
     top: 50px;
     left: 8%;
@@ -964,10 +976,10 @@ body{
 }
 
 .eventlist{
-    position: absolute;
+    position: relative;
     background-color: #090d19;
     width: 100px;
-    left: 55%;
+    left: 0%;
     top: 80px;
     height: 170px;
     color: white; 
@@ -975,10 +987,10 @@ body{
 }
 
 .latestpostlist{
-    position: absolute;
+    position: relative;
     width: 160px;
     top: 80px;
-    left: 34%;
+    left: 0%;
     color: white; 
     line-height: 40px;
     background-color: #090d19;
@@ -987,9 +999,9 @@ body{
 
 
 .gitlist{
-    position: absolute;
+    position: relative;
     top: 80px;
-    left: 72%;
+    left:0%;
     height: 290px;
     width: 200px;
     font-size: 12px;
@@ -1014,7 +1026,7 @@ body{
  
 /* aaa 992 */
 .dividerspace{
-    position: absolute;
+    position: sticky;
     top: 380px;
     width: 100%;
     height: 40px;
@@ -1032,7 +1044,7 @@ body{
 }
 
 .lastspace{
-    position: absolute;
+    position: sticky;
     top: 400px;
     width: 100%;
     height: 30px;
@@ -1243,9 +1255,8 @@ body{
 
 /*Upper text Starts here*/
 .oraclelogo{
-    position: absolute;
     background-color: #090d19;
-    position: absolute;
+    position: relative;
     top: 55px;
     left: 9%;
     width: 180px;
@@ -1253,11 +1264,11 @@ body{
 }
 
 .eventlist{
-    position: absolute;
+    position: relative;
     width: 130px;
     height: 170px;
     top: 90px;
-    left: 56%;
+    left: 0%;
     color: white; 
     line-height: 40px; 
     background-color: #090d19;
@@ -1265,11 +1276,11 @@ body{
 }
 
  .latestpostlist{
-    position: absolute;
+    position: relative;
     width: 190px;
     height: 200px;
     top: 90px;
-    left: 34%;
+    left: 0%;
     list-style-type:none; 
     color: white; 
     line-height: 40px; 
@@ -1278,11 +1289,11 @@ body{
 }
 
 .gitlist{
-    position: absolute;
+    position: relative;
     width: 200px;
     height: 310px;
     top: 90px;
-    left: 75%;
+    left: 0%;
     list-style-type:none; 
     color: white; 
     line-height: 40px; 
@@ -1309,7 +1320,7 @@ body{
 }
 /* aaa 1200 */
 .dividerspace{
-    position: absolute;
+    position: sticky;
     top: 420px;
     left: 1%;
     width: 100%;
@@ -1329,7 +1340,7 @@ body{
 /*Privacy policy and copyright Start Here*/
 
 .lastspace{
-    position: absolute;
+    position: sticky;
     top: 440px;
     width: 100%;
     height: 70px;
@@ -1548,9 +1559,8 @@ z-index: 1;
 
 /*Upper text Starts here*/
 .oraclelogo{
-    position: absolute;
     background-color: #090d19;
-    position: absolute;
+    position: relative;
     top: 55px;
     left: 9%;
     width: 240px;
@@ -1558,11 +1568,11 @@ z-index: 1;
 }
 
 .latestpostlist{
-    position: absolute;
+    position: relative;
     width: 190px;
     height: 200px;
     top: 90px;
-    left: 34%;
+    left: 0%;
     list-style-type:none; 
     color: white; 
     line-height: 40px; 
@@ -1571,11 +1581,11 @@ z-index: 1;
 }
 
 .eventlist{
-    position: absolute;
+    position: relative;
     width: 130px;
     height: 170px;
     top: 90px;
-    left: 58%;
+    left: 0%;
     color: white; 
     line-height: 40px; 
     background-color: #090d19;
@@ -1583,11 +1593,11 @@ z-index: 1;
 }
 
 .gitlist{
-    position: absolute;
+    position: relative;
     width: 200px;
     height: 310px;
     top: 90px;
-    left: 78%;
+    left: 0%;
     list-style-type:none; 
     color: white; 
     line-height: 40px; 
@@ -1606,7 +1616,7 @@ z-index: 1;
 }
 /* aaa 1400 */
 .dividerspace{
-    position: absolute;
+    position: sticky;
     top: 420px;
     left: .65%;
     width: 100%;

@@ -19,7 +19,7 @@
     <!-- external css -->
     <link rel="stylesheet" type="text/css" href="css/updatednavbar.css">
     <link rel="stylesheet" href="css/h-homepage.css">
-    <link rel="stylesheet" href="css/h-slider.css">
+    <!-- <link rel="stylesheet" href="css/h-slider.css"> -->
     <link rel="stylesheet" href="css/h-services.css">
     <link rel="stylesheet" href="css/h-testimonial.css">
     <link rel="stylesheet" href="css/hBgEvent.css">
@@ -168,10 +168,11 @@
 
 
         <!-- second page - slider -->
+        <% if (banner.length > 0) { %>
         <section class="mb-lg-5">
 
             <div class="container">
-                <h1 class="text-center featured">FEATURED EVENTS</h1>
+                <h1 class="text-center featured">FEATURED</h1>
 
 
                 <section class="banner" id="banner">
@@ -230,7 +231,9 @@
 
             </div>
         </section>
+        <% } %>
 
+        <% if (blogs.length > 0) { %>
 
         <section class="blog-wrap">
             <div class="container">
@@ -277,6 +280,9 @@
         </section>
 
         <br><br><br><br>
+
+        <% } %>
+
         <!-- third page - services details -->
         <section class="services">
             <div class="container text-white py-5">
@@ -389,6 +395,8 @@
 
             </div>
         </section>
+
+        <%- include('partials/footer.ejs') %>
         <!-- /testimonial -->
 
         <!-- to sync with backend later -->
