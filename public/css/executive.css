@@ -94,13 +94,13 @@
     .img-area{
       height: 280px;
       width: 175px;
-  }
+     }
   }
 
 .img-area{
 	padding:  5%;
 	border-radius: 10px;
-    background-color: #803380;
+    background-color: #794bb7;
 
     /*background-color: rgba(255, 255, 255, 1.0);
 	background: inherit;
@@ -289,5 +289,8 @@ font-weight: bold;
 
 
     @media (max-width: 599px) { 
-      
+      /* here */    
      }
+
+
+     
