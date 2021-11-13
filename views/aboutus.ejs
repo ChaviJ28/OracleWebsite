@@ -7,7 +7,9 @@
 
     <!-- external css -->
     <link rel="stylesheet" href="css/aboutus.css">
+    <link rel="stylesheet" href="css/founder.css">
     <link rel="stylesheet" href="css/A-testimonial.css">
+    
     <link rel="stylesheet" type="text/css" href="css/executive.css">
 
     <!-- executive part: -->
@@ -22,16 +24,18 @@
 </head>
 <body>
 
+  <%- include('partials/navbar.ejs') %>
 
     <section class="first-page py-3">
+      <br><br><br><br><br>
         <div class="container container-fluid"  >
 
-            <div class="row" style="border:  1px solid rgb(0, 174, 255);">
+            <div class="row" style="border:  0px solid rgb(0, 174, 255);">
                 
                 <div class="col-md">
 
                   <div class="row main-text">
-                    <h1> Our Club </h1>
+                    <h1 class="aboutTitle"> Our Club </h1>
 
                     <p>
                       The UoM Oracle Club is a club stemming from the Faculty of Information Communication and Digital Technologies
@@ -68,7 +72,7 @@
 
                 </div>
                   
-                <div class="carCenter col-md car-con  " style="border:  1px solid rgb(255, 251, 0);">
+                <div class="carCenter col-md car-con  " style="border:  0px solid rgb(255, 251, 0);">
 
                     <div id="carouselExampleIndicators" class="carCenter carousel slide carousel-fade" data-bs-ride="carousel">
 
@@ -136,7 +140,11 @@
 
             </div>
         </div>
+        <br><br>
     </section>
+
+
+ 
 
     <section class="services">
       <div class="container text-white py-5">
@@ -257,6 +265,46 @@
            </div>
          </div>
 
+          <!-- emrith -->
+          <div class="col-6   col-md-6 col-lg-1 outer">
+            <div class="img-area img-block mb-5">
+              <img src="images/about/exec/emrith_cc.png" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+               <div class="social">
+                 <ul class="list-inline">
+                   <li><a href="https://www.facebook.com/dhanveer.emrith"><i class="fa fa-facebook"></i></a></li>
+                   <li><a href="https://www.instagram.com/_d.s.emrith_/"><i class="fa fa-instagram"></i></a></li>
+                   <li><a href="http://www.linkedin.com/in/dhanveer-sharma-emrith"><i class="fa fa-linkedin"></i></a></li>
+                   <br>
+                 </ul>
+               </div>
+              <div class="content mt-2">
+                <h6>Dhanveer Sharma Emrith</h6>
+                <p class="text-title">Treasurer</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3 d-block d-lg-none ">
+          </div>
+
+            <!-- nushrat -->
+          <div class="col-6   col-md-6 col-lg-1 outer">
+            <div class="img-area img-block mb-5">
+              <img src="images/about/exec/nushrat_cc1.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+              <div class="social">
+                <ul class="list-inline">
+                  <li><a href="https://www.facebook.com/nushrat.shupzz.7"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                  <li><a href="https://www.linkedin.com/in/nousrat-sabbah-rossaye-0b46601b5"><i class="fa fa-linkedin"></i></a></li>
+                  <br>
+                </ul>
+              </div>
+              <div class="content mt-2">
+                <h6>Nousrat Rossaye</h6>
+                <p class="text-title">Public Relations Officer</p>
+              </div>
+            </div>
+          </div>
+
          <!-- ashwin -->
          <div class="col-6   col-md-6 col-lg-1 outer">
            <div class="img-area img-block mb-5">
@@ -295,44 +343,8 @@
            </div>
          </div>
 
-         <!-- emrith -->
-         <div class="col-6   col-md-6 col-lg-1 outer">
-           <div class="img-area img-block mb-5">
-             <img src="images/about/exec/emrith_uc.png" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
-              <div class="social">
-                <ul class="list-inline">
-                  <li><a href="https://www.facebook.com/dhanveer.emrith"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="https://www.instagram.com/_d.s.emrith_/"><i class="fa fa-instagram"></i></a></li>
-                  <li><a href="http://www.linkedin.com/in/dhanveer-sharma-emrith"><i class="fa fa-linkedin"></i></a></li>
-                  <br>
-                </ul>
-              </div>
-             <div class="content mt-2">
-               <h6>Dhanveer Sharma Emrith</h6>
-               <p class="text-title">Treasurer</p>
-             </div>
-           </div>
-         </div>
-         <div class="col-3 d-block d-lg-none ">
-         </div>
-           <!-- nushrat -->
-         <div class="col-6   col-md-6 col-lg-1 outer">
-           <div class="img-area img-block mb-5">
-             <img src="images/about/exec/nushrat_cc1.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
-              <div class="social">
-                <ul class="list-inline">
-                  <li><a href="https://www.facebook.com/nushrat.shupzz.7"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                  <li><a href="https://www.linkedin.com/in/nousrat-sabbah-rossaye-0b46601b5"><i class="fa fa-linkedin"></i></a></li>
-                  <br>
-                </ul>
-              </div>
-             <div class="content mt-2">
-               <h6>Nousrat Rossaye</h6>
-               <p class="text-title">Public Relations Officer</p>
-             </div>
-           </div>
-         </div>
+        
+         
        </div>
      </div>
    </section>
@@ -475,9 +487,12 @@
       </div>
 
   </section>
-    
+
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/founder.js"></script>
     <script type="text/javascript" src="/js/dev.js"></script>
+    
     
   </body>
 </html>

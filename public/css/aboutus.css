@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+html , body {
+    height: 100%;
+    width: 100%;
+ 
+}
 /* ----- Our Club ----- */
 .main-text {
     font-family: 'Roboto', sans-serif;
@@ -8,9 +12,20 @@
     flex-direction: column;
 }
 
+.aboutTitle{
+    color:white
+}
+
 .first-page{
-    padding-top: 10px;
-    height: 90%;
+    /* padding-top: 10px; */
+    /* height: 90%; */
+    background: url(../images/backgrounds/backgroundDark.png) no-repeat center; 
+    display: table;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    color: white;
 }
 
 .rounded1{
@@ -54,7 +69,7 @@
 
 .car-con{
     border: none;
-    margin-top: 4% !important;
+    margin-top: 5% !important;
 }
 
 .carousel-control-prev,
@@ -238,7 +253,7 @@
     background-color: black;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    padding-bottom: 30px; /* Temporary padding */
+     /* padding-bottom: 30px; */
     height: 100%;
 }
 
