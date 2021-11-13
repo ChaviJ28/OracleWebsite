@@ -15,7 +15,13 @@
     
     <div class="container mt-5 text-end">
         <h3 class="text-center mt-3 mb-5">All Members</h3>
-        <a class="btn btn-lg btn-dark text-end mb-5" href="/join">New Member</a>
+        <div class="d-flex justify-content-end">
+        <a class="btn btn-lg btn-dark text-end mb-5 me-3" href="/join">New Member</a>
+        <a class="btn btn-lg btn-success text-end mb-5 me-3" href="/join">Join Requests</a>
+        <a class="btn btn-lg btn-danger text-end mb-5 me-3" href="/member/mail">Send Mail</a>
+
+        </div>
+        <%- include("partials/flash"); -%>
         <div>
             <table class="table table-bordered text-center">
                 <thead>

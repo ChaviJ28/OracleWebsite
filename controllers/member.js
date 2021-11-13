@@ -51,7 +51,7 @@ module.exports.delete = async (req, res) => {
 
         const id = req.params.id;
         await Member.findByIdAndDelete(id);
-        req.flash('success', 'Member deleted Successfully');
+        req.flash('success', 'Member Successfully deleted ');
         res.redirect('/member/admin');
     })
 }
@@ -61,6 +61,34 @@ module.exports.view = async (req, res) => {
     isLoggedIn(req, res, () => {
         res.render('singleMember', { member });
     })
+}
+
+module.exports.mail = async (req, res) => {
+        res.render('memberMail');
+ 
+}
+
+module.exports.mailMember = async (req, res) => {
+    if (req.body.subject && req.body.mail) {
+        const members = await Member.find({})
+        const mail= req.body.mail;
+        const subject = req.body.subject;
+        members.forEach(function(member){
+            var msg = {
+                from: 'admin@uomoracleclub.org',
+                to: member.email, 
+                subject: subject,
+                html: mail
+            }
+            transporter.sendMail(msg).then(info => {
+               
+            });
+        });
+        req.flash('success', 'Email successfully sent');
+        res.redirect('/member/admin');
+    }
+    
+
 }
 
 
