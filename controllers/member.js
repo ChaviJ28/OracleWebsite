@@ -1,6 +1,15 @@
 var express = require('express');
 const Member = require("../models/member");
+const nodemailer = require('nodemailer');
 
+const transporter = nodemailer.createTransport({
+    host: 'smtppro.zoho.com',
+    port: 465,
+    auth: {
+        user: "admin@uomoracleclub.org",
+        pass: "Uom_oracleclub_450"
+    }
+})
 
 
 
