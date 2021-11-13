@@ -8,6 +8,9 @@
   border-radius: .25rem !important;
 }
 
+.blog-wrap {
+  min-height: 650px;
+}
 
 /* body {
   line-height: 1.5;
@@ -1470,3 +1473,11 @@ h3.quote::before {
 }
 
 /*# sourceMappingURL=maps/style.css.map */
+
+
+@media (max-width: 1400px) { 
+.blog-wrap {
+  min-height: 400px;
+}
+
+}
