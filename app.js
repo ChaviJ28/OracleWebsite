@@ -50,13 +50,15 @@ const indexRoutes = require('./routes/index.js')
 const blogRoutes = require('./routes/blogs.js')
 const eventRoutes = require('./routes/events.js')
 const authRoutes = require('./routes/auth.js')
-
+const memberRoutes = require('./routes/member.js');
+const { default: member } = require('./models/member.js');
 
 //use routes
 app.use('/', indexRoutes);
 app.use('/blogs', blogRoutes);
 app.use('/events', eventRoutes);
 app.use('/', authRoutes);
+app.use('/member', memberRoutes);
 
 
 

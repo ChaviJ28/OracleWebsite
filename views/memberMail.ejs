@@ -9,8 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet"> 
-    
-    <link rel="stylesheet" href="css/event.css">
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
@@ -21,36 +20,26 @@
 <body>
 
     <div class="container mt-5">
-        <h3 class="text-center">New blog</h3>
-        <form action="/blogs" method="POST" class="mt-5" enctype="multipart/form-data">
+        <h3 class="text-center">Email To Member</h3>
+        <form action="/member/mail" method="POST" class="mt-5">
             <div class="mb-3">
                
-                <input type="text" class="form-control" name="title" placeholder="Title" required>
+                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
               </div>
     
-              <div class="mb-3">
-               
-                <input type="file" accept="image/*" name="photo" required>
-              </div>    
+             
     
               <div class="mb-3">
-                 <input type="text" class="form-control" name="author" placeholder="Author" required>
-              </div>   
-
-              <div class="mb-3">
-                <input type="text" class="form-control" name="catch" placeholder="Catchphrase to be displayed on Card" required>
-             </div>  
-    
-              <div class="mb-3">
-              <textarea id="summernote" name="description"></textarea>
+              <textarea id="summernote" name="mail"></textarea>
               </div>
 
 
               <div class="mb-3 text-end">
-                <button type="submit" class="btn btn-primary">Create blog</button>
+                <button type="submit" class="btn btn-primary">Send Mail</button>
             </div>
         </form>
-        <a class="btn btn-lg btn-dark text-end mt-4 me-3 mb-4" href="/blogs/admin">back</a>
+
+        <a class="btn btn-lg btn-dark text-end mt-4 me-3" href="/member/admin">back</a>
     </div>
 
 

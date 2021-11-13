@@ -30,3 +30,8 @@ module.exports.about = async (req, res) => {
     }
 }
 
+
+module.exports.member = (req, res) => {
+    res.render('join');
+}
+
