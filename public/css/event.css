@@ -56,7 +56,7 @@ color: #fff;
 
 .imgEvent {
     width: 100%;
-height: max-content;
+/* height: max-content; */
 }
 
 .contImg {
@@ -206,7 +206,7 @@ margin: 30px auto;
         }
 
         #widthTab {
-            width: 235px;
+            width: 228 px;
 margin: 30px auto;
 
         }
@@ -219,4 +219,11 @@ margin: 30px auto;
         .category {
             height: 100px;
         }
+     }
+
+
+     @media (max-width: 410px) { 
+
+
+      
      }
