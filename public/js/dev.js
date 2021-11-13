@@ -4,7 +4,7 @@ var testim = document.getElementById("testim"),
     testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
     testimleftArrow = document.getElementById("left-arrow"),
     testimRightArrow = document.getElementById("right-arrow"),
-    testimSpeed = 4500,
+    testimSpeed = 5500,
     currentSlide = 0,
     currentActive = 0,
     testimTimer
