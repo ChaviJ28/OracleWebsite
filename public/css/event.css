@@ -1,11 +1,13 @@
 body {
     margin: 0%;
     background: #090D19;
+    /* background: linear-gradient(180deg, rgba(121, 75, 183, 0.45) 0%, rgba(9, 13, 25, 0.35) 96.56%); */
+    
 }
 
 .category {
     height: 180px;
-    background: linear-gradient(180deg, rgba(121, 75, 183, 0.45) 0%, rgba(9, 13, 25, 0.35) 96.56%);
+    /* background: linear-gradient(180deg, rgba(121, 75, 183, 0.45) 0%, rgba(9, 13, 25, 0.35) 96.56%); */
    
 }
 
@@ -132,7 +134,7 @@ margin-bottom: 1.1rem;
 
         .category {
             height: 150px;
-            background: linear-gradient(180deg, rgba(121, 75, 183, 0.45) 0%, rgba(9, 13, 25, 0.35) 96.56%);
+            /* background: linear-gradient(0deg, rgba(121, 75, 183, 0.45) 0%, rgba(9, 13, 25, 0.35) 96.56%); */
            
         }
 
