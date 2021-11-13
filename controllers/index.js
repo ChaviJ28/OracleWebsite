@@ -24,10 +24,7 @@ module.exports.about = async (req, res) => {
     } catch (err) {
         console.log(err)
     }
-    for (let index = 0; index < array.length; index++) {
-        const element = array[index];
-
-    }
+    
 }
 
 
