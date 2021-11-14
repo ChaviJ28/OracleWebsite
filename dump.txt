@@ -1,0 +1,64 @@
+<script>
+</script>
+
+<div class="mb-3 row">
+            <label class="col-sm-3 col-xl-2 col-form-label">First Name</label>
+            <div class="col-sm-9 col-xxl-10">
+              <input type="text" class="form-control" name="fName" placeholder="e.g John" required>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-xl-2 col-form-label">Last Name</label>
+            <div class="col-sm-9 col-xxl-10">
+              <input type="text" class="form-control" name="lName" placeholder="e.g Doe" required>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-xl-2 col-form-label">Phone No</label>
+            <div class="col-sm-9 col-xxl-10">
+              <input type="text" class="form-control" name="phoneNo" placeholder="e.g 57457363" required>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-xl-2 col-form-label">Faculty</label>
+            <div class="col-sm-9 col-xxl-10">
+              <select class="form-select" name="faculty" required>
+                <option value="">Select your Faculty</option>
+                <option value="Faculty of Agriculture">Faculty of Agriculture</option>
+                <option value="Faculty of Engineering">Faculty of Engineering</option>
+                <option value="Faculty of Information Communication and Digital Technologies">Faculty of Information Communication and Digital Technologies</option>
+                <option value="Faculty of Law & Management">Faculty of Law & Management</option>
+                <option value="Faculty of Medicine and Health Sciences">Faculty of Medicine and Health Sciences</option>
+                <option value="Faculty of Science">Faculty of Science</option>
+                <option value="Faculty of Social Sciences & Humanities">Faculty of Social Sciences & Humanities</option>
+                <option value="Centre for Innovative & Lifelong Learning">Centre for Innovative & Lifelong Learning</option>
+             
+              </select>
+            </div>
+          </div>
+
+        
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-xl-2 col-form-label">Course</label>
+            <div class="col-sm-9 col-xxl-10">
+              <input type="text" class="form-control" name="course" placeholder="e.g Bsc(Hons) Software Engineering" required>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-xl-2 col-form-label">Year</label>
+            <div class="col-sm-9 col-xxl-10">
+              <select class="form-select" name="year" required>
+                <option value="">Select your year</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                
+              </select>
+            </div>
+          </div>

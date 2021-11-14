@@ -4,7 +4,7 @@ body {
 
 .title {
     color: #fff;
-font-size: 2.5rem;
+font-size: 1.5rem;
 font-weight: bold;
 font-family: montserrat;
 line-height: 4.5rem;
@@ -17,6 +17,31 @@ font-weight: bold;
 font-family: montserrat;
 line-height: 4.5rem;
 margin-top: 3rem;
+}
+
+.title3{
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: montserrat;
+}
+.title4{
+    color: rgb(236, 236, 236);
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: montserrat;
+}
+.trouble{
+    visibility: hidden;
+}
+
+.btn {
+    background: linear-gradient(261.46deg, rgba(198, 19, 73, 0.5) 11.27%, rgba(83, 12, 73, 0.5) 57.87%) !important;
+    color: white !important;
+    width: 136px !important;
+        border-color: #110728 !important;
+    padding: 12px 0px;
+    border-radius: 14px;
 }
 
 .para {
@@ -90,7 +115,7 @@ border-radius: 14px;
 @media (max-width: 599px) { 
 
     .title {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
         line-height: 2.5rem;
     }
 

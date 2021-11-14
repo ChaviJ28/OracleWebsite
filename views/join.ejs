@@ -12,10 +12,10 @@
     
     <link rel="stylesheet" href="css/registration.css">
 
-    
-
+  
 </head>
 <body>
+  
   <%- include('partials/navbar.ejs') %>
 
   <br><br><br><br><br>
@@ -32,17 +32,23 @@
 
 
     - <div class="container mt-5">
-        <h3 class="text-center title">Join an intimate community of more than 500 members and receive our latest Events and Opportunities</h3>
+        <h3 class="text-center title">Join an intimate community of more than 500 members and receive updates on our latest Events and Opportunities</h3>
        
         <h4 class="text-center title2">Register Now</h4>
       
        <div class="mx-auto mt-md-3 formReg"> 
-        <form action="/member" method="POST">
+
+
+        <form name="regForm" onsubmit="return validateForm()" action="/member" method="POST" >
           <div class="mb-3 row">
             <label class="col-sm-3 col-xl-2 col-form-label">Umail</label>
             <div class="col-sm-9 col-xxl-10">
-              <input type="text" class="form-control" name="email" placeholder="e.g john.doe@uom.ac.mu" required>
+              <input type="text" class="form-control" name="email" placeholder="e.g john.doe@umail.uom.ac.mu" required>
+              <div class="invalid-feedback">
+                Please provide a valid umail. Make sure it ends with "@umail.uom.ac.mu"
+              </div>
             </div>
+            
           </div>
 
           <div class="mb-3 row">
@@ -88,7 +94,7 @@
           <div class="mb-3 row">
             <label class="col-sm-3 col-xl-2 col-form-label">Course</label>
             <div class="col-sm-9 col-xxl-10">
-              <input type="text" class="form-control" name="course" placeholder="e.g Software Engineering" required>
+              <input type="text" class="form-control" name="course" placeholder="e.g Bsc(Hons) Software Engineering" required>
             </div>
           </div>
 
@@ -106,79 +112,60 @@
               </select>
             </div>
           </div>
+          
+          <div class="trouble text-center">
+            Having trouble to join ? 
 
+            <button class="trouble-shoot btn" 
+             onclick="location.href='https://api.whatsapp.com/send?phone=23059189947'"
+            >Contact us
+           </button>
+          </div>
+            
+         
           <div class="mt-4 mb-5 text-center">
-            <button type="submit" class="btn btn-primary regbtn">submit</button>
+            <button type="submit" class="btn btn-primary regbtn">Submit</button>
         </div>
+
+
         </form>
+        <br>
+        <br>
+        <br>
+        <h4 class="title3">Privacy Policy ; 
+          <span class="title4"> The data collected in the above form is solely used for the purpose of registering 
+            new members in our club. In case of misconduct or inappropriate behaviour during one of our events, the 
+            information disclosed above helps us. Thank you for your cooperation.
+             </span>
+        </h4>
+
        </div>
 
       </div> 
        
       
       <% }  %>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <!-- <form action="/member" method="POST" class="mt-5">
-            <div class="mb-3">
-               
-                <input type="text" class="form-control" name="email" placeholder="email" required>
-              </div>
+     
+    <script>
+      function validateForm() {
+        let umail = document.forms["regForm"]["email"].value;
+        let umailLength = umail.length;
+        let umailOffset = umailLength - 16;
+        let umailText = umail.substring(umailOffset,umailLength);
+        
+        // const notburger = document.querySelector(".form-control");
+        if (umailText == "@umail.uom.ac.mu") {
+        }else{
+          event.preventDefault();
+          const notburger = document.querySelector(".form-control");
+          notburger.classList.add('form-control', 'is-invalid');
 
-              <div class="mb-3">
-               
-                <input type="text" class="form-control" name="fName" placeholder="First Name" required>
-              </div>
-
-
-              <div class="mb-3">
-               
-                <input type="text" class="form-control" name="lName" placeholder="Last Name" required>
-              </div>
-
-
-              <div class="mb-3">
-               
-                <input type="text" class="form-control" name="phoneNo" placeholder="Phone Number" required>
-              </div>
-
-
-              <div class="mb-3">
-               
-                <input type="text" class="form-control" name="course" placeholder="Course" required>
-              </div>
-
-
-              <div class="mb-3">
-               
-                <input type="text" class="form-control" name="year" placeholder="year" required>
-              </div>
-
-
-              <div class="mb-3">
-               
-                <input type="text" class="form-control" name="faculty" placeholder="faculty" required>
-              </div>
-      
-    
-
-              <div class="mb-3 text-end">
-                <button type="submit" class="btn btn-primary">submit</button>
-            </div>
-        </form>
-    </div> -->
-
-
+          const trouble = document.querySelector(".trouble");
+          trouble.style.visibility = "visible";
+        }
+  
+      }
+      </script>
     
 
 
