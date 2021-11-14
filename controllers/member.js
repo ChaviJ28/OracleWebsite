@@ -6,8 +6,8 @@ const transporter = nodemailer.createTransport({
     host: 'smtppro.zoho.com',
     port: 465,
     auth: {
-        user: "admin@uomoracleclub.org",
-        pass: "Uom_oracleclub_450"
+        user: "uomoracleclub@uomoracleclub.org",
+        pass: "Uom_oracleclub_400"
     }
 })
 
@@ -75,7 +75,7 @@ module.exports.mailMember = async (req, res) => {
         const subject = req.body.subject;
         members.forEach(function(member){
             var msg = {
-                from: 'admin@uomoracleclub.org',
+                from: 'uomoracleclub@uomoracleclub.org',
                 to: member.email, 
                 subject: subject,
                 html: mail
