@@ -10,5 +10,7 @@ router.get('/admin', member.admin);
 router.get('/view/:id', member.view);
 router.get('/mail', member.mail);
 router.post('/mail', member.mailMember);
+router.get('/accept', member.accform);
+router.post('/accept', member.acceptMembers);
 
 module.exports = router

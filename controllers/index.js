@@ -24,9 +24,17 @@ module.exports.about = async (req, res) => {
     } catch (err) {
         console.log(err)
     }
-    
+
 }
 
+module.exports.privacy = async (req, res) => {
+    try {
+        res.render('privacy')
+    } catch (err) {
+        console.log(err)
+    }
+
+}
 
 module.exports.member = (req, res) => {
     res.render('join');
