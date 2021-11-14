@@ -4,7 +4,7 @@ body {
 
 .title {
     color: #fff;
-font-size: 1.5rem;
+font-size: 2.5rem;
 font-weight: bold;
 font-family: montserrat;
 line-height: 4.5rem;
@@ -32,7 +32,7 @@ margin-top: 3rem;
     font-family: montserrat;
 }
 .trouble{
-    visibility: hidden;
+    display: none;
 }
 
 .btn {
@@ -80,6 +80,15 @@ border-radius: 14px;
 @media (max-width: 1400px) {
     .formReg {
         width: 80%;
+    }
+
+
+    .title {
+        color: #fff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    font-family: montserrat;
+    line-height: 4.5rem;
     }
 }
 
