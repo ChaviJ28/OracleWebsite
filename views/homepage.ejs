@@ -231,7 +231,16 @@
 
             </div>
         </section>
-        <% } %>
+        <% } else { %>
+
+            <ul class="dots" id="banner-dots">
+                <li class="dot active" id="banner-content"></li>
+                <% for(i=0; i<banner.length-1; i++){ %>
+                    <li class="dot"></li>
+                    <%}%>
+            </ul>
+
+            <% }  %>
 
         <% if (blogs.length > 0) { %>
 
