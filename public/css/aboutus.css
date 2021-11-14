@@ -19,7 +19,7 @@ html , body {
 .first-page{
     /* padding-top: 10px; */
     /* height: 90%; */
-    background: url(../images/backgrounds/backgroundDark.png) no-repeat center; 
+    background: url(../images/backgrounds/backgroundDark.jpg) no-repeat center; 
     display: table;
     height: 100%;
     position: relative;
@@ -43,7 +43,7 @@ html , body {
 }
 
 .card-body{
-    background-image: linear-gradient(45deg, #CB6CE6, #4D67D8);
+    background-image: linear-gradient(45deg, #A827944D, #11226C);;
     color: white;
     border-radius: 0 0 15px 15px ;
     height: 130px;
@@ -114,6 +114,9 @@ html , body {
     }
 } 
 
+.card {
+    background-color: transparent !important;
+}
 /* ----- End ----- */
 
 
@@ -125,6 +128,28 @@ html , body {
 * {
     font-family: 'Roboto', sans-serif;
 }
+
+
+@media only screen and (min-width: 1400px) {
+    .car-con {
+        border: none;
+        margin-top: 2% !important;
+    }
+
+  
+.padbig {
+    padding-top: 5%;
+}
+    
+}
+
+
+@media only screen and (min-width: 1200px) {
+    .car-con {
+        margin-left: 2% !important;
+    }
+}
+
 
 @media only screen and (max-width: 900px) {
     .first-page{
