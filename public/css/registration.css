@@ -1,0 +1,116 @@
+body {
+    background: #090D19;
+}
+
+.title {
+    color: #fff;
+font-size: 2.5rem;
+font-weight: bold;
+font-family: montserrat;
+line-height: 4.5rem;
+}
+
+.title2 {
+    color: #fff;
+font-size: 2rem;
+font-weight: bold;
+font-family: montserrat;
+line-height: 4.5rem;
+margin-top: 3rem;
+}
+
+.para {
+    color: #fff;
+font-size: 2rem;
+font-weight: bold;
+font-family: montserrat;
+line-height: 2rem;
+}
+
+
+.formReg {
+    width: 60%;
+    color: #fff;
+}
+
+.regbtn {
+    background: linear-gradient(261.46deg, rgba(95, 19, 198, 0.5) 11.27%, rgba(66, 12, 83, 0.5) 57.87%) !important;
+width: 236px !important;
+border-color: #110728 !important;
+padding: 12px 0px;
+border-radius: 14px;
+}
+
+.regbtn:hover {
+    background: linear-gradient(261.46deg, rgba(92, 17, 196, 0.116) 11.27%, rgba(66, 12, 83, 0.192) 57.87%) !important;
+
+}
+
+.centervert {
+    margin-top: 12%;
+    height: 700px;
+}
+
+
+@media (max-width: 1400px) {
+    .formReg {
+        width: 80%;
+    }
+}
+
+@media (max-width: 900px) {  
+    .formReg {
+        width: 90%;
+    }
+
+    .title {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+
+    .title2 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .centervert {
+        margin-top: 25%;
+        height: 500px;
+    }
+
+    .para {
+        font-size: 1.5rem;
+        }
+
+}
+
+
+@media (max-width: 599px) { 
+
+    .title {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+
+    .title2 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-top: 1rem;
+    }
+
+    .formReg {
+        width: 90%;
+    }
+
+    .centervert {
+        margin-top: 45%;
+        height: 500px;
+    }
+
+    .para {
+    font-size: 1.3rem;
+    }
+
+}

@@ -14,7 +14,7 @@
             <li><a href="/events" class="menu">Events</a></li>
             <li><a href="/blogs" class="menu">Blog</a></li>
             <% if(!currentUser){ %>
-                <li><a href="" class="register">Join Us</a></li>
+                <li><a href="/join" class="register">Join Us</a></li>
                 <%}else{%>
                     <li><a href="/dash" class="menu">Dashboard</a></li>
                     <li><a href="/logout" class="register">Log Out</a></li>
@@ -28,4 +28,3 @@
     </div>
 </header>
 
-<%- include("./flash");%>
