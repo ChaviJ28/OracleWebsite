@@ -12,6 +12,8 @@ module.exports.registerform = async (req, res) => {
     })
 }
 
+//cc
+
 module.exports.login = async (req, res) => {
     res.redirect('/dash')
 }
