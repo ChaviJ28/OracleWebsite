@@ -7,7 +7,8 @@ const transporter = nodemailer.createTransport({
     port: 465,
     auth: {
         user: "uomoracleclub@uomoracleclub.org",
-        pass: "Uom_oracleclub_400"
+        pass: "FUCKcloud69"
+        
     }
 })
 
@@ -17,6 +18,7 @@ module.exports.new = async (req, res) => {
     if (req.body.email && req.body.fName && req.body.lName && req.body.faculty && req.body.course) {
         const newMember = new Member({
             email: req.body.email,
+            studentId: req.body.studId,
             fName: req.body.fName,
             lName: req.body.lName,
             phoneNo: req.body.phoneNo,

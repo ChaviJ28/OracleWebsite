@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 
 var memberSchema = mongoose.Schema({
     email: String,
+    studentId: String,
     fName: String,
     lName: String,
     phoneNo: String,
