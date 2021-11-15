@@ -31,6 +31,16 @@ display: none;
     /* top: 50%; */
     /* transform: translateY(-50%); */
 }
+
+.banner .cont > div {
+    display: none;
+}
+
+.banner .cont > div.active {
+    display: block;
+}
+
+
 .banner .wrap{
     position: relative;
     width: 100%;

@@ -4,6 +4,15 @@
     /* top: 50%; */
     /* transform: translateY(-50%); */
 }
+
+.testim .cont > div {
+    display: none;
+}
+
+.testim .cont > div.active {
+    display: flex;
+}
+
 .testim .wrap{
     position: relative;
     width: 100%;
