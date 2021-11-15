@@ -27,6 +27,8 @@ window.onload = function () {
         }
         if (currentActive != currentSlide) {
             testimContent[currentActive].classList.add("inactive");
+            testimContent[currentActive].classList.add("inactive");
+          
         }
         testimContent[slide].classList.add("active");
         testimDots[slide].classList.add("active");

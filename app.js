@@ -9,6 +9,8 @@ var passport = require("passport");
 var passportLocalMongoose = require("passport-local-mongoose");
 var LocalStrategy = require("passport-local");
 
+require('dotenv').config();
+
 app.use(bodyparser.json())
     .use(bodyparser.urlencoded({
         extended: true

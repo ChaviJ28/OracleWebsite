@@ -4,6 +4,16 @@
     /* top: 50%; */
     /* transform: translateY(-50%); */
 }
+
+.testim .cont > div {
+    display: none;
+}
+
+.testim .cont > div.active {
+    display: flex;
+}
+
+
 .testim .wrap{
     position: relative;
     width: 100%;
@@ -11,15 +21,6 @@
     padding: 40px 20px;
     margin: auto;
 }
-
-.dot.active {
-    display: block;
-}
-
-.dot.inactive {
-    display: none;
-}
-
 .testim .arrow{
     display: block;
     position: absolute;
