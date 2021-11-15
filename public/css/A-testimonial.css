@@ -11,6 +11,15 @@
     padding: 40px 20px;
     margin: auto;
 }
+
+.dot.active {
+    display: block;
+}
+
+.dot.inactive {
+    display: none;
+}
+
 .testim .arrow{
     display: block;
     position: absolute;
