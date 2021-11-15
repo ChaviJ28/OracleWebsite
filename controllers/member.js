@@ -3,12 +3,12 @@ const Member = require("../models/member");
 const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
-    host: 'smtppro.zoho.com',
-    port: 465,
+    host: 'smtp.gmail.com',
+    port: 587,
     auth: {
-        user: "uomoracleclub@uomoracleclub.org",
-        pass: "FUCKcloud69"
-        
+        user: "oracleclub2020@gmail.com",
+        pass: "qsqubrcdflwwwljq"
+
     }
 })
 
@@ -82,25 +82,42 @@ module.exports.mail = async (req, res) => {
 
 module.exports.mailMember = async (req, res) => {
     isLoggedIn(req, res, async () => {
-
-        if (req.body.subject && req.body.mail) {
-            const members = await Member.find({})
-            const mail = req.body.mail;
-            const subject = req.body.subject;
-            members.forEach(function (member) {
+        //IF ACCEPTED MEMBER THEN SEND MAIL
+        try {
+            var arr = [];
+            if (req.body.subject && req.body.mail) {
+                const members = await Member.find({})
+                const mail = req.body.mail;
+                const subject = req.body.subject;
+                members.forEach(function (member) {
+                    if (member.checked == true) {
+                        arr.push(member.email);
+                    }
+                });
                 var msg = {
-                    from: 'uomoracleclub@uomoracleclub.org',
-                    to: member.email,
+                    from: {
+                        address: 'oracleclub2020@gmail.com',
+                        name: 'Uom Oracle Club'
+                    },
+                    to: arr,
                     subject: subject,
                     html: mail
                 }
                 transporter.sendMail(msg).then(info => {
 
+                    if (info.rejected.length > 0) {
+                        req.flash('error', info.rejected + ' mails not found');
+                        res.redirect('/member/admin');
+                    } else {
+                        req.flash('success', 'Email successfully sent');
+                        res.redirect('/member/admin');
+                    }
                 });
-            });
-            req.flash('success', 'Email successfully sent');
-            res.redirect('/member/admin');
+            }
+        } catch (e) {
+            res.json(e)
         }
+
     })
 }
 
@@ -121,7 +138,7 @@ module.exports.accform = async (req, res) => {
 
 module.exports.acceptMembers = async (req, res) => {
     isLoggedIn(req, res, () => {
-        console.log(req.body)
+        var arr = []
         try {
             req.body.forEach(async (id) => {
                 var member = await Member.findById(id);
@@ -137,18 +154,26 @@ module.exports.acceptMembers = async (req, res) => {
                         break;
                     default: wa = 'https://chat.whatsapp.com/FMRKWyYaNXBJL8jG4HF2P0'
                 }
-                var msg = {
-                    from: 'uomoracleclub@uomoracleclub.org',
-                    to: member.email,
-                    subject: 'Welcome to Uom Oracle Club',
-                    html: wa
-                }
-                transporter.sendMail(msg).then(info => {
-
-                });
+                arr.push(member.email);
             })
-            req.flash('success', 'Email successfully sent');
-            res.json('/member/admin');
+            var msg = {
+                from: {
+                    address: 'oracleclub2020@gmail.com',
+                    name: 'Uom Oracle Club'
+                },
+                to: arr,
+                subject: 'Welcome to Uom Oracle Club',
+                html: wa
+            }
+            transporter.sendMail(msg).then(info => {
+                if (info.rejected.length > 0) {
+                    req.flash('error', info.rejected + ' mails not found');
+                    res.redirect('/member/admin');
+                } else {
+                    req.flash('success', 'Email successfully sent');
+                    res.redirect('/member/admin');
+                }
+            });
         } catch (e) {
             res.json(e)
         }
