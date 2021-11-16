@@ -10,7 +10,7 @@
 }
 
 .testim .cont > div.active {
-    display: flex;
+    display: block;
 }
 
 .testim .wrap{
