@@ -1,6 +1,9 @@
 var express = require('express');
 const Member = require("../models/member");
 const nodemailer = require('nodemailer');
+const path = require('path');
+const fs = require('fs');
+const handlebars = require('handlebars');
 
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -138,15 +141,16 @@ module.exports.accform = async (req, res) => {
 
 module.exports.acceptMembers = async (req, res) => {
     isLoggedIn(req, res, () => {
-        var arr = []
+        var arr = [];
+        const filePath = path.join(__dirname, '../views/mail.html');
+        const source = fs.readFileSync(filePath, 'utf-8').toString();
+        const template = handlebars.compile(source);
         try {
             req.body.forEach(async (id) => {
                 var member = await Member.findById(id);
                 member.checked = true;
                 member.save();
                 //send mail
-                console.log(member.year)
-                console.log(typeof member.year)
                 switch (member.year) {
                     case '1': wa = 'https://chat.whatsapp.com/CuAWydqa7tSJBY3kYHrPLF'
                         break;
@@ -154,26 +158,32 @@ module.exports.acceptMembers = async (req, res) => {
                         break;
                     default: wa = 'https://chat.whatsapp.com/FMRKWyYaNXBJL8jG4HF2P0'
                 }
-                arr.push(member.email);
-            })
-            var msg = {
-                from: {
-                    address: 'oracleclub2020@gmail.com',
-                    name: 'Uom Oracle Club'
-                },
-                to: arr,
-                subject: 'Welcome to Uom Oracle Club',
-                html: wa
-            }
-            transporter.sendMail(msg).then(info => {
+                const replacements = {
+                    whatsapp: wa
+                };
+                const htmlToSend = template(replacements);
+                const mailOptions = {
+                    from: {
+                        address: 'oracleclub2020@gmail.com',
+                        name: 'Uom Oracle Club'
+                    },
+                    to: member.email,
+                    subject: 'Welcome to Uom Oracle Club',
+                    html: htmlToSend
+                };
+                const info = await transporter.sendMail(mailOptions);
                 if (info.rejected.length > 0) {
-                    req.flash('error', info.rejected + ' mails not found');
-                    res.redirect('/member/admin');
-                } else {
-                    req.flash('success', 'Email successfully sent');
-                    res.redirect('/member/admin');
+                    arr.push(info.rejected[0])
                 }
-            });
+            })
+            if (arr.length > 0) {
+                req.flash('error', arr + ' mails not found');
+                res.json('/member/admin');
+
+            } else {
+                req.flash('success', 'Email successfully sent');
+                res.json('/member/admin');
+            }
         } catch (e) {
             res.json(e)
         }

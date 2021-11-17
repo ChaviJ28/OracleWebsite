@@ -138,7 +138,6 @@ window.onload = function () {
     document.getElementById('banner-content').addEventListener("mouseout", function (event) {
         //   console.log(document.querySelector('#banner-content')); 
         for (var k = 0; k < bannerContent.length; k++) {
-            console.log("hov");
             document.getElementsByClassName("bannerImg")[k].style.filter = 'blur(0px)';
             document.getElementsByClassName("btnHovShow")[k].style.display = "none";
             // playSlide2(slide);
