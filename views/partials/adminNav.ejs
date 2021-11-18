@@ -19,14 +19,17 @@
         <li class="nav-item">
           <a class="nav-link" href="/events/banners">Banner</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/member/admin">Member</a>
-        </li>
         <% if(currentUser.admin==true){ %>
           <li class="nav-item">
-            <a class="nav-link" href="/users">User</a>
+            <a class="nav-link" href="/member/admin">Member</a>
           </li>
           <%}%>
+
+            <% if(currentUser.admin==true){ %>
+              <li class="nav-item">
+                <a class="nav-link" href="/users">User</a>
+              </li>
+              <%}%>
 
       </ul>
     </div>

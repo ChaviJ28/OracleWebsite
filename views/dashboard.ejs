@@ -107,19 +107,20 @@
                     </div>
 
                     <!-- 4-4 -->
-                    <div class="col-lg-2 col-md-2 col-sm-1 servicesDetails">
-                        <a href="/member/admin">
-                            <!-- border-end border-light -->
-                            <!-- style="border:1px solid red;" -->
-                            <div class="col-md-12 col-sm-1 d-flex justify-content-center ">
-                                <img src="/images/icons/home_1.png" alt="" width="50" height="50">
-                            </div>
-                            <div class="col-md-12 col-sm-1 d-flex justify-content-center">
-                                <p class="servicesText">Members Panel</p>
-                            </div>
-                        </a>
-                    </div>
-
+                    <% if(currentUser.admin==true){ %>
+                        <div class="col-lg-2 col-md-2 col-sm-1 servicesDetails">
+                            <a href="/member/admin">
+                                <!-- border-end border-light -->
+                                <!-- style="border:1px solid red;" -->
+                                <div class="col-md-12 col-sm-1 d-flex justify-content-center ">
+                                    <img src="/images/icons/home_1.png" alt="" width="50" height="50">
+                                </div>
+                                <div class="col-md-12 col-sm-1 d-flex justify-content-center">
+                                    <p class="servicesText">Members Panel</p>
+                                </div>
+                            </a>
+                        </div>
+                        <%}%>
 
 
 
