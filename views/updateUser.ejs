@@ -27,53 +27,66 @@
 <body>
     <%- include('partials/adminNav.ejs') %>
 
-    <div class="container mt-5">
-        <h3 class="text-center">Update User</h3>
-        <form action="/users/<%= user._id %>/update?_method=PUT" method="POST" class="mt-5">
-            <div class="mb-3 row">
-                <label for="staticFrom" class="col-sm-2 col-form-label">Name</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" value="<%= user.name %>" name="name" placeholder="Name">
+        <div class="container mt-5">
+            <h3 class="text-center">Update User</h3>
+            <form action="/users/<%= user._id %>/update?_method=PUT" method="POST" class="mt-5">
+                <div class="mb-3 row">
+                    <label for="staticFrom" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" value="<%= user.name %>" name="name" placeholder="Name">
+                    </div>
                 </div>
-            </div>
 
 
 
-            <div class="mb-3 row">
-                <label for="staticFrom" class="col-sm-2 col-form-label">Username</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" value=<%=user.username %> name="username"
-                    placeholder="username">
+                <div class="mb-3 row">
+                    <label for="staticFrom" class="col-sm-2 col-form-label">Username</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" value=<%=user.username %> name="username"
+                        placeholder="username">
+                    </div>
                 </div>
-            </div>
 
-            <div class="mb-3 row">
-                <label for="staticFrom" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" value=<%=user.email %> name="email"
-                    placeholder="email
-                    Link">
+                <div class="mb-3 row">
+                    <label for="staticFrom" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" value=<%=user.email %> name="email"
+                        placeholder="email
+                        Link">
+                    </div>
                 </div>
-            </div>
 
-            <div class="mb-3 text-end">
-                <button type="submit" class="btn btn-primary">update User</button>
-            </div>
-        </form>
-        <div class="mb-3 row">
-            <form action="/users/<%= user._id %>/reset" method="POST">
-                <button type='submit' class="btn btn-danger">Reset password</button>
+                <div class="mb-3 row">
+                    <label for="staticFrom" class="col-sm-2 col-form-label">Admin</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" value=<%=user.admin %> name="email"
+                        placeholder="Admin" disabled>
+                    </div>
+
+                </div>
+
+                <div class="mb-3 text-end">
+                    <button type="submit" class="btn btn-primary">update User</button>
+                </div>
+
             </form>
+            <div class="mb-3 row">
+                <form action="/users/<%= user._id %>/reset" method="POST" class='col-2'>
+                    <button type='submit' class="btn btn-danger">Reset password</button>
+                </form>
+                <form action="/users/<%= user._id %>/toggle-admin" method="POST" class='col-2'>
+                    <button type='submit' class="btn btn-success">Toggle Admin</button>
+                </form>
+            </div>
+
+            <a class="btn btn-lg btn-dark text-end mt-4 me-3 mb-4" href="/users">back</a>
         </div>
 
-        <a class="btn btn-lg btn-dark text-end mt-4 me-3 mb-4" href="/users">back</a>
-    </div>
 
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
 
 </body>
 

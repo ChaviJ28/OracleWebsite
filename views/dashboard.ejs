@@ -125,23 +125,25 @@
 
                 </div>
                 <br>
-                <div class="row gx-1 justify-content-center servicesRow" style="border: 0px solid red;">
+                <% if(currentUser.admin==true){ %>
+                    <div class="row gx-1 justify-content-center servicesRow" style="border: 0px solid red;">
 
-                    <!-- 1-1 -->
-                    <div class="col-lg-2 col-md-2 col-sm-1 servicesDetails">
-                        <a href="/users">
-                            <!-- border-end border-light -->
-                            <!-- style="border:1px solid red;" -->
-                            <div class="col-md-12 col-sm-1 d-flex justify-content-center ">
-                                <img src="/images/icons/user.png" alt="" width="50" height="50">
-                            </div>
-                            <div class="col-md-12 col-sm-1 d-flex justify-content-center">
-                                <p class="servicesText">User Panel</p>
-                            </div>
-                        </a>
+                        <!-- 1-1 -->
+                        <div class="col-lg-2 col-md-2 col-sm-1 servicesDetails">
+                            <a href="/users">
+                                <!-- border-end border-light -->
+                                <!-- style="border:1px solid red;" -->
+                                <div class="col-md-12 col-sm-1 d-flex justify-content-center ">
+                                    <img src="/images/icons/user.png" alt="" width="50" height="50">
+                                </div>
+                                <div class="col-md-12 col-sm-1 d-flex justify-content-center">
+                                    <p class="servicesText">User Panel</p>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
-
-                </div>
+                    <%}%>
             </div>
         </div>
 

@@ -7,7 +7,8 @@ const UserSchema = new mongoose.Schema({
     salt: String,
     hash: String,
     dateRegistered: { type: Date, default: Date.now },
-    email: String
+    email: String,
+    admin: Boolean
 });
 
 

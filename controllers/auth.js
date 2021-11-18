@@ -8,7 +8,7 @@ module.exports.loginform = async (req, res) => {
 
 module.exports.registerform = async (req, res) => {
     isLoggedIn(req, res, () => {
-    res.render('register')
+        res.render('register')
     })
 }
 
@@ -24,29 +24,30 @@ module.exports.logout = async (req, res) => {
 }
 
 module.exports.register = async (req, res) => {
-    // isLoggedIn(req, res, () => {
-    let nUser = new userdb({
-        name: req.body.name,
-        username: req.body.username,
-        email: req.body.email
-    });
-    userdb.register(nUser, 'default123', (err, user) => {
-        if (err) {
-            req.flash("error", "Something went wrong, please try again !");
-            res.redirect("/register");
-        } else {
-            //send mail ?
-            req.login(nUser, (err) => {
-                if (err) {
-                    req.flash('success', 'Accont created, please login ')
-                    res.redirect('/login');
-                } else {
-                    res.redirect('/dash')
-                }
-            })
-        }
+    isLoggedIn(req, res, () => {
+        let nUser = new userdb({
+            name: req.body.name,
+            username: req.body.username,
+            email: req.body.email,
+            admin: false
+        });
+        userdb.register(nUser, 'default123', (err, user) => {
+            if (err) {
+                req.flash("error", "Something went wrong, please try again !");
+                res.redirect("/register");
+            } else {
+                //send mail ?
+                req.login(nUser, (err) => {
+                    if (err) {
+                        req.flash('success', 'Accont created, please login ')
+                        res.redirect('/login');
+                    } else {
+                        res.redirect('/dash')
+                    }
+                })
+            }
+        })
     })
-    // })
 
 }
 
@@ -58,43 +59,72 @@ module.exports.dash = async (req, res) => {
 
 module.exports.users = async (req, res) => {
     isLoggedIn(req, res, async () => {
-        var users = await userdb.find({}).sort({ _id: -1 });
-        res.render('users', { users })
+        isAdmin(req, res, async () => {
+            var users = await userdb.find({}).sort({ _id: -1 });
+            res.render('users', { users })
+        })
     })
 }
 
 module.exports.userone = async (req, res) => {
     const user = await userdb.findById(req.params.id);
     isLoggedIn(req, res, () => {
-        res.render('updateUser', { user });
+        isAdmin(req, res, async () => {
+            res.render('updateUser', { user });
+        })
     })
 }
 
 module.exports.updateuser = async (req, res) => {
     isLoggedIn(req, res, async () => {
-
-        const id = req.params.id;
-        const user = await userdb.findByIdAndUpdate(id, {
-            name: req.body.name,
-            username: req.body.username,
-            email: req.body.email
-        });
-        await user.save();
-        res.redirect('/users');
+        isAdmin(req, res, async () => {
+            const id = req.params.id;
+            const user = await userdb.findByIdAndUpdate(id, {
+                name: req.body.name,
+                username: req.body.username,
+                email: req.body.email
+            });
+            await user.save();
+            res.redirect('/users');
+        })
     })
+}
+
+module.exports.toggleAdmin = async (req, res) => {
+    isLoggedIn(req, res, async () => {
+        isAdmin(req, res, async () => {
+            const id = req.params.id;
+            const user = await userdb.findById(id);
+            user.admin = !user.admin;
+            user.save();
+            res.redirect('/users');
+        })
+    })
+}
+
+module.exports.adda = async (req, res) => {
+    const user = await userdb.find();
+    user.forEach((user) => {
+        if (user.username != "Ash") {
+            user.admin = true;
+            user.save();
+        }
+    })
+    res.json(user.length);
 }
 
 module.exports.reset = async (req, res) => {
     isLoggedIn(req, res, async () => {
-
-        const id = req.params.id;
-        const user = await userdb.findById(req.params.id);
-        user.setPassword('default123', async (e, u) => {
-            if (!e) {
-                await u.save();
-                res.redirect('/users')
-            }
-            else throw 'error'
+        isAdmin(req, res, async () => {
+            const id = req.params.id;
+            const user = await userdb.findById(req.params.id);
+            user.setPassword('default123', async (e, u) => {
+                if (!e) {
+                    await u.save();
+                    res.redirect('/users')
+                }
+                else throw 'error'
+            })
         })
     })
 }
@@ -127,12 +157,14 @@ module.exports.change = async (req, res) => {
 }
 
 module.exports.delete = async (req, res) => {
-    isLoggedIn(req, res, async () => {
+    isAdmin(req, res, async () => {
+        isLoggedIn(req, res, async () => {
 
-        const id = req.params.id;
-        const user = await userdb.findById(id);
-        await userdb.findByIdAndDelete(id);
-        res.redirect('/users');
+            const id = req.params.id;
+            const user = await userdb.findById(id);
+            await userdb.findByIdAndDelete(id);
+            res.redirect('/users');
+        })
     })
 }
 
@@ -142,4 +174,11 @@ function isLoggedIn(req, res, next) {
         return next();
     }
     res.redirect('/login');
+}
+
+function isAdmin(req, res, next) {
+    if (req.user.admin == true) {
+        return next();
+    }
+    res.redirect('/dash');
 }
