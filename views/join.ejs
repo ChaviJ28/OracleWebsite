@@ -57,7 +57,7 @@
           <div class="mb-3 row">
             <label class="col-sm-3 col-xl-2 col-form-label">Student Id</label>
             <div class="col-sm-9 col-xxl-10">
-              <input type="text" class="form-control" name="studId" placeholder="e.g 2085943" required>
+              <input type="text" class="form-control" name="studId" placeholder="e.g 2085943"  maxlength="7" minlength="7" pattern="[0-9]+"  required>
             </div>
           </div>
 
@@ -78,14 +78,14 @@
           <div class="mb-3 row">
             <label class="col-sm-3 col-xl-2 col-form-label">Phone No</label>
             <div class="col-sm-9 col-xxl-10">
-              <input type="text" class="form-control" name="phoneNo" placeholder="e.g 57457363" required>
+              <input type="text" class="form-control" name="phoneNo" placeholder="e.g 57457363" minlength="8" pattern="[0-9+_-]+" required>
             </div>
           </div>
 
           <div class="mb-3 row">
             <label class="col-sm-3 col-xl-2 col-form-label">Faculty</label>
             <div class="col-sm-9 col-xxl-10">
-              <select class="form-select" name="faculty" required>
+              <select class="form-select"  id="faculty" name="faculty" onchange="selectCourse()"  required>
                 <option value="">Select your Faculty</option>
                 <option value="Faculty of Agriculture">Faculty of Agriculture</option>
                 <option value="Faculty of Engineering">Faculty of Engineering</option>
@@ -95,18 +95,43 @@
                 <option value="Faculty of Science">Faculty of Science</option>
                 <option value="Faculty of Social Sciences & Humanities">Faculty of Social Sciences & Humanities</option>
                 <option value="Centre for Innovative & Lifelong Learning">Centre for Innovative & Lifelong Learning</option>
+                <option value="Others">Others</option>
+             
+              </select>
+            </div>
+          </div>
+
+
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-xl-2 col-form-label">Program Level</label>
+            <div class="col-sm-9 col-xxl-10">
+              <select class="form-select" name="level" id="level" onchange="selectCourse()" required>
+                <option value="">Select your Level</option>
+                <option value="Undergraduate">Undergraduate</option>
+                <option value="Postgraduate">Postgraduate</option>
              
               </select>
             </div>
           </div>
 
         
-          <div class="mb-3 row">
+          <!-- <div class="mb-3 row">
             <label class="col-sm-3 col-xl-2 col-form-label">Course</label>
             <div class="col-sm-9 col-xxl-10">
               <input type="text" class="form-control" name="course" placeholder="e.g Bsc(Hons) Software Engineering" required>
             </div>
+          </div> -->
+
+
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-xl-2 col-form-label">Course</label>
+            <div class="col-sm-9 col-xxl-10">
+              <select class="form-select" id="course" name="course" required>
+                <option value="">Select your Course</option>
+              </select>
+            </div>
           </div>
+
 
           <div class="mb-3 row">
             <label class="col-sm-3 col-xl-2 col-form-label">Year</label>
@@ -158,7 +183,7 @@
      
     <script>
       function validateForm() {
-        let umail = document.forms["regForm"]["email"].value;
+        let umail = document.forms["regForm"]["email"].value.trim();
         let umailLength = umail.length;
         let umailOffset = umailLength - 16;
         let umailText = umail.substring(umailOffset,umailLength);
@@ -184,6 +209,103 @@
   
       }
       </script>
+
+
+<script>
+  function selectCourse() {
+    var fac = document.getElementById("faculty").value;
+    var level = document.getElementById("level").value;
+    var course = document.getElementById("course");
+  
+    course.innerHTML = '';
+    var opt = document.createElement("option");
+    opt.textContent = "Select your Course";
+    opt.value = "";
+    course.appendChild(opt);
+
+    var options = [];
+    if (level && fac) {
+      if (level == "Undergraduate") {
+      switch(fac) {
+        case "Faculty of Agriculture": 
+          options = ["BSc (Hons) Agricultural Science and Technology","BSc (Hons) Aquaculture","BSc (Hons) Crop Technology (Minor: Sheltered Farming)","BSc (Hons) Food Science and Technology","BSc(Hons) Applied Biochemistry" ];
+          break;
+        case "Faculty of Engineering": 
+          options = ["BEng (Hons) Chemical Engineering","BSc (Hons) Applied Climate Change and Adaptation", "BEng (Hons) Civil Engineering", "BSc (Hons) Town and Country Planning (Top-Up Programme)","BEng (Hons) Electrical and Electronic Engineering","BEng (Hons) Telecommunications Engineering with Networking","BEng (Hons) Mechanical Engineering","BEng (Hons) Mechatronics Engineering","BSc (Hons) Fashion Technology (Minor: Entrepreneurship)","BSc (Hons) Operations and Supply Chain Management","BSc (Hons) Sustainable Product Design","BEng (Hons) Mechanical Engineering (Minor: Industrial Systems)", "Bachelor of Science in Electrical and Computer Engineering (University of Arizona)"];
+          break;
+        case "Faculty of Information Communication and Digital Technologies": 
+          options = ["BSc (Hons) Information Systems","BSc (Hons) Animation and Visual Effects","BSc (Hons) Applied Computing","BSc (Hons) Computer Science","BSc (Hons) Mobile and Smart Technologies","BSc (Hons) Software Engineering","BSc (Hons) Data Science"];
+          break;
+        case "Faculty of Law & Management": 
+          options = ["BSc (Hons) Accounting (Minor: Finance)","BSc (Hons) Finance","BSc (Hons) Finance (Minor: Law)","BSc (Hons) Accounting (Minor: Management)","BSc (Hons) International Business Finance","BSc (Hons) International Business Management","BSc (Hons) Banking and Finance","Bachelor of Laws with Honours - LLB (Hons)","BA (Hons) Law and Criminal Justice","BA (Hons) Law with Management","BSc (Hons) Management","BSc (Hons) Human Resource Management","BSc (Hons) Marketing with Digital Technologies","BSc (Hons) Management Accounting and Finance","BSc (Hons) Tourism, Hospitality and Events Management","BSc (Hons) Accounting (Minor: Business Informatics)", "Bachelor of Applied Science in Cyber Operations (University of Arizona)"];
+          break;
+        case "Faculty of Medicine and Health Sciences": 
+        options = ["Doctor of Medicine (MD) – Bachelor of Medicine and Master of Medicine","BSc (Hons) Biomedical Sciences","BSc (Hons) Nutritional Sciences","Diploma/BSc (Hons) Occupational Health and Safety","BSc (Hons) Occupational Therapy","Diploma in Sanitary Science"];
+          break;
+        case "Faculty of Science": 
+          options = ["BSc (Hons) Biological Sciences","BSc (Hons) Chemistry","Bsc (Hons) Marine Environmental Sciences","BSc (Hons) Mathematics with Computer Science","BSc (Hons) Mathematics/ Mathematics with Statistics/ Mathematics with Finance","BSc (Hons) Physics *Optional Minor: Astrophysics/Biology/Chemistry/ Instrumentation/ Mathematics/Renewable","BSc (Hons) Physics with Computing"];
+          break;
+        case "Faculty of Social Sciences & Humanities": 
+          options = ["BSc (Hons) Economics and Finance","BA (Hons) Economics and Law","BSc (Hons) Business Economics and Investment Analysis","BSc (Hons) Actuarial Studies","BSc (Hons) Business Statistics with Finance","BA (Hons)/MA English Studies","BA (Hons) French Studies","BA (Hons) French with Translation Studies","Foundation Course in English","BSc (Hons) Psychology","BSc (Hons) Sociology / Sociology (Specialisation: Gender Studies)","BSc (Hons) Social Work Practice","BA (Hons) History and Sociology","Diploma/BSc (Hons) Communication Studies  with Specialisation in Business Communication/Journalism *"];
+          break;
+        case "Centre for Innovative & Lifelong Learning": 
+          options = ["BSc (Hons) Web and Multimedia Development","BSc (Hons) Educational Technologies"];
+          break;
+        default: 
+        case "Others": 
+          options = ["Others"];
+          break;
+        options = [];
+          break;
+      }
+ } else if (level == "Postgraduate") {
+  switch(fac) {
+        case "Faculty of Agriculture": 
+          options = ["MSc Tropical Animal Production", "MSc Agronomy"];
+          break;
+        case "Faculty of Engineering": 
+          options = ["MSc Building Services Engineering","MSc Project Management","MSc Renewable Energy and Smart Electrical Systems","MSc Sustainable Energy Engineering with Environmental Management","MSc Telecommunications with Internet of Things","MSc Urban Planning & Climate Resilience","MSc Total Quality Management and Performance Excellence","MSc Operations and Logistics Management"];
+          break;
+        case "Faculty of Information Communication and Digital Technologies": 
+          options = ["MSc Network Security and Management","MSc Software Project Management","MSc Artificial Intelligence"];
+          break;
+        case "Faculty of Law & Management": 
+          options = ["MBA (Specialisation: Human Resource Management)","Masters of Business Administration","MBA (Specialisation: Financial Services)","MSc Digital Marketing","LL.M. in Human Rights","LL.M. in Corporate Law","LL.M. in Competition Law and Public Policies","MSc in Finance","MSc Financial Technology"];
+          break;
+        case "Faculty of Medicine and Health Sciences": 
+        options = ["MSc in Geriatric Care Management","Master in Public Health"];
+          break;
+        case "Faculty of Science": 
+          options = ["MSc Marine Science","MSc Coastal and Ocean Management","MSc Mathematical and Scientific Computing","MSc Applied and Sustainable Chemistry"];
+          break;
+        case "Faculty of Social Sciences & Humanities": 
+          options = ["MA Economics","MSc Financial Economics","MA Public Policy and Administration","Master of Regional Integration","MA Historical Studies","MA English Studies"];
+          break;
+        case "Centre for Innovative & Lifelong Learning": 
+          options = ["Masters of Business Administration","MA Educational Leadership","MSc Educational Technologies","Masters in Leadership Development in Information and Communication Technologies and the Knowledge Society"];
+          break;
+        default: 
+        case "Others": 
+          options = ["Others"];
+          break;
+        options = [];
+          break;
+      }
+ }
+
+
+for(var i = 0; i < options.length; i++) {
+    var val = options[i];
+    var opt = document.createElement("option");
+    opt.textContent = val;
+    opt.value = val;
+    course.appendChild(opt);
+}
+    }
+  }
+
+  
+</script>
     
 
 

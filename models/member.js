@@ -8,6 +8,7 @@ var memberSchema = mongoose.Schema({
     lName: String,
     phoneNo: String,
     course: String,
+    level: String,
     year: String,
     faculty: String,
     checked: Boolean

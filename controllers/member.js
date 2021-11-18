@@ -26,6 +26,7 @@ module.exports.new = async (req, res) => {
             lName: req.body.lName,
             phoneNo: req.body.phoneNo,
             course: req.body.course,
+            level: req.body.level,
             year: req.body.year,
             faculty: req.body.faculty,
             checked: false
