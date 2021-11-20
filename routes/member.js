@@ -12,5 +12,6 @@ router.get('/mail', member.mail);
 router.post('/mail', member.mailMember);
 router.get('/accept', member.accform);
 router.post('/accept', member.acceptMembers);
+router.get('/download', member.excel);
 
 module.exports = router

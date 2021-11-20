@@ -24,5 +24,8 @@ router.post('/banners/:id/update', upload.single('photo'), event.updatebanner)
 router.post('/banners/:id/delete', event.deletebanner)
 router.post('/banners/:id/toggle', event.togglebanner)
 
+//API
+router.get('/api/get', event.get)
+
 
 module.exports = router

@@ -12,8 +12,7 @@ var memberSchema = mongoose.Schema({
     year: String,
     faculty: String,
     checked: Boolean
-}
-);
+});
 
 module.exports = mongoose.model("member", memberSchema);
 

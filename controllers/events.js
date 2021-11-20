@@ -13,26 +13,55 @@ const imagePath = __dirname + '/../public/';
 module.exports.all = async (req, res) => {
     var currentEvent = [];
     var previousEvent = [];
-    var events = await Event.find({});
-    events.forEach(function (event, i) {
-        console.log(event.date, Date.now());
-        if (event.date < Date.now()) {
-            previousEvent.push(event);
-        } else {
-            currentEvent.push(event);
-        }
-    })
-    res.render('events', { currentEvent, previousEvent })
+    // var events = await Event.find({});
+    // events.forEach(function (event, i) {
+    //     if (event.date < Date.now() && previousEvent.length < 5) {
+    //         previousEvent.push(event);
+    //     }
+    //     if (event.date >= Date.now() && currentEvent.length < 5) {
+    //         currentEvent.push(event);
+    //     }
+    // })
+    res.render('events', { currentEvent, previousEvent, currentCount: 5, prevCount: 5 })
+    // res.render('events', { currentCount: 0, prevCount: 0 })
 }
 
 
-// module.exports.viewOne = async (req, res) => {
-//     const event = await Event.findById(req.params.id, err);
-//     if (!event) {
-//        console.log(err);
-//     }
-//     res.render('singleEvent', { event });
-// }
+module.exports.get = async (req, res) => {
+    var events = await Event.find({}).sort({ _id: -1 });
+    var next = parseInt(req.query.next)
+    var content = req.query.content
+    var send = []
+    if (content == 'previous') {
+        events = events.slice(next);
+        events.forEach(function (event, i) {
+            if (event.date < Date.now() && send.length < 5) {
+                send.push(event);
+            }
+        })
+        var prevCount = next;
+        var obj = {
+            prevCount: prevCount + 5,
+            events: send
+        }
+        res.json(obj)
+    }
+    if (content == 'upcoming') {
+        events = events.slice(next);
+        events.forEach(function (event, i) {
+            if (event.date >= Date.now() && send.length < 5) {
+                send.push(event);
+            }
+        })
+        var currentCount = next;
+        var obj = {
+            currentCount: currentCount + 5,
+            events: send
+        }
+        res.json(obj)
+    }
+}
+
 
 module.exports.newEvent = (req, res) => {
     isLoggedIn(req, res, async () => {
