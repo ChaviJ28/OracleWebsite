@@ -153,7 +153,6 @@ module.exports.update = async (req, res) => {
             imgUpdate = true;
         }
 
-        console.log(req.body);
 
         if (imgUpdate == true) {
             fs.unlinkSync(imagePath + imageUrl)
@@ -174,8 +173,6 @@ module.exports.update = async (req, res) => {
             date: req.body.date
         });
         await event.save();
-        console.log(event);
-
 
         res.redirect('/events/admin');
     })
