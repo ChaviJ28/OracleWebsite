@@ -128,8 +128,15 @@
         <div class="mb-3 text-end">
           <button type="submit" class="btn btn-primary">update Event</button>
         </div>
-      </form>
-      <a class="btn btn-lg btn-dark text-end mt-4 me-3 mb-4" href="/events/admin">back</a>
+    </div>
+
+    <input type="text" class="form-control d-none" value="<%= event.imageUrl %>" name="oldImage" placeholder="Title">
+
+    <div class="mb-3 text-end">
+      <button type="submit" class="btn btn-primary">update Event</button>
+    </div>
+    </form>
+    <a class="btn btn-lg btn-dark text-end mt-4 me-3 mb-4" href="/events/admin">back</a>
     </div>
     <script>
       $('#summernote').summernote({

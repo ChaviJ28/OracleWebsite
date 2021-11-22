@@ -181,8 +181,6 @@ module.exports.update = async (req, res) => {
             date: newDate
         });
         await event.save();
-        console.log(event);
-
 
         res.redirect('/events/admin');
     })
