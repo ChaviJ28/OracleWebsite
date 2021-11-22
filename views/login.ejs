@@ -28,19 +28,20 @@
     <!--===============================================================================================-->
 </head>
 
+
+
 <body>
 
     <div class="limiter">
         <div class="container-login100" style="background-image: url('images/backgrounds/backgroundDark.png');">
             <div class="wrap-login100 p-t-30 p-b-50">
 
-                <a href="/">
-                    <button  class="btn btn-primary">Back to Home </button>
-                </a>
-                
+
                 <%- include("partials/flash"); -%>
 
                     <span class="login100-form-title p-b-41">
+                        <button class="mr-3" role="button"><strong><a class="back-btn"
+                                    href='/'>&larr;</a></strong></button>
                         Account Login
                     </span>
                     <form class="login100-form validate-form p-b-33 p-t-5" method="POST">

@@ -86,6 +86,7 @@ module.exports.updateEvent = async (req, res) => {
         var day = event.date.getDate()
         if (month < 10) { month = '0' + month.toString() }
         var newDate = (year + '-' + month + '-' + day)
+        console.log(event)
         res.render('updateEvent', { event, newDate });
     })
 }
@@ -142,7 +143,7 @@ module.exports.update = async (req, res) => {
 
         const id = req.params.id;
         var imageUrl = req.body.oldImage;
-
+        console.log(req.body)
         var big = false;
         if (req.body.big) {
             big = true;
@@ -153,7 +154,13 @@ module.exports.update = async (req, res) => {
             imgUpdate = true;
         }
 
-        console.log(req.body);
+        var x = new Date(req.body.date)
+        var y = new Date(req.body.newdate)
+        if (req.body.newdate.length > 0) {
+            newDate = y
+        } else {
+            newDate = x
+        }
 
         if (imgUpdate == true) {
             fs.unlinkSync(imagePath + imageUrl)
@@ -171,7 +178,7 @@ module.exports.update = async (req, res) => {
             location: req.body.location,
             linkgoogle: req.body.google,
             imageUrl: imageUrl,
-            date: req.body.date
+            date: newDate
         });
         await event.save();
         console.log(event);
