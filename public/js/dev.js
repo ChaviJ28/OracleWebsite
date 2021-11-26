@@ -4,7 +4,7 @@ var testim = document.getElementById("testim"),
     testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
     testimleftArrow = document.getElementById("left-arrow"),
     testimRightArrow = document.getElementById("right-arrow"),
-    testimSpeed = 5500,
+    testimSpeed = 8500,
     currentSlide = 0,
     currentActive = 0,
     testimTimer
@@ -28,7 +28,7 @@ window.onload = function () {
         if (currentActive != currentSlide) {
             testimContent[currentActive].classList.add("inactive");
             testimContent[currentActive].classList.add("inactive");
-          
+
         }
         testimContent[slide].classList.add("active");
         testimDots[slide].classList.add("active");
@@ -40,7 +40,7 @@ window.onload = function () {
             playSlide(currentSlide += 1);
         }, testimSpeed)
     }
-// coding with nick
+    // coding with nick
     testimleftArrow.addEventListener("click", function () {
         playSlide(currentSlide -= 1);
     })
