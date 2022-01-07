@@ -16,9 +16,13 @@ router.get('/download', member.excel);
 
 //fix to fetch
 const memberdb = require("../models/member")
-router.post('/list/:no', async (req, res) => {
-    var members = await memberdb.find({}).sort({ _id: -1 }).limit(req.params.no);
-    res.json(members);
+router.get('/list/:no', async (req, res) => {
+    var no = parseInt(req.params.no);
+    var members = await memberdb.find({}).limit(no).sort({ _id: -1 });
+    res.json({
+        no: req.params.no,
+        mem: members
+    });
 })
 
 
