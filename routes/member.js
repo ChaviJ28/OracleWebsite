@@ -26,7 +26,7 @@ router.get('/list/:no', async (req, res) => {
 })
 
 // all to false
-router.get('/list/', async (req, res) => {
+router.get('/false', async (req, res) => {
     var members = await memberdb.find({}).sort({ _id: -1 });
     members.forEach((m) => {
         m.checked = false;
