@@ -173,10 +173,6 @@ module.exports.accform = async (req, res) => {
             mem.forEach(m => {
                 if (m.checked == false) {
                     members.push(m)
-
-                    for (i = 0; i <= 15; i++) {
-                        members.push(mem[1])
-                    }
                 }
             });
 
