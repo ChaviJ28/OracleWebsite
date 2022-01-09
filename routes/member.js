@@ -26,14 +26,14 @@ router.get('/list/:no', async (req, res) => {
 })
 
 // all to false
-router.get('/false', async (req, res) => {
-    var members = await memberdb.find({}).sort({ _id: -1 });
-    members.forEach((m) => {
-        m.checked = false;
-        m.save()
-    })
-    res.json(members);
+// router.get('/false', async (req, res) => {
+//     var members = await memberdb.find({}).sort({ _id: -1 });
+//     members.forEach((m) => {
+//         m.checked = false;
+//         m.save()
+//     })
+//     res.json(members);
 
-})
+// })
 
 module.exports = router
