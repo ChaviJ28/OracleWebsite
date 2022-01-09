@@ -11,7 +11,9 @@ var memberSchema = mongoose.Schema({
     level: String,
     year: String,
     faculty: String,
-    checked: Boolean
+    checked: Boolean,
+    dateAccepted: Date,
+    dateFilled: { type: Date, default: Date.now() }
 });
 
 module.exports = mongoose.model("member", memberSchema);

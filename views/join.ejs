@@ -1,121 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UoM Oracle Club </title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UoM Oracle Club </title>
 
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet"> 
-    <link rel="icon" href="/images/logo/new2.ico" type="image/x-icon">
-    
-    <link rel="stylesheet" href="css/registration.css">
 
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/logo/new2.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="css/registration.css">
+
+
 </head>
+
 <body>
-  
+
   <%- include('partials/navbar.ejs') %>
 
-  <br><br><br><br><br>
+    <br><br><br><br><br>
 
 
-  <% if(success && success.length) {%>
-    <div class="container centervert" style="height: 500px;">
-      <p class="text-center para">You have successfully Registered.</p>
-      <p class="text-center para">You will receive an email by tomorrow with further details.</p>
+    <% if(success && success.length) {%>
+      <div class="container centervert" style="height: 500px;">
+        <p class="text-center para">You have successfully Registered.</p>
+        <p class="text-center para">You will receive an email by tomorrow with further details.</p>
 
-   
-    </div>
+
+      </div>
       <% } else { %>
 
-
-    - <div class="container mt-5">
-        <h3 class="text-center title">Join an intimate community of more than 500 members and receive updates on our latest Events and Opportunities</h3>
-       
-        <h4 class="text-center title2">Register Now</h4>
-      
-       <div class="mx-auto mt-md-3 formReg"> 
-
-
-        <form name="regForm" onsubmit="return validateForm()" action="/member" method="POST" >
-          <div class="mb-3 row">
-            <label class="col-sm-3 col-xl-2 col-form-label">Umail</label>
-            <div class="col-sm-9 col-xxl-10">
-              <input type="text" class="form-control" name="email" placeholder="e.g john.doe@umail.uom.ac.mu" required>
-              <div class="invalid-feedback">
-                Please provide a valid umail. Make sure it ends with "@umail.uom.ac.mu"
-              </div>
-            </div>
-            
+        <% if(error && error=="duplicate" ) {%>
+          <div class="container centervert" style="height: 500px;">
+            <p class="text-center para">Duplicate Entry.</p>
+            <p class="text-center para">Please wait for confirmation mail.</p>
           </div>
-
-          <div class="mb-3 row">
-            <label class="col-sm-3 col-xl-2 col-form-label">Student Id</label>
-            <div class="col-sm-9 col-xxl-10">
-              <input type="text" class="form-control" name="studId" placeholder="e.g 2085943"  maxlength="7" minlength="7" pattern="[0-9]+"  required>
-            </div>
-          </div>
-
-          <div class="mb-3 row">
-            <label class="col-sm-3 col-xl-2 col-form-label">First Name</label>
-            <div class="col-sm-9 col-xxl-10">
-              <input type="text" class="form-control" name="fName" placeholder="e.g John" required>
-            </div>
-          </div>
-
-          <div class="mb-3 row">
-            <label class="col-sm-3 col-xl-2 col-form-label">Last Name</label>
-            <div class="col-sm-9 col-xxl-10">
-              <input type="text" class="form-control" name="lName" placeholder="e.g Doe" required>
-            </div>
-          </div>
-
-          <div class="mb-3 row">
-            <label class="col-sm-3 col-xl-2 col-form-label">Phone No</label>
-            <div class="col-sm-9 col-xxl-10">
-              <input type="text" class="form-control" name="phoneNo" placeholder="e.g 57457363" minlength="8" pattern="[0-9+_-]+" required>
-            </div>
-          </div>
-
-          <div class="mb-3 row">
-            <label class="col-sm-3 col-xl-2 col-form-label">Faculty</label>
-            <div class="col-sm-9 col-xxl-10">
-              <select class="form-select"  id="faculty" name="faculty" onchange="selectCourse()"  required>
-                <option value="">Select your Faculty</option>
-                <option value="Faculty of Agriculture">Faculty of Agriculture</option>
-                <option value="Faculty of Engineering">Faculty of Engineering</option>
-                <option value="Faculty of Information Communication and Digital Technologies">Faculty of Information Communication and Digital Technologies</option>
-                <option value="Faculty of Law & Management">Faculty of Law & Management</option>
-                <option value="Faculty of Medicine and Health Sciences">Faculty of Medicine and Health Sciences</option>
-                <option value="Faculty of Science">Faculty of Science</option>
-                <option value="Faculty of Social Sciences & Humanities">Faculty of Social Sciences & Humanities</option>
-                <option value="Centre for Innovative & Lifelong Learning">Centre for Innovative & Lifelong Learning</option>
-                <option value="Others">Others</option>
-             
-              </select>
-            </div>
-          </div>
+          <%}%>
 
 
-          <div class="mb-3 row">
-            <label class="col-sm-3 col-xl-2 col-form-label">Program Level</label>
-            <div class="col-sm-9 col-xxl-10">
-              <select class="form-select" name="level" id="level" onchange="selectCourse()" required>
-                <option value="">Select your Level</option>
-                <option value="Undergraduate">Undergraduate</option>
-                <option value="Postgraduate">Postgraduate</option>
-             
-              </select>
-            </div>
-          </div>
+            - <div class="container mt-5">
+              <h3 class="text-center title">Join an intimate community of more than 500 members and receive updates on
+                our latest Events and Opportunities</h3>
 
-        
-          <!-- <div class="mb-3 row">
+              <h4 class="text-center title2">Register Now</h4>
+
+              <div class="mx-auto mt-md-3 formReg">
+
+
+                <form name="regForm" onsubmit="return validateForm()" action="/member" method="POST">
+                  <div class="mb-3 row">
+                    <label class="col-sm-3 col-xl-2 col-form-label">Umail</label>
+                    <div class="col-sm-9 col-xxl-10">
+                      <input type="text" class="form-control" name="email" placeholder="e.g john.doe@umail.uom.ac.mu"
+                        required>
+                      <div class="invalid-feedback">
+                        Please provide a valid umail. Make sure it ends with "@umail.uom.ac.mu"
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="mb-3 row">
+                    <label class="col-sm-3 col-xl-2 col-form-label">Student Id</label>
+                    <div class="col-sm-9 col-xxl-10">
+                      <input type="text" class="form-control" name="studId" placeholder="e.g 2085943" maxlength="7"
+                        minlength="7" pattern="[0-9]+" required>
+                    </div>
+                  </div>
+
+                  <div class="mb-3 row">
+                    <label class="col-sm-3 col-xl-2 col-form-label">First Name</label>
+                    <div class="col-sm-9 col-xxl-10">
+                      <input type="text" class="form-control" name="fName" placeholder="e.g John" required>
+                    </div>
+                  </div>
+
+                  <div class="mb-3 row">
+                    <label class="col-sm-3 col-xl-2 col-form-label">Last Name</label>
+                    <div class="col-sm-9 col-xxl-10">
+                      <input type="text" class="form-control" name="lName" placeholder="e.g Doe" required>
+                    </div>
+                  </div>
+
+                  <div class="mb-3 row">
+                    <label class="col-sm-3 col-xl-2 col-form-label">Phone No</label>
+                    <div class="col-sm-9 col-xxl-10">
+                      <input type="text" class="form-control" name="phoneNo" placeholder="e.g 57457363" minlength="8"
+                        pattern="[0-9+_-]+" required>
+                    </div>
+                  </div>
+
+                  <div class="mb-3 row">
+                    <label class="col-sm-3 col-xl-2 col-form-label">Faculty</label>
+                    <div class="col-sm-9 col-xxl-10">
+                      <select class="form-select" id="faculty" name="faculty" onchange="selectCourse()" required>
+                        <option value="">Select your Faculty</option>
+                        <option value="Faculty of Agriculture">Faculty of Agriculture</option>
+                        <option value="Faculty of Engineering">Faculty of Engineering</option>
+                        <option value="Faculty of Information Communication and Digital Technologies">Faculty of
+                          Information Communication and Digital Technologies</option>
+                        <option value="Faculty of Law & Management">Faculty of Law & Management</option>
+                        <option value="Faculty of Medicine and Health Sciences">Faculty of Medicine and Health Sciences
+                        </option>
+                        <option value="Faculty of Science">Faculty of Science</option>
+                        <option value="Faculty of Social Sciences & Humanities">Faculty of Social Sciences & Humanities
+                        </option>
+                        <option value="Centre for Innovative & Lifelong Learning">Centre for Innovative & Lifelong
+                          Learning</option>
+                        <option value="Others">Others</option>
+
+                      </select>
+                    </div>
+                  </div>
+
+
+                  <div class="mb-3 row">
+                    <label class="col-sm-3 col-xl-2 col-form-label">Program Level</label>
+                    <div class="col-sm-9 col-xxl-10">
+                      <select class="form-select" name="level" id="level" onchange="selectCourse()" required>
+                        <option value="">Select your Level</option>
+                        <option value="Undergraduate">Undergraduate</option>
+                        <option value="Postgraduate">Postgraduate</option>
+
+                      </select>
+                    </div>
+                  </div>
+
+
+                  <!-- <div class="mb-3 row">
             <label class="col-sm-3 col-xl-2 col-form-label">Course</label>
             <div class="col-sm-9 col-xxl-10">
               <input type="text" class="form-control" name="course" placeholder="e.g Bsc(Hons) Software Engineering" required>
@@ -123,199 +141,203 @@
           </div> -->
 
 
-          <div class="mb-3 row">
-            <label class="col-sm-3 col-xl-2 col-form-label">Course</label>
-            <div class="col-sm-9 col-xxl-10">
-              <select class="form-select" id="course" name="course" required>
-                <option value="">Select your Course</option>
-              </select>
+                  <div class="mb-3 row">
+                    <label class="col-sm-3 col-xl-2 col-form-label">Course</label>
+                    <div class="col-sm-9 col-xxl-10">
+                      <select class="form-select" id="course" name="course" required>
+                        <option value="">Select your Course</option>
+                      </select>
+                    </div>
+                  </div>
+
+
+                  <div class="mb-3 row">
+                    <label class="col-sm-3 col-xl-2 col-form-label">Year</label>
+                    <div class="col-sm-9 col-xxl-10">
+                      <select class="form-select" name="year" required>
+                        <option value="">Select your year</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="trouble text-center">
+                    Having trouble to join ?
+
+                    <button class="trouble-shoot btn"
+                      onclick="location.href='https://api.whatsapp.com/send?phone=23058092173'">Contact us
+                    </button>
+                  </div>
+
+
+                  <div class="mt-4 mb-5 text-center">
+                    <button type="submit" class="btn btn-primary regbtn">Submit</button>
+                  </div>
+
+
+                </form>
+                <br>
+                <br>
+                <br>
+                <h4 class="title3">Privacy Policy ;
+                  <span class="title4"> The data collected in the above form is solely used for the purpose of
+                    registering
+                    new members in our club. In case of misconduct or inappropriate behaviour during one of our events,
+                    the
+                    information disclosed above helps us. Thank you for your cooperation.
+                  </span>
+                </h4>
+
+              </div>
+
             </div>
-          </div>
 
 
-          <div class="mb-3 row">
-            <label class="col-sm-3 col-xl-2 col-form-label">Year</label>
-            <div class="col-sm-9 col-xxl-10">
-              <select class="form-select" name="year" required>
-                <option value="">Select your year</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                
-              </select>
-            </div>
-          </div>
-          
-          <div class="trouble text-center">
-            Having trouble to join ? 
+            <% } %>
 
-            <button class="trouble-shoot btn" 
-             onclick="location.href='https://api.whatsapp.com/send?phone=23058092173'"
-            >Contact us
-           </button>
-          </div>
-            
-         
-          <div class="mt-4 mb-5 text-center">
-            <button type="submit" class="btn btn-primary regbtn">Submit</button>
-        </div>
+              <script>
+                function validateForm() {
+                  let umail = document.forms["regForm"]["email"].value.trim();
+                  let umailLength = umail.length;
+                  let umailOffset = umailLength - 16;
+                  let umailText = umail.substring(umailOffset, umailLength);
 
+                  // const notburger = document.querySelector(".form-control");
+                  if (umailText == "@umail.uom.ac.mu") {
+                  } else {
+                    event.preventDefault();
+                    const notburger = document.querySelector(".form-control");
+                    notburger.classList.add('form-control', 'is-invalid');
 
-        </form>
-        <br>
-        <br>
-        <br>
-        <h4 class="title3">Privacy Policy ; 
-          <span class="title4"> The data collected in the above form is solely used for the purpose of registering 
-            new members in our club. In case of misconduct or inappropriate behaviour during one of our events, the 
-            information disclosed above helps us. Thank you for your cooperation.
-             </span>
-        </h4>
+                    //display trouble message
+                    const trouble = document.querySelector(".trouble");
+                    trouble.style.display = "block";
 
-       </div>
+                    //scroll up for user
+                    window.scrollTo({
+                      top: 100,
+                      behavior: 'smooth'
+                    });
 
-      </div> 
-       
-      
-      <% }  %>
-     
-    <script>
-      function validateForm() {
-        let umail = document.forms["regForm"]["email"].value.trim();
-        let umailLength = umail.length;
-        let umailOffset = umailLength - 16;
-        let umailText = umail.substring(umailOffset,umailLength);
-        
-        // const notburger = document.querySelector(".form-control");
-        if (umailText == "@umail.uom.ac.mu") {
-        }else{
-          event.preventDefault();
-          const notburger = document.querySelector(".form-control");
-          notburger.classList.add('form-control', 'is-invalid');
+                  }
 
-          //display trouble message
-          const trouble = document.querySelector(".trouble");
-          trouble.style.display = "block";
-
-          //scroll up for user
-          window.scrollTo({
-            top: 100,
-            behavior: 'smooth'
-          });
-
-        }
-  
-      }
-      </script>
+                }
+              </script>
 
 
-<script>
-  function selectCourse() {
-    var fac = document.getElementById("faculty").value;
-    var level = document.getElementById("level").value;
-    var course = document.getElementById("course");
-  
-    course.innerHTML = '';
-    var opt = document.createElement("option");
-    opt.textContent = "Select your Course";
-    opt.value = "";
-    course.appendChild(opt);
+              <script>
+                function selectCourse() {
+                  var fac = document.getElementById("faculty").value;
+                  var level = document.getElementById("level").value;
+                  var course = document.getElementById("course");
 
-    var options = [];
-    if (level && fac) {
-      if (level == "Undergraduate") {
-      switch(fac) {
-        case "Faculty of Agriculture": 
-          options = ["BSc (Hons) Agricultural Science and Technology","BSc (Hons) Aquaculture","BSc (Hons) Crop Technology (Minor: Sheltered Farming)","BSc (Hons) Food Science and Technology","BSc(Hons) Applied Biochemistry" ];
-          break;
-        case "Faculty of Engineering": 
-          options = ["BEng (Hons) Chemical Engineering","BSc (Hons) Applied Climate Change and Adaptation", "BEng (Hons) Civil Engineering", "BSc (Hons) Town and Country Planning (Top-Up Programme)","BEng (Hons) Electrical and Electronic Engineering","BEng (Hons) Telecommunications Engineering with Networking","BEng (Hons) Mechanical Engineering","BEng (Hons) Mechatronics Engineering","BSc (Hons) Fashion Technology (Minor: Entrepreneurship)","BSc (Hons) Operations and Supply Chain Management","BSc (Hons) Sustainable Product Design","BEng (Hons) Mechanical Engineering (Minor: Industrial Systems)", "Bachelor of Science in Electrical and Computer Engineering (University of Arizona)"];
-          break;
-        case "Faculty of Information Communication and Digital Technologies": 
-          options = ["BSc (Hons) Information Systems","BSc (Hons) Animation and Visual Effects","BSc (Hons) Applied Computing","BSc (Hons) Computer Science","BSc (Hons) Mobile and Smart Technologies","BSc (Hons) Software Engineering","BSc (Hons) Data Science"];
-          break;
-        case "Faculty of Law & Management": 
-          options = ["BSc (Hons) Accounting (Minor: Finance)","BSc (Hons) Finance","BSc (Hons) Finance (Minor: Law)","BSc (Hons) Accounting (Minor: Management)","BSc (Hons) International Business Finance","BSc (Hons) International Business Management","BSc (Hons) Banking and Finance","Bachelor of Laws with Honours - LLB (Hons)","BA (Hons) Law and Criminal Justice","BA (Hons) Law with Management","BSc (Hons) Management","BSc (Hons) Human Resource Management","BSc (Hons) Marketing with Digital Technologies","BSc (Hons) Management Accounting and Finance","BSc (Hons) Tourism, Hospitality and Events Management","BSc (Hons) Accounting (Minor: Business Informatics)", "Bachelor of Applied Science in Cyber Operations (University of Arizona)"];
-          break;
-        case "Faculty of Medicine and Health Sciences": 
-        options = ["Doctor of Medicine (MD) – Bachelor of Medicine and Master of Medicine","BSc (Hons) Biomedical Sciences","BSc (Hons) Nutritional Sciences","Diploma/BSc (Hons) Occupational Health and Safety","BSc (Hons) Occupational Therapy","Diploma in Sanitary Science"];
-          break;
-        case "Faculty of Science": 
-          options = ["BSc (Hons) Biological Sciences","BSc (Hons) Chemistry","Bsc (Hons) Marine Environmental Sciences","BSc (Hons) Mathematics with Computer Science","BSc (Hons) Mathematics/ Mathematics with Statistics/ Mathematics with Finance","BSc (Hons) Physics *Optional Minor: Astrophysics/Biology/Chemistry/ Instrumentation/ Mathematics/Renewable","BSc (Hons) Physics with Computing"];
-          break;
-        case "Faculty of Social Sciences & Humanities": 
-          options = ["BSc (Hons) Economics and Finance","BA (Hons) Economics and Law","BSc (Hons) Business Economics and Investment Analysis","BSc (Hons) Actuarial Studies","BSc (Hons) Business Statistics with Finance","BA (Hons)/MA English Studies","BA (Hons) French Studies","BA (Hons) French with Translation Studies","Foundation Course in English","BSc (Hons) Psychology","BSc (Hons) Sociology / Sociology (Specialisation: Gender Studies)","BSc (Hons) Social Work Practice","BA (Hons) History and Sociology","Diploma/BSc (Hons) Communication Studies  with Specialisation in Business Communication/Journalism *"];
-          break;
-        case "Centre for Innovative & Lifelong Learning": 
-          options = ["BSc (Hons) Web and Multimedia Development","BSc (Hons) Educational Technologies"];
-          break;
-        default: 
-        case "Others": 
-          options = ["Others"];
-          break;
-        options = [];
-          break;
-      }
- } else if (level == "Postgraduate") {
-  switch(fac) {
-        case "Faculty of Agriculture": 
-          options = ["MSc Tropical Animal Production", "MSc Agronomy"];
-          break;
-        case "Faculty of Engineering": 
-          options = ["MSc Building Services Engineering","MSc Project Management","MSc Renewable Energy and Smart Electrical Systems","MSc Sustainable Energy Engineering with Environmental Management","MSc Telecommunications with Internet of Things","MSc Urban Planning & Climate Resilience","MSc Total Quality Management and Performance Excellence","MSc Operations and Logistics Management"];
-          break;
-        case "Faculty of Information Communication and Digital Technologies": 
-          options = ["MSc Network Security and Management","MSc Software Project Management","MSc Artificial Intelligence"];
-          break;
-        case "Faculty of Law & Management": 
-          options = ["MBA (Specialisation: Human Resource Management)","Masters of Business Administration","MBA (Specialisation: Financial Services)","MSc Digital Marketing","LL.M. in Human Rights","LL.M. in Corporate Law","LL.M. in Competition Law and Public Policies","MSc in Finance","MSc Financial Technology"];
-          break;
-        case "Faculty of Medicine and Health Sciences": 
-        options = ["MSc in Geriatric Care Management","Master in Public Health"];
-          break;
-        case "Faculty of Science": 
-          options = ["MSc Marine Science","MSc Coastal and Ocean Management","MSc Mathematical and Scientific Computing","MSc Applied and Sustainable Chemistry"];
-          break;
-        case "Faculty of Social Sciences & Humanities": 
-          options = ["MA Economics","MSc Financial Economics","MA Public Policy and Administration","Master of Regional Integration","MA Historical Studies","MA English Studies"];
-          break;
-        case "Centre for Innovative & Lifelong Learning": 
-          options = ["Masters of Business Administration","MA Educational Leadership","MSc Educational Technologies","Masters in Leadership Development in Information and Communication Technologies and the Knowledge Society"];
-          break;
-        default: 
-        case "Others": 
-          options = ["Others"];
-          break;
-        options = [];
-          break;
-      }
- }
+                  course.innerHTML = '';
+                  var opt = document.createElement("option");
+                  opt.textContent = "Select your Course";
+                  opt.value = "";
+                  course.appendChild(opt);
 
-
-for(var i = 0; i < options.length; i++) {
-    var val = options[i];
-    var opt = document.createElement("option");
-    opt.textContent = val;
-    opt.value = val;
-    course.appendChild(opt);
-}
-    }
-  }
-
-  
-</script>
-    
+                  var options = [];
+                  if (level && fac) {
+                    if (level == "Undergraduate") {
+                      switch (fac) {
+                        case "Faculty of Agriculture":
+                          options = ["BSc (Hons) Agricultural Science and Technology", "BSc (Hons) Aquaculture", "BSc (Hons) Crop Technology (Minor: Sheltered Farming)", "BSc (Hons) Food Science and Technology", "BSc(Hons) Applied Biochemistry"];
+                          break;
+                        case "Faculty of Engineering":
+                          options = ["BEng (Hons) Chemical Engineering", "BSc (Hons) Applied Climate Change and Adaptation", "BEng (Hons) Civil Engineering", "BSc (Hons) Town and Country Planning (Top-Up Programme)", "BEng (Hons) Electrical and Electronic Engineering", "BEng (Hons) Telecommunications Engineering with Networking", "BEng (Hons) Mechanical Engineering", "BEng (Hons) Mechatronics Engineering", "BSc (Hons) Fashion Technology (Minor: Entrepreneurship)", "BSc (Hons) Operations and Supply Chain Management", "BSc (Hons) Sustainable Product Design", "BEng (Hons) Mechanical Engineering (Minor: Industrial Systems)", "Bachelor of Science in Electrical and Computer Engineering (University of Arizona)"];
+                          break;
+                        case "Faculty of Information Communication and Digital Technologies":
+                          options = ["BSc (Hons) Information Systems", "BSc (Hons) Animation and Visual Effects", "BSc (Hons) Applied Computing", "BSc (Hons) Computer Science", "BSc (Hons) Mobile and Smart Technologies", "BSc (Hons) Software Engineering", "BSc (Hons) Data Science"];
+                          break;
+                        case "Faculty of Law & Management":
+                          options = ["BSc (Hons) Accounting (Minor: Finance)", "BSc (Hons) Finance", "BSc (Hons) Finance (Minor: Law)", "BSc (Hons) Accounting (Minor: Management)", "BSc (Hons) International Business Finance", "BSc (Hons) International Business Management", "BSc (Hons) Banking and Finance", "Bachelor of Laws with Honours - LLB (Hons)", "BA (Hons) Law and Criminal Justice", "BA (Hons) Law with Management", "BSc (Hons) Management", "BSc (Hons) Human Resource Management", "BSc (Hons) Marketing with Digital Technologies", "BSc (Hons) Management Accounting and Finance", "BSc (Hons) Tourism, Hospitality and Events Management", "BSc (Hons) Accounting (Minor: Business Informatics)", "Bachelor of Applied Science in Cyber Operations (University of Arizona)"];
+                          break;
+                        case "Faculty of Medicine and Health Sciences":
+                          options = ["Doctor of Medicine (MD) – Bachelor of Medicine and Master of Medicine", "BSc (Hons) Biomedical Sciences", "BSc (Hons) Nutritional Sciences", "Diploma/BSc (Hons) Occupational Health and Safety", "BSc (Hons) Occupational Therapy", "Diploma in Sanitary Science"];
+                          break;
+                        case "Faculty of Science":
+                          options = ["BSc (Hons) Biological Sciences", "BSc (Hons) Chemistry", "Bsc (Hons) Marine Environmental Sciences", "BSc (Hons) Mathematics with Computer Science", "BSc (Hons) Mathematics/ Mathematics with Statistics/ Mathematics with Finance", "BSc (Hons) Physics *Optional Minor: Astrophysics/Biology/Chemistry/ Instrumentation/ Mathematics/Renewable", "BSc (Hons) Physics with Computing"];
+                          break;
+                        case "Faculty of Social Sciences & Humanities":
+                          options = ["BSc (Hons) Economics and Finance", "BA (Hons) Economics and Law", "BSc (Hons) Business Economics and Investment Analysis", "BSc (Hons) Actuarial Studies", "BSc (Hons) Business Statistics with Finance", "BA (Hons)/MA English Studies", "BA (Hons) French Studies", "BA (Hons) French with Translation Studies", "Foundation Course in English", "BSc (Hons) Psychology", "BSc (Hons) Sociology / Sociology (Specialisation: Gender Studies)", "BSc (Hons) Social Work Practice", "BA (Hons) History and Sociology", "Diploma/BSc (Hons) Communication Studies  with Specialisation in Business Communication/Journalism *"];
+                          break;
+                        case "Centre for Innovative & Lifelong Learning":
+                          options = ["BSc (Hons) Web and Multimedia Development", "BSc (Hons) Educational Technologies"];
+                          break;
+                        default:
+                        case "Others":
+                          options = ["Others"];
+                          break;
+                          options = [];
+                          break;
+                      }
+                    } else if (level == "Postgraduate") {
+                      switch (fac) {
+                        case "Faculty of Agriculture":
+                          options = ["MSc Tropical Animal Production", "MSc Agronomy"];
+                          break;
+                        case "Faculty of Engineering":
+                          options = ["MSc Building Services Engineering", "MSc Project Management", "MSc Renewable Energy and Smart Electrical Systems", "MSc Sustainable Energy Engineering with Environmental Management", "MSc Telecommunications with Internet of Things", "MSc Urban Planning & Climate Resilience", "MSc Total Quality Management and Performance Excellence", "MSc Operations and Logistics Management"];
+                          break;
+                        case "Faculty of Information Communication and Digital Technologies":
+                          options = ["MSc Network Security and Management", "MSc Software Project Management", "MSc Artificial Intelligence"];
+                          break;
+                        case "Faculty of Law & Management":
+                          options = ["MBA (Specialisation: Human Resource Management)", "Masters of Business Administration", "MBA (Specialisation: Financial Services)", "MSc Digital Marketing", "LL.M. in Human Rights", "LL.M. in Corporate Law", "LL.M. in Competition Law and Public Policies", "MSc in Finance", "MSc Financial Technology"];
+                          break;
+                        case "Faculty of Medicine and Health Sciences":
+                          options = ["MSc in Geriatric Care Management", "Master in Public Health"];
+                          break;
+                        case "Faculty of Science":
+                          options = ["MSc Marine Science", "MSc Coastal and Ocean Management", "MSc Mathematical and Scientific Computing", "MSc Applied and Sustainable Chemistry"];
+                          break;
+                        case "Faculty of Social Sciences & Humanities":
+                          options = ["MA Economics", "MSc Financial Economics", "MA Public Policy and Administration", "Master of Regional Integration", "MA Historical Studies", "MA English Studies"];
+                          break;
+                        case "Centre for Innovative & Lifelong Learning":
+                          options = ["Masters of Business Administration", "MA Educational Leadership", "MSc Educational Technologies", "Masters in Leadership Development in Information and Communication Technologies and the Knowledge Society"];
+                          break;
+                        default:
+                        case "Others":
+                          options = ["Others"];
+                          break;
+                          options = [];
+                          break;
+                      }
+                    }
 
 
-        
+                    for (var i = 0; i < options.length; i++) {
+                      var val = options[i];
+                      var opt = document.createElement("option");
+                      opt.textContent = val;
+                      opt.value = val;
+                      course.appendChild(opt);
+                    }
+                  }
+                }
 
-    
-   
 
-        <%- include('partials/footer.ejs') %>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+              </script>
+
+
+
+
+
+
+
+
+              <%- include('partials/footer.ejs') %>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                  crossorigin="anonymous"></script>
 
 </body>
+
 </html>

@@ -17,29 +17,53 @@ const transporter = nodemailer.createTransport({
 })
 
 
+async function check(umail) {
+    var members = await Member.find({}).sort({ _id: -1 });
+    var resp = 'ok';
+    console.log(umail.toString())
+    members.forEach((m) => {
+        if (m.email.toString() == umail.toString()) {
+            console.log(m.email.toString())
+            resp = 'duplicate'
+        }
+    })
+    return resp;
+}
 
 module.exports.new = async (req, res) => {
-    if (req.body.email && req.body.fName && req.body.lName && req.body.faculty && req.body.course) {
-        const newMember = new Member({
-            email: req.body.email,
-            studentId: req.body.studId,
-            fName: req.body.fName,
-            lName: req.body.lName,
-            phoneNo: req.body.phoneNo,
-            course: req.body.course,
-            level: req.body.level,
-            year: req.body.year,
-            faculty: req.body.faculty,
-            checked: false
-        });
-        console.log(newMember);
-
-        await newMember.save();
-        req.flash('success', 'You have successfully registered');
+    resp = await check(req.body.email);
+    console.log(resp);
+    if (resp == 'duplicate') {
+        req.flash('error', 'duplicate');
         res.redirect('/join');
-
     } else {
-        req.flash('error', 'Please try again later');
+
+        if (req.body.email && req.body.fName && req.body.lName && req.body.faculty && req.body.course) {
+            const newMember = new Member({
+                email: req.body.email,
+                studentId: req.body.studId,
+                fName: req.body.fName,
+                lName: req.body.lName,
+                phoneNo: req.body.phoneNo,
+                course: req.body.course,
+                level: req.body.level,
+                year: req.body.year,
+                faculty: req.body.faculty,
+                checked: false,
+                dateFilled: Date.now()
+            });
+            console.log(newMember);
+
+
+            await newMember.save();
+            req.flash('success', 'You have successfully registered');
+            res.redirect('/join');
+
+        } else {
+            req.flash('error', 'Please try again later');
+            res.redirect('/join');
+
+        }
     }
 }
 
@@ -53,7 +77,7 @@ module.exports.admin = async (req, res) => {
             const mem = await Member.find({})
             mem.forEach(m => {
                 if (m.checked) {
-                    members.push(m)
+                    members.push(m);
                 } else {
                     count++;
                 }
@@ -149,6 +173,10 @@ module.exports.accform = async (req, res) => {
             mem.forEach(m => {
                 if (m.checked == false) {
                     members.push(m)
+
+                    for (i = 0; i <= 15; i++) {
+                        members.push(mem[1])
+                    }
                 }
             });
 
@@ -169,6 +197,7 @@ module.exports.acceptMembers = async (req, res) => {
                 req.body.forEach(async (id) => {
                     var member = await Member.findById(id);
                     member.checked = true;
+                    member.dateAccepted = Date.now();
                     member.save();
                     //send mail
                     switch (member.year) {
@@ -198,7 +227,7 @@ module.exports.acceptMembers = async (req, res) => {
                 })
                 if (arr.length > 0) {
                     req.flash('error', arr + ' mails not found');
-                    res.json('/member/admin');
+                    res.json(arr);
 
                 } else {
                     req.flash('success', 'Email successfully sent');
@@ -211,6 +240,7 @@ module.exports.acceptMembers = async (req, res) => {
         })
     })
 }
+
 
 module.exports.excel = async (req, res) => {
     isLoggedIn(req, res, async () => {
@@ -243,6 +273,8 @@ module.exports.excel = async (req, res) => {
             ws.cell(2, 8).string('Level').style(headstyle)
             ws.cell(2, 9).string('Year').style(headstyle)
             ws.cell(2, 10).string('Faculty').style(headstyle)
+            ws.cell(2, 10).string('Date Filled Form').style(headstyle)
+            ws.cell(2, 10).string('Date Accepted').style(headstyle)
 
             ws1.cell(2, 1).string('No.').style(headstyle)
             ws1.cell(2, 2).string('StudentId').style(headstyle)
@@ -254,6 +286,7 @@ module.exports.excel = async (req, res) => {
             ws1.cell(2, 8).string('Level').style(headstyle)
             ws1.cell(2, 9).string('Year').style(headstyle)
             ws1.cell(2, 10).string('Faculty').style(headstyle)
+            ws1.cell(2, 10).string('Date Filled Form').style(headstyle)
 
             var titlestyle = wb.createStyle({
                 font: {
@@ -287,6 +320,8 @@ module.exports.excel = async (req, res) => {
                     ws.cell(i + 2, 8).string(mem.level).style(style)
                     ws.cell(i + 2, 9).string(mem.year).style(style)
                     ws.cell(i + 2, 10).string(mem.faculty).style(style)
+                    ws.cell(i + 2, 10).string(mem.dateFilled).style(style)
+                    ws.cell(i + 2, 10).string(mem.dateAccepted).style(style)
                     i++
                 } else {
                     ws1.cell(j + 2, 1).string(i.toString()).style(style)
@@ -299,6 +334,7 @@ module.exports.excel = async (req, res) => {
                     ws1.cell(j + 2, 8).string(mem.level).style(style)
                     ws1.cell(j + 2, 9).string(mem.year).style(style)
                     ws1.cell(j + 2, 10).string(mem.faculty).style(style)
+                    ws1.cell(j + 2, 10).string(mem.dateFilled).style(style)
                     j++
                 }
             })
