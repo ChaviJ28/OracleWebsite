@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-html , body {
+
+html,
+body {
     height: 100%;
     width: 100%;
- 
+    font-family: 'Roboto', sans-serif;
 }
+
 /* ----- Our Club ----- */
 .main-text {
     font-family: 'Roboto', sans-serif;
@@ -12,14 +15,14 @@ html , body {
     flex-direction: column;
 }
 
-.aboutTitle{
-    color:white
+.aboutTitle {
+    color: white
 }
 
-.first-page{
+.first-page {
     /* padding-top: 10px; */
     /* height: 90%; */
-    background: url(../images/backgrounds/backgroundDark.jpg) no-repeat center; 
+    background: url(../images/backgrounds/backgroundDark.jpg) no-repeat center;
     display: table;
     height: 100%;
     position: relative;
@@ -28,11 +31,11 @@ html , body {
     color: white;
 }
 
-.rounded1{
+.rounded1 {
     border-radius: 15px;
 }
 
-.purple-text{
+.purple-text {
     color: #7437ff;
 }
 
@@ -42,21 +45,22 @@ html , body {
     object-fit: cover;
 }
 
-.card-body{
-    background-image: linear-gradient(45deg, #A827944D, #11226C);;
+.card-body {
+    background-image: linear-gradient(45deg, #A827944D, #11226C);
+    ;
     color: white;
-    border-radius: 0 0 15px 15px ;
+    border-radius: 0 0 15px 15px;
     height: 130px;
 }
 
-.card{
+.card {
     border-radius: 15px !important;
 }
 
 .carousel-indicators button,
 .carousel-indicators button.active {
-    width: 10px !important; 
-    height: 10px !important; 
+    width: 10px !important;
+    height: 10px !important;
     margin: 0 0 0 5px !important;
     border-radius: 50% !important;
     border: none !important;
@@ -67,24 +71,24 @@ html , body {
     background: white;
 }
 
-.car-con{
+.car-con {
     border: none;
     margin-top: 5% !important;
 }
 
 .carousel-control-prev,
-.carousel-control-next{
+.carousel-control-next {
     margin-bottom: 100px;
 }
 
 /* Phone and tablet screens */
 @media only screen and (max-width: 900px) {
     .card img {
-      width: 100%;
-      height: 200px;
+        width: 100%;
+        height: 200px;
     }
 
-    .cardText{
+    .cardText {
         height: 96px;
         overflow: scroll !important;
         overflow-x: hidden !important;
@@ -97,26 +101,27 @@ html , body {
     .cardText::-webkit-scrollbar {
         width: 5px;
     }
-      
+
     .cardText::-webkit-scrollbar-track {
         background: rgba(255, 255, 255, 0.3);
         border-radius: 100vw;
         margin-block: 0.4em;
     }
-      
+
     .cardText::-webkit-scrollbar-thumb {
         background: #22277A;
         border-radius: 100vw;
     }
-    
-    .card-body{
+
+    .card-body {
         height: 150px;
     }
-} 
+}
 
 .card {
     background-color: transparent !important;
 }
+
 /* ----- End ----- */
 
 
@@ -136,11 +141,11 @@ html , body {
         margin-top: 2% !important;
     }
 
-  
-.padbig {
-    padding-top: 5%;
-}
-    
+
+    .padbig {
+        padding-top: 5%;
+    }
+
 }
 
 
@@ -152,13 +157,13 @@ html , body {
 
 
 @media only screen and (max-width: 900px) {
-    .first-page{
-        height:auto;
+    .first-page {
+        height: auto;
     }
 }
 
 .services {
-    background: url(../images/backgrounds/backgroundDark_reversed.jpg) no-repeat center; 
+    background: url(../images/backgrounds/backgroundDark_reversed.jpg) no-repeat center;
 }
 
 .text-purple {
@@ -187,7 +192,7 @@ html , body {
     line-height: 1.7rem;
 }
 
- 
+
 
 @media screen and (max-width: 1024px) {
 
@@ -223,14 +228,14 @@ html , body {
     .services p {
         font-size: 0.9rem;
     }
-    
+
     .services .col-12 {
         padding: 0px 15px !important;
     }
 
-  }
+}
 
-  @media screen and (max-width: 425px) {
+@media screen and (max-width: 425px) {
 
     .image {
         height: 200px;
@@ -248,10 +253,10 @@ html , body {
         margin: 10px 0px;
     }
 
-  }
+}
 
-  @media screen and (max-width: 320px) {
-      
+@media screen and (max-width: 320px) {
+
     .services .pb-5 {
         font-size: 1.7rem;
     }
@@ -264,7 +269,8 @@ html , body {
         font-size: 0.85rem;
     }
 
-  }
+}
+
 /* ----- End ----- */
 
 
@@ -273,13 +279,13 @@ html , body {
 
 
 /* ----- Core Developers ----- */
-.last-page{
+.last-page {
     /* background: url(../images/backgrounds/backgroundDark_reversed.jpg) no-repeat center;  */
     background-color: black;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-     padding-bottom: 3rem; 
- 
+    padding-bottom: 3rem;
+
 }
 
 .glow-line {
@@ -293,23 +299,23 @@ html , body {
     /* in order: x offset, y offset, blur size, spread size, color */
 }
 
-.c-purple-text{
+.c-purple-text {
     color: #7437ff;
     font-family: montserrat;
 }
 
-.container-bg{
+.container-bg {
     /* background: url(../images/backgrounds/backgroundDark_reversed.jpg); */
     background-color: black;
 }
 
-.c-title{
+.c-title {
     font-family: montserrat;
     color: white
 }
-.c-text{
+
+.c-text {
     text-align: center;
 }
 
 /* ----- End ----- */
-  
